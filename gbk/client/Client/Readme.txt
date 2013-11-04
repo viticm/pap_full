@@ -1,15 +1,6 @@
 
 //====== 1
-编译：
-
-添加环境变量：
-BuildOut	// 输出目录
-OutDir		// 生成目录
-
-从16服务器上的 Program Share -> Share Source 中复制 EngineSDK 到自己本地， 和 Client 目录平级放置
-
-
-最终的目录结构：
+目录结构：
 
 	存放项目的目录： Client	 	== 代码
 			 Common  	== 代码

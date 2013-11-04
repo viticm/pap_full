@@ -49,9 +49,9 @@
 #include "Interface\GMInterface_Script_Tooltip.h"
 #include "gamedefine2.h"
 #include "GMActionSystem_MouseCmd.h"
-#include "..\client\cegui\cegui\include\CEGUI.h"
-#include "..\client\cegui\cegui\include\CEGUIIme.h"
-#include "..\client\cegui\cegui\include\CEGUIPropertyHelper.h"
+#include "..\..\cegui\cegui\include\CEGUI.h"
+#include "..\..\cegui\cegui\include\CEGUIIme.h"
+#include "..\..\cegui\cegui\include\CEGUIPropertyHelper.h"
 #include "..\Interface\GMGameInterface_Script_SouXia.h"
 #pragma comment(lib, "CEGUIBase")
 
