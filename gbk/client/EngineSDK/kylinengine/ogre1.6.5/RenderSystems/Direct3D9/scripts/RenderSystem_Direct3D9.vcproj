@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="RenderSystem_Direct3D9"
 	ProjectGUID="{4041D7E0-A8FA-4EED-9B19-BFC3595899D3}"
+	RootNamespace="RenderSystem_Direct3D9"
 	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -54,7 +56,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="0"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\Direct3D9\include;"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;..\..\..\..\ThirdParty\VSInclude\DirectX9\;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\Direct3D9\include"
 				PreprocessorDefinitions="WIN32,_WINDOWS,_DEBUG,_USRDLL,OGRED3DENGINEDLL_EXPORTS,CMAKE_INTDIR=\&quot;Debug\&quot;,RenderSystem_Direct3D9_EXPORTS"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
@@ -89,6 +91,8 @@
 				AdditionalLibraryDirectories="&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Lib\x86\$(OutDir)&quot;,&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Lib\x86&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\Debug\RenderSystem_Direct3D9_d.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\Debug\RenderSystem_Direct3D9_d.lib"
 			/>
 			<Tool
@@ -110,15 +114,12 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\..\..\..\..\Bin\Client\Game"
+			OutputDirectory="..\..\..\..\..\..\..\Run\Client\Game"
 			IntermediateDirectory="..\..\..\..\..\..\..\..\BuildOut\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
 			UseOfMFC="0"
@@ -155,7 +156,7 @@
 				AdditionalOptions=" /Zm1000 /fp:fast"
 				Optimization="0"
 				InlineFunctionExpansion="2"
-				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;..\..\..\OgreMain\include\Threading;..\include"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;..\..\..\OgreMain\include\Threading;..\include;..\..\..\..\..\ThirdParty\VSInclude\DirectX9\Include"
 				PreprocessorDefinitions="WIN32,_WINDOWS,NDEBUG,_USRDLL,OGRED3DENGINEDLL_EXPORTS,CMAKE_INTDIR=\&quot;Release\&quot;,RenderSystem_Direct3D9_EXPORTS"
 				ExceptionHandling="1"
 				RuntimeLibrary="2"
@@ -181,12 +182,14 @@
 				Name="VCLinkerTool"
 				LinkLibraryDependencies="false"
 				AdditionalOptions=" /STACK:10000000 /machine:I386"
-				AdditionalDependencies="kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib d3d9.lib d3dx9.lib DxErr.lib dxguid.lib ..\..\..\..\..\..\Bin\Client\Game\OgreMain.lib ..\..\..\Dependencies\lib\release\freetype235.lib ..\..\..\Dependencies\lib\release\FreeImage.lib ..\..\..\Dependencies\lib\release\zziplib.lib ..\..\..\Dependencies\lib\release\zlib.lib $(NOINHERIT)"
+				AdditionalDependencies="kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib d3d9.lib d3dx9.lib DxErr.lib dxguid.lib ..\..\..\..\..\..\..\Run\Client\Game\OgreMain.lib ..\..\..\Dependencies\lib\release\freetype235.lib ..\..\..\Dependencies\lib\release\FreeImage.lib ..\..\..\Dependencies\lib\release\zziplib.lib ..\..\..\Dependencies\lib\release\zlib.lib $(NOINHERIT)"
 				OutputFile="$(OutDir)\$(ProjectName).dll"
 				Version="0.0"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\..\Dependencies\lib\Release"
+				AdditionalLibraryDirectories="..\..\..\Dependencies\lib\Release;..\..\..\..\..\ThirdParty\VSInclude\DirectX9\Lib\x86"
 				ProgramDatabaseFile="$(TargetDir)$(TargetName).pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="$(TargetDir)$(TargetName).lib"
 			/>
 			<Tool
@@ -206,9 +209,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -285,6 +285,8 @@
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Lib\x86\$(OutDir)&quot;,&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Lib\x86&quot;"
 				ProgramDatabaseFile="..\..\bin\MinSizeRel\RenderSystem_Direct3D9.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\MinSizeRel\RenderSystem_Direct3D9.lib"
 			/>
 			<Tool
@@ -304,9 +306,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -385,6 +384,8 @@
 				AdditionalLibraryDirectories="&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Lib\x86\$(OutDir)&quot;,&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Lib\x86&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\..\bin\RelWithDebInfo\RenderSystem_Direct3D9.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\RelWithDebInfo\RenderSystem_Direct3D9.lib"
 			/>
 			<Tool
@@ -404,9 +405,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"

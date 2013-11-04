@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="Game"
 	ProjectGUID="{4F67BA5B-C49B-4C66-84BD-C1A339BC6C92}"
 	RootNamespace="Game"
 	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -17,7 +18,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\..\Bin\Client\Game"
+			OutputDirectory="..\..\..\Run\Client\Game"
 			IntermediateDirectory="..\..\..\..\BuildOut\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
@@ -41,7 +42,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\Common;..\..\Common\Packets;..\..\Common\DataBase;..\..\Common\Utilities;..\..\Common\Combat;..\LuaPlus\Src\LuaPlus;..\GameInterface\Include;..\GameInterface\Include\Game;..\GameInterface\Capability;..\Game;..\..\EngineSDK\kylinengine\FairyCore;..\..\EngineSDK\kylinengine\Ogre\OgreMain\include;..\..\EngineSDK\ThirdParty\VSInclude;..\..\EngineSDK\kylinengine\NavigationEngine;..\..\Common\PathLib"
+				AdditionalIncludeDirectories="..\..\..\Common;..\..\..\Common\Packets;..\..\..\Common\DataBase;..\..\..\Common\Utilities;..\..\..\Common\Combat;..\LuaPlus\Src\LuaPlus;..\GameInterface\Include;..\GameInterface\Include\Game;..\GameInterface\Capability;..\Game;..\..\EngineSDK\kylinengine\FairyCore;..\..\EngineSDK\kylinengine\Ogre\OgreMain\include;..\..\EngineSDK\ThirdParty\VSInclude;..\..\EngineSDK\kylinengine\NavigationEngine;..\..\..\Common\PathLib"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;__WINDOWS__;GAME_CLIENT;_USE_32BIT_TIME_T;_FOX_CLIENT;_FOX_LOGIN;_FOX_SERVER;_CRT_SECURE_NO_DEPRECATE"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
@@ -79,6 +80,8 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)/$(ProjectName).pdb"
 				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -100,15 +103,12 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\Bin\Client\Game"
+			OutputDirectory="..\..\..\Run\Client\Game"
 			IntermediateDirectory="..\..\..\..\BuildOut\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
@@ -136,7 +136,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="..\..\..\..\Common;..\..\Common;..\..\Common\Packets;..\..\Common\DataBase;..\..\Common\Utilities;..\..\Common\Combat;..\LuaPlus\Src\LuaPlus;..\GameInterface\Include;..\GameInterface\Include\Game;..\GameInterface\Capability;..\Game;..\..\EngineSDK\kylinengine\FairyCore;..\..\EngineSDK\kylinengine\ogre1.6.5\OgreMain\include;..\..\EngineSDK\kylinengine\ogre1.6.5\Dependencies\include;..\..\EngineSDK\ThirdParty\VSInclude;..\..\EngineSDK\kylinengine\NavigationEngine;..\..\Common\PathLib"
+				AdditionalIncludeDirectories="..\..\..\..\..\Common;..\..\..\Common;..\..\..\Common\Packets;..\..\..\Common\DataBase;..\..\..\Common\Utilities;..\..\..\Common\Combat;..\LuaPlus\Src\LuaPlus;..\GameInterface\Include;..\GameInterface\Include\Game;..\GameInterface\Capability;..\Game;..\..\EngineSDK\kylinengine\FairyCore;..\..\EngineSDK\kylinengine\ogre1.6.5\OgreMain\include;..\..\EngineSDK\kylinengine\ogre1.6.5\Dependencies\include;..\..\EngineSDK\ThirdParty\VSInclude;..\..\EngineSDK\kylinengine\NavigationEngine;..\..\..\Common\PathLib"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;__WINDOWS__;_FOX_CLIENT;_FOX_LOGIN;_FOX_SERVER;GAME_CLIENT;_USE_32BIT_TIME_T;_CRT_SECURE_NO_DEPRECATE"
 				StringPooling="false"
 				MinimalRebuild="true"
@@ -165,10 +165,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4078"
-				AdditionalDependencies="winmm.lib expat.lib opcode.lib Net_Release.lib PathLib.lib"
+				AdditionalDependencies="winmm.lib expat.lib opcode.lib Fox_Net.lib PathLib.lib"
 				OutputFile="$(OutDir)\Game.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\Bin\Client\Game;../../EngineSDK/ThirdParty/VSLib;../../Common;../game;&quot;../../EngineSDK/LibAndDll/$(ConfigurationName)&quot;;..\..\EngineSDK\kylinengine\ogre1.6.5\Dependencies\Lib\Release"
+				AdditionalLibraryDirectories="..\..\Bin\Client\Game;../../EngineSDK/ThirdParty/VSLib;../../../Common;../game;&quot;../../EngineSDK/LibAndDll/$(ConfigurationName)&quot;;..\..\EngineSDK\kylinengine\ogre1.6.5\Dependencies\Lib\Release"
 				IgnoreDefaultLibraryNames="msvcrtd.lib;libcd.lib;LIBCMTD.lib"
 				GenerateDebugInformation="true"
 				GenerateMapFile="true"
@@ -177,6 +177,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -196,9 +198,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"

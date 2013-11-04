@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="Opcode"
 	ProjectGUID="{FD449C37-B1EC-4A35-9300-1EA7A273158B}"
 	RootNamespace="Opcode"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -16,8 +17,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(BuildOut)\$(ConfigurationName)"
-			IntermediateDirectory="$(BuildOut)\$(ConfigurationName)\$(ProjectName)"
+			OutputDirectory="../../../../Run/Client/Game/"
+			IntermediateDirectory="..\..\..\..\..\BuildOut\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"

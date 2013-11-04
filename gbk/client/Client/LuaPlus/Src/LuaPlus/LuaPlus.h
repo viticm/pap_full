@@ -76,5 +76,6 @@ class LuaStackObject;
 #include "LuaHelper.h"
 #include "LuaAutoBlock.h"
 #include "LuaStackTableIterator.h"
+using namespace LuaPlus ;
 
 #endif LUAPLUS_H

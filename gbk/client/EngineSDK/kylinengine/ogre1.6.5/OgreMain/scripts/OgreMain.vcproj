@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="OgreMain"
 	ProjectGUID="{C4CE0FC1-13A8-4BEA-B2CD-FE31EB0CD0CD}"
+	RootNamespace="OgreMain"
 	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -54,7 +56,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="0"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="..\..\OgreMain\include;..\include;..\..\Dependencies\include;..\..\Dependencies\include\OIS;..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\OgreMain\include\Threading;..\..\OgreMain\include\WIN32;..\..\OgreMain\src\nedmalloc;"
+				AdditionalIncludeDirectories="..\..\OgreMain\include;..\include;..\..\Dependencies\include;..\..\Dependencies\include\OIS;..\..\Dependencies\include\Cg;..\..\..\..\ThirdParty\VSInclude\DirectX9\Include;..\..\OgreMain\include\Threading;..\..\OgreMain\include\WIN32;..\..\OgreMain\src\nedmalloc"
 				PreprocessorDefinitions="WIN32,_WINDOWS,_DEBUG,OGRE_NONCLIENT_BUILD,FREEIMAGE_LIB,_MT,_USRDLL,CMAKE_INTDIR=\&quot;Debug\&quot;,OgreMain_EXPORTS"
 				ExceptionHandling="1"
 				BasicRuntimeChecks="3"
@@ -91,6 +93,8 @@
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\bin\Debug\OgreMain_d.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\lib\Debug\OgreMain_d.lib"
 			/>
 			<Tool
@@ -112,15 +116,12 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\..\..\..\Bin\Client\Game"
+			OutputDirectory="..\..\..\..\..\..\Run\Client\Game"
 			IntermediateDirectory=".\obj\$(ConfigurationName)"
 			ConfigurationType="2"
 			UseOfMFC="0"
@@ -195,6 +196,8 @@
 				AssemblyDebug="0"
 				ProgramDatabaseFile="$(TargetDir)$(TargetName).pdb"
 				GenerateMapFile="true"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="$(TargetDir)$(TargetName).lib"
 			/>
 			<Tool
@@ -214,9 +217,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -295,6 +295,8 @@
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				ProgramDatabaseFile="..\bin\MinSizeRel\OgreMain.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\lib\MinSizeRel\OgreMain.lib"
 			/>
 			<Tool
@@ -314,9 +316,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -397,6 +396,8 @@
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="..\bin\RelWithDebInfo\OgreMain.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\lib\RelWithDebInfo\OgreMain.lib"
 			/>
 			<Tool
@@ -416,9 +417,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"

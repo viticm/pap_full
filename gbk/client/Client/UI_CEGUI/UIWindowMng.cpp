@@ -29,7 +29,6 @@
 #include "FalagardComplexWindow.h"
 #include "FalChatHistory.h"
 
-
 CEGUI::Window*  CUIWindowMng::m_pBackGroundSheet = NULL; // ¿Í»§¶Ë´°¿Úµ×°å
 CUIWindowMng*	CUIWindowMng::s_pMe	= NULL;
 
