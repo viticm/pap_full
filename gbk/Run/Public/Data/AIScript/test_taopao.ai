@@ -1,0 +1,17 @@
+;被人砍说“我你也敢打？！”，可攻击，不反击，AI<=60 HP会逃跑，逃跑会呼叫同伙
+[common]
+0:if(AIS_GetAIState()=SATTACK&AIS_GetHP()<60){AIS_ToSpeak(22,1);AIS_ToFlee(1);AIS_SetTimes(-1);AIS_SetPRI(34);};生命少于60%的时候向距离最近的队友逃跑
+[commonend]
+
+[skill]
+0:if(AIS_GetAIState()=SATTACK){AIS_ToSpeak(20,1);AIS_SetTimes(1);AIS_SetPRI(30);};如果被攻击则说话“我你也敢打？！”
+[skillend]
+
+[beskill]
+[beskillend]
+
+[damage]
+[damageend]
+
+[dead]
+[deadend]

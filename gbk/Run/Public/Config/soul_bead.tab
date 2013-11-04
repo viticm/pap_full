@@ -1,0 +1,4 @@
+INT	INT	INT	INT	STRING	STRING	STRING	INT	INT	INT	INT	STRING	INT	STRING	STRING	INT	STRING
+index	class	type	Medindex	资源	name	说明文字	适应规则	有效时间/分钟	效果编号	是否广播	类型描述	选择对象类型	掉落时的外形	掉落模型附加的特效	掉落的声音	物品名称的颜色
+20010001	20	1	1	daxingbaoshi_01	武魂珠	武器之魂，具有武器的威力精华。可直接使用，也可附魔在其他同类型武器上	12	120	1001	0	魂珠	4	掉落珠子.obj	cj_yingguang_huang	0	ffffff
+20020001	20	2	1	daxingbaoshi_01	器魂珠	防器之魂，具有防器的防御精华。可直接使用，也可附魔在其他同类型防具上	12	1440	1002	0	魂珠	4	掉落珠子.obj	cj_yingguang_huang	0	ffffff

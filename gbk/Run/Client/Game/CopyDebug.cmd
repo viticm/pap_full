@@ -1,0 +1,1 @@
+copy ..\..\..\EngineSDK\LibAndDll\Debug\*.dll *.dll

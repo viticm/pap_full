@@ -1,0 +1,21 @@
+INT	INT	STRING	INT	STRING	INT	INT	INT
+场景号(sceneid)	线程号(从0开始)	场景名字	是否激活(1表示激活，0表示不激活)	文件名称	所在服务器号	场景类型(0表示普通场景，1表示副本)	客户端对应资源(scene_define.tab)
+0	0	南湖野外01	1	nanhuyewai/nanhuyewai.scn	0	0	0
+1	0	新手村_01	1	xinshoucun_01/xinshoucun_01.scn	0	0	1
+2	0	新手村_02	1	xinshoucun_02/xinshoucun_02.scn	0	0	2
+3	0	杨柳村	1	yangliucun/yangliucun.scn	0	0	3
+4	0	桃花岛	1	taohuadao/taohuadao.scn	0	0	4
+5	0	副本_01	1	fuben_01/fuben_01.scn	0	1	5
+6	0	副本_02	1	fuben_02/fuben_02.scn	0	1	6
+7	0	空白副本	1		0	1	
+8	0	空白副本	1		0	1	
+9	0	苏州	1	suzhou/suzhou.scn	0	0	9
+10	0	南湖野外	1	nanhuyewai/nanhuyewai.scn	0	0	10
+##11	0	空白副本	1		0	1	
+11	0	牛家村	1	niujiacun/niujiacun.scn	0	1	11
+12	0	曼陀山庄	1	mantuoshanzhuang/mantuoshanzhuang.scn	0	0	12
+13	0	燕子坞	1	yanziwu/yanziwu.scn	0	0	13
+14	0	扬州	1	yangzhou/yangzhou.scn	0	0	14
+15	0	杭州	1	hangzhou/hangzhou.scn	0	0	15
+16	0	丐帮	1	gaibang/gaibang.scn	0	0	16
+17	0	嘉兴	1	jiaxing/jiaxing.scn	0	0	17

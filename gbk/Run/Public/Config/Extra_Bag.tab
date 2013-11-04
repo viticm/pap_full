@@ -1,0 +1,3 @@
+INT	INT	INT	INT	STRING	STRING	STRING	INT	INT	INT	INT	INT	STRING	STRING	STRING	INT	STRING
+index	class（扩展背包class=19）	type(不限)	Medindex（不限）	资源	name	说明文字	适应规则	基本价格	出售价格	有效时间	有效格子数	类型描述	掉落时的外形	掉落模型附加的特效	掉落的声音	物品名称的颜色
+19010001	19	1	1	WXSJ_quest_rongqi_1_3	测试背包	测试背包	7	10	10	3600000	36	测试用的拓展背包	包袱.obj	cj_yingguang_huang	0	FFFFFFFF

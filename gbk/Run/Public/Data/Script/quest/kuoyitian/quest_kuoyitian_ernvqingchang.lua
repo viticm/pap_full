@@ -1,0 +1,254 @@
+--儿女情长
+
+--MisDescBegin
+x214002_g_ScriptId = 214002
+x214002_g_MissionIdPre =108
+x214002_g_MissionId = 109
+x214002_g_MissionKind = 3
+x214002_g_MissionLevel = 15
+x214002_g_ScriptIdNext = {ScriptId = 214003 ,LV = 1 }
+x214002_g_Name	="合答安" 
+x214002_g_Name2	="铁木真" 
+x214002_g_DemandItem ={}
+--x214002_g_noDemandKill ={{id=301,num=1}}	
+
+x214002_g_MissionName="儿女情长"
+x214002_g_MissionInfo="    <合答安两眼泪水，激动的说>铁木真……他，他还好吗？这么多年了，他还好吗……\n \n    是他让你来救我的吗？小的时候我就知道，他是一个不平凡的人，长生天一定会眷顾他的！\n \n    "  --任务描述
+x214002_g_MissionInfo2="，我不能这么跟你回去，我的丈夫被泰赤乌人抓走了，我要去救我丈夫。请你回去告诉#G铁木真#W，合答安永远都不会忘了他！"
+x214002_g_MissionTarget="    把合答安的话告诉#G铁木真#W。"		
+x214002_g_MissionComplete="    谢谢你给我带来合答安的消息。"					--完成任务npc说话的话
+--x214002_g_ContinueInfo="    不管付出多大代价，也要把那件东西给拿回来。"
+--任务奖励
+x214002_g_MoneyBonus = 600
+--固定物品奖励，最多8种
+x214002_g_ItemBonus={}
+
+--可选物品奖励，最多8种
+x214002_g_RadioItemBonus={}
+
+--MisDescEnd
+x214002_g_ExpBonus = 6500
+--**********************************
+
+--任务入口函数
+
+--**********************************
+
+function x214002_OnDefaultEvent(sceneId, selfId, targetId)	--点击该任务后执行此脚本
+
+	--检测列出条件
+	if x214002_CheckPushList(sceneId, selfId, targetId) <= 0 then
+		return
+	end
+
+	--如果已接此任务
+	if IsHaveMission(sceneId,selfId, x214002_g_MissionId) > 0 then
+		
+                     BeginEvent(sceneId)
+                     AddText(sceneId,"#Y"..x214002_g_MissionName)
+		     AddText(sceneId,x214002_g_MissionComplete)
+		     EndEvent()
+                     DispatchMissionContinueInfo(sceneId, selfId, targetId, x214002_g_ScriptId, x214002_g_MissionId)
+                
+
+        elseif x214002_CheckAccept(sceneId, selfId, targetId) > 0 then
+	    	
+		--发送任务接受时显示的信息
+		BeginEvent(sceneId)
+		AddText(sceneId,"#Y"..x214002_g_MissionName)
+                AddText(sceneId,x214002_g_MissionInfo..GetName(sceneId, selfId)..x214002_g_MissionInfo2) 
+		AddText(sceneId,"#Y任务目标#W") 
+		AddText(sceneId,x214002_g_MissionTarget) 
+		AddMoneyBonus(sceneId, x214002_g_MoneyBonus)	
+		EndEvent()
+		
+		DispatchMissionInfo(sceneId, selfId, targetId, x214002_g_ScriptId, x214002_g_MissionId)
+        end
+	
+end
+
+
+
+--**********************************
+
+--列举事件
+
+--**********************************
+
+function x214002_OnEnumerate(sceneId, selfId, targetId)
+
+
+	--如果玩家完成过这个任务
+	if IsMissionHaveDone(sceneId, selfId, x214002_g_MissionId) > 0 then
+		return 
+	end
+	--如果已接此任务
+	if  x214002_CheckPushList(sceneId, selfId, targetId) > 0 then
+		AddNumText(sceneId, x214002_g_ScriptId, x214002_g_MissionName)
+	end
+	
+end
+
+
+
+--**********************************
+
+--检测接受条件
+
+--**********************************
+
+function x214002_CheckAccept(sceneId, selfId, targetId)
+
+	if (GetName(sceneId,targetId)==x214002_g_Name) then 
+					return 1
+	end
+	return 0
+end
+
+
+--**********************************
+
+--检测查看条件
+
+--**********************************
+
+function x214002_CheckPushList(sceneId, selfId, targetId)
+        if (sceneId==14) then
+        	if IsMissionHaveDone(sceneId, selfId, x214002_g_MissionIdPre) > 0 then
+	        	if (GetName(sceneId,targetId)==x214002_g_Name) then
+	        	        if IsHaveMission(sceneId,selfId, x214002_g_MissionId)<= 0 then
+	        	            	return 1
+	        	        end
+	        	end
+			if (GetName(sceneId,targetId)==x214002_g_Name2) then
+				    if IsHaveMission(sceneId,selfId, x214002_g_MissionId) > 0 then
+				    	return 1
+	        	            end
+	        	end
+	        end
+        end
+        return 0
+	
+end
+
+--**********************************
+
+--接受
+
+--**********************************
+
+function x214002_OnAccept(sceneId, selfId)
+
+	                                                  
+	BeginEvent(sceneId)
+	AddMission( sceneId, selfId, x214002_g_MissionId, x214002_g_ScriptId, 1, 0, 0)
+	AddText(sceneId,"接受任务："..x214002_g_MissionName) 
+	EndEvent()
+	DispatchMissionTips(sceneId, selfId)
+	     	                                    
+	     
+end
+
+
+
+--**********************************
+
+--放弃
+
+--**********************************
+
+function x214002_OnAbandon(sceneId, selfId)
+
+	--删除玩家任务列表中对应的任务
+	DelMission(sceneId, selfId, x214002_g_MissionId)
+	for i, item in x214002_g_DemandItem do
+		DelItem(sceneId, selfId, item.id, item.num)
+	end
+
+end
+
+
+
+--**********************************
+
+--检测是否可以提交
+
+--**********************************
+
+function x214002_CheckSubmit( sceneId, selfId, targetId)
+
+	if (GetName(sceneId,targetId)==x214002_g_Name2) then
+	        return 1
+	end
+	return 0
+
+end
+
+
+
+--**********************************
+
+--提交
+
+--**********************************
+
+function x214002_OnSubmit(sceneId, selfId, targetId, selectRadioId)
+
+	if DelMission(sceneId, selfId, x214002_g_MissionId) > 0 then
+	
+		MissionCom(sceneId, selfId, x214002_g_MissionId)
+		AddExp(sceneId, selfId, x214002_g_ExpBonus)
+		AddMoney(sceneId, selfId, x214002_g_MoneyBonus)
+		for i, item in x214002_g_RadioItemBonus do
+	        if item.id == selectRadioId then
+	        item={{selectRadioID, 1}}
+	        end
+	        end
+
+		for i, item in x214002_g_DemandItem do
+		DelItem(sceneId, selfId, item.id, item.num)
+		end
+		CallScriptFunction( x214002_g_ScriptIdNext.ScriptId, "OnDefaultEvent",sceneId, selfId, targetId )
+	end
+	
+
+	
+end
+
+
+
+--**********************************
+
+--杀死怪物或玩家
+
+--**********************************
+
+function x214002_OnKillObject(sceneId, selfId, objdataId)
+	 
+
+end
+
+
+
+--**********************************
+
+--进入区域事件
+
+--**********************************
+
+function x214002_OnEnterArea(sceneId, selfId, zoneId)
+
+end
+
+
+
+--**********************************
+
+--道具改变
+
+--**********************************
+
+function x214002_OnItemChanged(sceneId, selfId, itemdataId)
+
+end
+

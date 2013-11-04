@@ -1,0 +1,2 @@
+INT	INT	STRING	STRING	INT	STRING	INT	INT
+ID	RaceID	ModelFile	ShowName	消耗物品ID	MaterialName	消耗物品数量	是否在初始时可选(0表示游戏中，初始时都不可选，1表示只有初始时可选，2表示只有在游戏中可选，3表示游戏中，初始时都可选)

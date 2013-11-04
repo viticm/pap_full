@@ -1,0 +1,5 @@
+INT	STRING	INT	STRING	INT	STRING	INT	INT	INT
+编号	名称	对应生活技能ID	对应模型	对应任务ID	Tips默认	打开时间默认	脚本ID	打开动画
+1	灌木01	1	灌木01.mesh		无效		301021	
+2	灌木02	2	灌木02.mesh		无效		301022	
+3	灌木03	3	简易旗杆01.mesh		无效		301023	

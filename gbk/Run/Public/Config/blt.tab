@@ -1,0 +1,4 @@
+INT	STRING	STRING	STRING	STRING	STRING	INT	INT	INT	STRING	STRING	FLOAT	FLOAT	STRING	STRING	STRING
+ID	描述	关键字	子弹模版名	预留1	预留2	是否使用逻辑子弹	轨迹类型	轨迹参数	子弹飞行特效ID	飞行音效ID	速度(m/s)	加速度	子弹爆炸特效ID	爆炸音效ID	击中特效的绑定点
+1	经验球	BulletFlowSystem_Exp				1	1	0	状态_经验球_01		20	0			身体受击点
+2	金钱球	BulletFlowSystem_Money				1	0	0	状态_经验球_01		20	0			身体受击点

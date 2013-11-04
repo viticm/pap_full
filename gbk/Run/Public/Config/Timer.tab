@@ -1,0 +1,3 @@
+INT	STRING	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	STRING	INT	STRING	INT	INT	STRING	INT	INT	STRING	INT	INT	STRING	INT	INT	STRING	INT	INT	INT	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING
+index	name	scriptid	opt_type	time_type	time_start	time_over	reserve1	reserve2	reserve3	reserve4	reserve5	广播类型	慢报间隔	慢报内容	慢报结束时间点	快报间隔	快报内容	快报结束时间点	刚开报间隔	刚开报内容	刚开报结束时间点	进行中报间隔	进行中报内容	进行中报结束时间点	快结束报间隔	快结束报内容	快结束报结束时间点	ruler	SceneId	Map_0	Map_1	Map_2	Map_3	Map_4	Map_5	Map_6	Map_7	Map_8	Map_9
+1	逗大家一乐	910000	0	1	940	1000	0	1	2	3	4	0|3	600	SUC:#cFF80FF给大家讲笑话:一女奇丑，嫁不出去，希望被拐，一天终于被绑匪劫走，却半月卖不出去，绑匪将其送回，此女却坚决不下车，绑匪咬牙一跺脚:走，车不要了！！	1000	600	讲个笑话	1000	600	讲个笑话	1000	600	讲个笑话	1000	600	讲个笑话	1000	-1	3	0|-1	0|-1	0|-1	0|-1	0|-1	0|-1	0|-1	0|-1	0|-1	0|-1

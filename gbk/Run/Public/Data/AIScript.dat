@@ -1,0 +1,19 @@
+MGR_TXT
+
+0=ai_normal_000.ai =近程普通攻击
+1=ai_normal_001.ai =中程普通攻击
+2=ai_normal_002.ai =远程普通攻击
+3=ai_normal_003.ai =近程技能攻击
+4=ai_normal_004.ai =中程技能攻击
+5=ai_normal_005.ai =远程技能攻击
+6=test_taopao.ai =逃跑测试
+200=ai_boss_000.ai =Boss
+201=ai_boss_001.ai =Boss
+202=ai_boss_002.ai =活财神副本BOSS
+400=ai_quest_000.ai =贵族
+401=ai_quest_001.ai =商人叫卖
+402=ai_quest_002.ai =百姓
+403=ai_quest_003.ai =NPC通用
+404=ai_quest_004.ai= 屠夫
+405=ai_quest_005.ai= 官员1
+406=ai_quest_006.ai= 官员2

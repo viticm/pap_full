@@ -1,0 +1,78 @@
+INT	INT	STRING	STRING	STRING	STRING	STRING	STRING	INT	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING
+装备ID	模型ID	名称	说明	图标	类型描述	掉落时的外形	掉落模型附加的特效	掉落的声音	物品名称的颜色	特效1	绑定点1	特效2	绑定点2	特效3	绑定点3	特效4	绑定点4	特效5	绑定点5	特效6	绑定点6	特效7	绑定点7	特效8	绑定点8	特效9	绑定点9	特效10	绑定点10	特效11	绑定点11	特效12	绑定点12	特效13	绑定点13	特效14	绑定点14	特效15	绑定点15	特效16	绑定点16
+####	1001XXXX	少林武器	棍																																						
+10011001	1	追风棍	产地：少林	xinshougun	棍	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10011002	2	震雷棍	产地：少林	xinshougun	棍	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10011003	3	噬雪棍	产地：少林	xinshougun	棍	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1002XXXX	少林副手	缠手																																						
+####	1003XXXX	丐帮武器	棒																																						
+10031001	201	甲朴棒	产地：丐帮	xinshoubang	棒	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10031002	202	青玉棒	产地：丐帮	xinshoubang	棒	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10031003	203	凤翔棒	产地：丐帮	xinshoubang	棒	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10031004	204	游蛇棒	产地：丐帮	xinshoubang	棒	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10031005	205	卧龙棒	产地：丐帮	xinshoubang	棒	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10031006	206	君怒棒	产地：丐帮	xinshoubang	棒	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1004XXXX	丐帮副手	掌套																																						
+####	1005XXXX	武当武器	剑																																						
+10051001	401	青冥剑	产地：武当	xinshoujian	剑	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10051002	402	玄铁剑	产地：武当	xinshoujian	剑	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10051003	403	重影剑	产地：武当	xinshoujian	剑	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1006XXXX	武当副手	符咒																																						
+####	1007XXXX	唐门武器	刀																																						
+10071001	601	驱魔刀	产地：唐门	xinshoudao	刀	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10071002	602	长啸刀	产地：唐门	xinshoudao	刀	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10071003	603	劝叟刀	产地：唐门	xinshoudao	刀	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10071004	604	斩龙刀	产地：唐门	xinshoudao	刀	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1008XXXX	唐门副手	暗器																																						
+####	1009XXXX	逍遥武器	扇子																																						
+10091001	801	白折扇	产地：逍遥派	xinshoushan	扇子	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10091002	802	浊清扇	产地：逍遥派	xinshoushan	扇子	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10091003	803	燃焰扇	产地：逍遥派	xinshoushan	扇子	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1010XXXX	逍遥副手	金沙																																						
+####	1011XXXX	药王武器	葫芦																																						
+10111001	1001	逆魂封印	产地：药王谷	xinshouhulu	葫芦	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10111002	1002	沉金之殇	产地：药王谷	xinshouhulu	葫芦	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10111003	1003	乾坤自在	产地：药王谷	xinshouhulu	葫芦	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1012XXXX	药王副手	药粉																																						
+####	1013XXXX	桃花武器	笛子																																						
+10131001	1201	竹音笛	产地：桃花岛	xinshoudi	笛子	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10131002	1202	灵清笛	产地：桃花岛	xinshoudi	笛子	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10131003	1203	飘渺笛	产地：桃花岛	xinshoudi	笛子	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1014XXXX	桃花副手	扳指																																						
+####	1015XXXX	峨眉武器	刺																																						
+10151001	1401	金钢刺	产地：峨嵋	xinshouci	刺	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10151002	1401	墨书刺	产地：峨嵋	xinshouci	刺	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10151003	1401	眉黛刺	产地：峨嵋	xinshouci	刺	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1016XXXX	峨眉副手	针																																						
+####	1020XXXX	头盔																																							
+####	1021XXXX	项链																																							
+####	1022XXXX	衬肩																																							
+####	1023XXXX	衣服																																							
+10231001	5036	新手衣服1	产地：新手套装系列	xinshouzhuangnan	衣服	掉落防具类_01.obj	cj_yingguang_huang		ffffff																																
+10231002	5037	新手衣服2	产地：新手套装系列	xinshouzhuangnv	衣服	掉落防具类_01.obj	cj_yingguang_huang		ffffff																																
+10231003	5035	新手衣服3	产地：新手套装系列	xinshouzhuangnan	衣服	掉落防具类_01.obj	cj_yingguang_huang	0	ffffff																																
+10231004	5030	新手衣服4	产地：新手套装系列	xinshouzhuangnv	衣服	掉落防具类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1024XXXX	护腕																																							
+####	1025XXXX	手套																																							
+10251001	5038	新手手套1	产地：新手套装系列	WXSJ_equip_shoutao_1_1	手套	掉落防具类_01.obj	cj_yingguang_huang		ffffff																																
+10251002	5039	新手手套2	产地：新手套装系列	WXSJ_equip_shoutao_1_1	手套	掉落防具类_01.obj	cj_yingguang_huang		ffffff																																
+10251003	5031	新手手套3	产地：新手套装系列	WXSJ_equip_shoutao_1_1	手套	掉落防具类_01.obj	cj_yingguang_huang	0	ffffff																																
+10251004	5032	新手手套4	产地：新手套装系列	WXSJ_equip_shoutao_1_1	手套	掉落防具类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1026XXXX	腰带																																							
+####	1027XXXX	鞋子																																							
+10271001	5040	新手鞋子1	产地：新手套装系列	WXSJ_equip_xie_1_1	鞋子	掉落防具类_01.obj	cj_yingguang_huang																																		
+10271002	5041	新手鞋子2	产地：新手套装系列	WXSJ_equip_xie_1_1	鞋子	掉落防具类_01.obj	cj_yingguang_huang																																		
+10271003	5033	新手鞋子3	产地：新手套装系列	WXSJ_equip_xie_1_1	鞋子	掉落防具类_01.obj	cj_yingguang_huang	0	ffffff																																
+10271004	5034	新手鞋子4	产地：新手套装系列	WXSJ_equip_xie_1_1	鞋子	掉落防具类_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1028XXXX	戒指																																							
+####	1029XXXX	搜侠录																																							
+10291001	0	入门搜侠录	产地：蒙古	WXSJ_souxia_souxialu_1_1	搜侠录	掉落搜侠录_01.obj	cj_yingguang_huang	0	ffffff																																
+10291002	0	初级搜侠录	产地：蒙古	WXSJ_souxia_souxialu_1_2	搜侠录	掉落搜侠录_01.obj	cj_yingguang_huang	0	ffffff																																
+10291003	0	中级搜侠录	产地：蒙古	WXSJ_souxia_souxialu_1_3	搜侠录	掉落搜侠录_01.obj	cj_yingguang_huang	0	ffffff																																
+10291004	0	高级搜侠录	产地：蒙古	WXSJ_souxia_souxialu_1_4	搜侠录	掉落搜侠录_01.obj	cj_yingguang_huang	0	ffffff																																
+10291005	0	特殊类型搜侠录	产地：蒙古	WXSJ_souxia_souxialu_1_5	搜侠录	掉落搜侠录_01.obj	cj_yingguang_huang	0	ffffff																																
+####	1032XXXX	饰品																																							
+####	1033XXXX	外装																																							
+10341001	1003	采矿镐	产地：蒙古	xinshougun	工具	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10341002	1003	采药镰	产地：蒙古	xinshoubang	工具	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
+10341003	1003	捕虫网	产地：蒙古	xinshoujian	工具	掉落笛子类_01.obj	cj_yingguang_huang	0	ffffff																																
