@@ -165,10 +165,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4078"
-				AdditionalDependencies="winmm.lib expat.lib opcode.lib Fox_Net.lib PathLib.lib"
+				AdditionalDependencies="winmm.lib expat.lib opcode.lib FoxNet.lib PathLib.lib"
 				OutputFile="$(OutDir)\Game.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="../../../Run/Client/Game;../../EngineSDK/ThirdParty/VSLib;../../../Common;../game;&quot;../../EngineSDK/LibAndDll/$(ConfigurationName)&quot;;..\..\EngineSDK\kylinengine\ogre1.6.5\Dependencies\Lib\Release"
+				AdditionalLibraryDirectories="../../../Run/Client/Game;../../EngineSDK/ThirdParty/VSLib;../../../Common;../game;&quot;../../EngineSDK/LibAndDll/$(ConfigurationName)&quot;;..\..\EngineSDK\kylinengine\ogre1.6.5\Dependencies\Lib\Release;..\..\EngineSDK\ThirdParty\VSInclude\DirectX9\Lib\x86"
 				IgnoreDefaultLibraryNames="msvcrtd.lib;libcd.lib;LIBCMTD.lib"
 				GenerateDebugInformation="true"
 				GenerateMapFile="true"

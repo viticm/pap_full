@@ -4,6 +4,7 @@
 	Version="9.00"
 	Name="FoxNet"
 	ProjectGUID="{2C301491-A756-43C4-BB82-BABE85A4DA92}"
+	RootNamespace="FoxNet"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="131072"
 	>
@@ -17,7 +18,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\..\..\Run\Server\$(ConfigurationName)"
+			OutputDirectory="..\..\..\Common\"
 			IntermediateDirectory="\Intermediate\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
 			UseOfMFC="0"
@@ -101,7 +102,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\..\Run\Server\$(ConfigurationName)"
+			OutputDirectory="..\..\..\..\Common\"
 			IntermediateDirectory="\Intermediate\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
 			UseOfMFC="0"
