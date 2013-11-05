@@ -23,7 +23,8 @@ SMHandle		CreateShareMem(SM_KEY key,UINT Size)
 	//sprintf(keybuf,"./%d",key);
 #if __LINUX__
 	//key = ftok(keybuf,'w'); 
-	SMHandle hd =  shmget(key ,Size,IPC_CREAT|IPC_EXCL|0666); 
+	SMHandle hd =  shmget(key, Size, IPC_CREAT | IPC_EXCL | 0666); 
+    printf( "test ==================, Size: %d\n", Size );
 	printf("handle = %d ,key = %d ,error: %d \r\n",hd,key,errno);
 	return hd;
 #elif __WINDOWS__
