@@ -18,7 +18,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\..\Bin\SERVER"
+			OutputDirectory="..\..\..\Run\Server"
 			IntermediateDirectory="\Intermediate\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../Common;../../Server/Server/Base;../../Server/Server/SMU;./Main;./DB;./ShareData;../../Common/DBSystem/Mysql/include;../../Common/DBSystem/DataBase;../../Server/Server/Other;../../Server/Server/Main;../../Common/Combat;../../Common/DataBase;./ShareMemory"
+				AdditionalIncludeDirectories="../../../Common;../../Server/Server/Base;../../Server/Server/SMU;./Main;./DB;./ShareData;../../../Common/DBSystem/Mysql/include;../../../Common/DBSystem/DataBase;../../Server/Server/Other;../../Server/Server/Main;../../../Common/Combat;../../../Common/DataBase;./ShareMemory"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;__WINDOWS__;_CRT_SECURE_NO_DEPRECATE;__SHAREMEMORY__;_USE_32BIT_TIME_T"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -63,7 +63,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\..\Common\FoxNet.lib ws2_32.lib"
+				AdditionalDependencies="..\..\..\Common\FoxNet.lib ws2_32.lib"
 				OutputFile="$(OutDir)/ShareMemory.exe"
 				LinkIncremental="2"
 				IgnoreDefaultLibraryNames=""
@@ -124,7 +124,7 @@
 				InlineFunctionExpansion="1"
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				AdditionalIncludeDirectories="./;../../Common;../../Server/Server/Base;../../Server/Server/SMU;./Main;./DB;./ShareData;../../Common/DBSystem/Mysql/include;../../Common/DBSystem/DataBase;../../Server/Server/Other;../../Server/Server/Main;../../Common/Combat;../../Common/DataBase;./ShareMemory"
+				AdditionalIncludeDirectories="./;../../../Common;../../Server/Server/Base;../../Server/Server/SMU;./Main;./DB;./ShareData;../../../Common/DBSystem/Mysql/include;../../../Common/DBSystem/DataBase;../../Server/Server/Other;../../Server/Server/Main;../../../Common/Combat;../../../Common/DataBase;./ShareMemory"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WINDOWS__;_FOX_SERVER;_FOX_CLIENT;_FOX_WORLD;_USE_32BIT_TIME_T"
 				StringPooling="true"
 				BasicRuntimeChecks="0"
@@ -147,7 +147,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FORCE:MULTIPLE"
-				AdditionalDependencies="ws2_32.lib ..\..\Common\NetD.lib ..\..\Common\FoxUtil.lib"
+				AdditionalDependencies="ws2_32.lib ..\..\..\Common\NetD.lib ..\..\..\Common\FoxUtil.lib"
 				OutputFile="$(OutDir)\ShareMemory.exe"
 				LinkIncremental="2"
 				IgnoreDefaultLibraryNames="libc.lib;libcd.lib"
@@ -254,11 +254,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\DataBase\WXSJ_DBC.cpp"
+				RelativePath="..\..\..\Common\DataBase\WXSJ_DBC.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\DataBase\WXSJ_DBC.h"
+				RelativePath="..\..\..\Common\DataBase\WXSJ_DBC.h"
 				>
 			</File>
 		</Filter>
@@ -288,294 +288,294 @@
 			Name="Common"
 			>
 			<File
-				RelativePath="..\..\Common\Assertx.cpp"
+				RelativePath="..\..\..\Common\Assertx.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Assertx.h"
+				RelativePath="..\..\..\Common\Assertx.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\BaseType.h"
+				RelativePath="..\..\..\Common\BaseType.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\DB_Struct.cpp"
+				RelativePath="..\..\..\Common\DB_Struct.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\DB_Struct.h"
+				RelativePath="..\..\..\Common\DB_Struct.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\DBSystem\DataBase\DBTypes.h"
+				RelativePath="..\..\..\Common\DBSystem\DataBase\DBTypes.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\FileAPI.h"
+				RelativePath="..\..\..\Common\FileAPI.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\FoxEncrypt.cpp"
+				RelativePath="..\..\..\Common\FoxEncrypt.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\FoxEncrypt.h"
+				RelativePath="..\..\..\Common\FoxEncrypt.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine.h"
+				RelativePath="..\..\..\Common\GameDefine.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine2.h"
+				RelativePath="..\..\..\Common\GameDefine2.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Attr.h"
+				RelativePath="..\..\..\Common\GameDefine_Attr.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Item.h"
+				RelativePath="..\..\..\Common\GameDefine_Item.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Result.h"
+				RelativePath="..\..\..\Common\GameDefine_Result.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Scene.h"
+				RelativePath="..\..\..\Common\GameDefine_Scene.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct.cpp"
+				RelativePath="..\..\..\Common\GameStruct.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct.h"
+				RelativePath="..\..\..\Common\GameStruct.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Impact.h"
+				RelativePath="..\..\..\Common\GameStruct_Impact.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Item.h"
+				RelativePath="..\..\..\Common\GameStruct_Item.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Pet.cpp"
+				RelativePath="..\..\..\Common\GameStruct_Pet.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Pet.h"
+				RelativePath="..\..\..\Common\GameStruct_Pet.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Scene.h"
+				RelativePath="..\..\..\Common\GameStruct_Scene.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Skill.h"
+				RelativePath="..\..\..\Common\GameStruct_Skill.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameUtil.cpp"
+				RelativePath="..\..\..\Common\GameUtil.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameUtil.h"
+				RelativePath="..\..\..\Common\GameUtil.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Minidump.cpp"
+				RelativePath="..\..\..\Common\Minidump.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Minidump.h"
+				RelativePath="..\..\..\Common\Minidump.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Rand.cpp"
+				RelativePath="..\..\..\Common\Rand.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Rand.h"
+				RelativePath="..\..\..\Common\Rand.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ServerSocket.h"
+				RelativePath="..\..\..\Common\ServerSocket.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ShareMemAPI.cpp"
+				RelativePath="..\..\..\Common\ShareMemAPI.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ShareMemAPI.h"
+				RelativePath="..\..\..\Common\ShareMemAPI.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Socket.h"
+				RelativePath="..\..\..\Common\Socket.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\SocketAPI.h"
+				RelativePath="..\..\..\Common\SocketAPI.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\SocketInputStream.h"
+				RelativePath="..\..\..\Common\SocketInputStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\SocketOutputStream.h"
+				RelativePath="..\..\..\Common\SocketOutputStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Type.h"
+				RelativePath="..\..\..\Common\Type.h"
 				>
 			</File>
 			<Filter
 				Name="DataBase"
 				>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBAbilityList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBAbilityList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBAbilityList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBAbilityList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBChardbVersion.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBChardbVersion.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBChardbVersion.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBChardbVersion.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBCharFullData.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBCharFullData.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBCharFullData.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBCharFullData.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBCoolDownInfo.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBCoolDownInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBCoolDownInfo.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBCoolDownInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBCreateCharOp.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBCreateCharOp.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBCreateCharOp.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBCreateCharOp.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBDeleteCharOp.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBDeleteCharOp.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBDeleteCharOp.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBDeleteCharOp.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBEquipBaseList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBEquipBaseList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBEquipBaseList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBEquipBaseList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBGuildInfo.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBGuildInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBGuildInfo.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBGuildInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBImpactList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBImpactList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBImpactList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBImpactList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBItemList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBItemList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBItemList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBItemList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBItemSerial.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBItemSerial.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBItemSerial.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBItemSerial.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBMailInfo.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBMailInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBMailInfo.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBMailInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBManager.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBManager.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBManager.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBManager.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBPetList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBPetList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBPetList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBPetList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBPrivateInfo.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBPrivateInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBPrivateInfo.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBPrivateInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBRelationList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBRelationList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBRelationList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBRelationList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBSkillList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBSkillList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBSkillList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBSkillList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBSouXiaList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBSouXiaList.cpp"
 					>
 					<FileConfiguration
 						Name="Debug|Win32"
@@ -597,55 +597,55 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBSouXiaList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBSouXiaList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBTaskList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBTaskList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBTaskList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBTaskList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBTitleInfo.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBTitleInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBTitleInfo.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBTitleInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBXinFaList.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBXinFaList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\DBXinFaList.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\DBXinFaList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\ODBCBase.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\ODBCBase.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\ODBCBase.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\ODBCBase.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\ODBCInterface.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\ODBCInterface.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\ODBCInterface.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\ODBCInterface.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\SqlTemplate.cpp"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\SqlTemplate.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DBSystem\DataBase\SqlTemplate.h"
+					RelativePath="..\..\..\Common\DBSystem\DataBase\SqlTemplate.h"
 					>
 				</File>
 			</Filter>
