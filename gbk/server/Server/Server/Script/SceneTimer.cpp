@@ -10,6 +10,7 @@
 #include "LuaInterface.h"
 #include "TimeManager.h"
 #include "Scene.h"
+#define min(a,b)            (((a) < (b)) ? (a) : (b))
 
 SceneTimer::SceneTimer()
 {

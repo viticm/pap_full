@@ -43,7 +43,7 @@ namespace Combat_Module
 			virtual VOID OnUseSkillSuccessfully(OWN_IMPACT& rImp, Obj_Character& rMe, SkillInfo_T& rSkill) const;
 
 		private: 
-			INT StdImpact060_T::IsSubSkillCanSuccess( INT iRate, Obj_Character& rMe ) const;
+			INT IsSubSkillCanSuccess( INT iRate, Obj_Character& rMe ) const;
 		};
 	}
 }

@@ -293,7 +293,7 @@ BOOL	ODBCInterface::Fetch()
 	for (int ColIndex=0;ColIndex<mColCount;ColIndex++)
 	{
 		int				TotalGet = 0;
-		SQLINTEGER		LenData = 0;
+        SQLLEN          LenData  = 0 ; // changed from SQLINTEGER by viticm
 		int				Ret		= 0;
 		while(Ret=SQLGetData(hStmt, ColIndex+1, SQL_C_CHAR,Col[ColIndex]+TotalGet,MAX_COLUMN_BUFFER,&LenData)!=SQL_NO_DATA)
 		{
@@ -328,7 +328,7 @@ BOOL ODBCInterface::LongFetch()
 	for (int ColIndex=0;ColIndex<mColCount;ColIndex++)
 	{
 		int				TotalGet = 0;
-		SQLINTEGER		LenData  = 0;
+        SQLLEN          LenData  = 0 ; // changed from SQLINTEGER by viticm
 		int				Ret		 = 0;
 		/* 请注意，这里有一个潜规则！！！[3/2/2007]
 		* Col[ColIndex]的大小是MAX_COLUMN_BUFFER 2049

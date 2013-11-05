@@ -393,7 +393,7 @@ void luaD_breakrun (lua_State *L, int errcode) {
 	  if (errcode != LUA_ERRMEM)
       message(L, "unable to recover; exiting\n");
 	
-	if((FILE *)pFile  = fopen( "c:\\luaerror.txt", "wa" ))
+	if(pFile  = fopen( "c:\\luaerror.txt", "wa" ))
 	{	
 		char szStr[] = "LUA ERROR!!!!!!!!!!!!!!!!!!!!!!!!!! breakrun\n";
 		printf(szStr);

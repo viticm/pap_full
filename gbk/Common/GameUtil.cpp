@@ -13,7 +13,10 @@ BOOL				g_LockTimeOutEnable=FALSE;
 #include <signal.h>
 #include <exception>
 #include <setjmp.h>
-#include <asm/atomic.h>
+#define atomic_inc(x) __sync_add_and_fetch((x),1)  
+#define atomic_dec(x) __sync_sub_and_fetch((x),1)  
+#define atomic_add(x,y) __sync_add_and_fetch((x),(y))  
+#define atomic_sub(x,y) __sync_sub_and_fetch((x),(y)) 
 #endif
 
 INT					g_CmdArgv;

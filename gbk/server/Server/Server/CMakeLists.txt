@@ -24,42 +24,41 @@ SET(EXECUTABLE_OUTPUT_PATH ${TF_CURRENT_BINARY_PATH_BIN})
 ##update_begin
 
 
-INCLUDE_DIRECTORIES(Item)
-INCLUDE_DIRECTORIES(ActionModule)
-INCLUDE_DIRECTORIES(Obj\\Horse)
-INCLUDE_DIRECTORIES(Base)
-INCLUDE_DIRECTORIES(Main)
-INCLUDE_DIRECTORIES(Player)
-INCLUDE_DIRECTORIES(Script)
-INCLUDE_DIRECTORIES(Packets)
-INCLUDE_DIRECTORIES(wuxing)
-INCLUDE_DIRECTORIES(DB)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Utilities)
-INCLUDE_DIRECTORIES(Skills\\ImpactLogic)
-INCLUDE_DIRECTORIES(Skills\\SkillLogic\\Human)
-INCLUDE_DIRECTORIES(Skills\\SkillLogic)
 INCLUDE_DIRECTORIES(Obj)
-INCLUDE_DIRECTORIES(Other)
-INCLUDE_DIRECTORIES(SMU)
-INCLUDE_DIRECTORIES(EventModule)
-INCLUDE_DIRECTORIES(Team)
-INCLUDE_DIRECTORIES(Scene)
-INCLUDE_DIRECTORIES(Scene\\Scan)
-INCLUDE_DIRECTORIES(AI)
-INCLUDE_DIRECTORIES(Skills\\SpecialObjLogic)
-INCLUDE_DIRECTORIES(Skills\\SkillLogic\\Pet)
-INCLUDE_DIRECTORIES(Skills\\SkillLogic\\Common)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Combat)
+INCLUDE_DIRECTORIES(Skills\\ImpactLogic)
 INCLUDE_DIRECTORIES(..\\..\\..\\Common\\DataBase)
 INCLUDE_DIRECTORIES(Obj\\HumanAssistantClass)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Packets)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Packets\\MsgMediator)
-INCLUDE_DIRECTORIES(Obj\\Visitor)
-INCLUDE_DIRECTORIES(Ability)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common)
-INCLUDE_DIRECTORIES(Mission)
-INCLUDE_DIRECTORIES(MenPai)
 INCLUDE_DIRECTORIES(Skills)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common)
+INCLUDE_DIRECTORIES(Obj\\Horse)
+INCLUDE_DIRECTORIES(AI)
+INCLUDE_DIRECTORIES(Mission)
+INCLUDE_DIRECTORIES(Base)
+INCLUDE_DIRECTORIES(Team)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Packets\\MsgMediator)
+INCLUDE_DIRECTORIES(EventModule)
+INCLUDE_DIRECTORIES(MenPai)
+INCLUDE_DIRECTORIES(Skills\\SkillLogic\\Pet)
+INCLUDE_DIRECTORIES(ActionModule)
+INCLUDE_DIRECTORIES(Scene\\Scan)
+INCLUDE_DIRECTORIES(Packets)
+INCLUDE_DIRECTORIES(Skills\\SpecialObjLogic)
+INCLUDE_DIRECTORIES(SMU)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Combat)
+INCLUDE_DIRECTORIES(Skills\\SkillLogic\\Common)
+INCLUDE_DIRECTORIES(Ability)
+INCLUDE_DIRECTORIES(Other)
+INCLUDE_DIRECTORIES(Player)
+INCLUDE_DIRECTORIES(Skills\\SkillLogic\\Human)
+INCLUDE_DIRECTORIES(Skills\\SkillLogic)
+INCLUDE_DIRECTORIES(Obj\\Visitor)
+INCLUDE_DIRECTORIES(DB)
+INCLUDE_DIRECTORIES(Scene)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Packets)
+INCLUDE_DIRECTORIES(Script)
+INCLUDE_DIRECTORIES(Item)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Utilities)
+INCLUDE_DIRECTORIES(Main)
 INCLUDE_DIRECTORIES(/usr/local/unixODBC/include)
 
 
@@ -949,8 +948,6 @@ SET (COMMON_PACKETS_PET_LIST
 	../../../Common/Packets/GCPetPlacardList.h
 	../../../Common/Packets/GCRemovePet.cpp
 	../../../Common/Packets/GCRemovePet.h
-	Obj/PetCalc.cpp
-	Obj/PetCalc.h
 	../../../Common/Packets/PetDetailExtraStructDefine.h
 )
 
@@ -1534,22 +1531,6 @@ SET (OBJ_BUS_LIST
 	Obj/Obj_Bus.h
 )
 
-SET (OBJ_PET_LIST
-	Obj/Obj_Pet.cpp
-	Obj/Obj_Pet.h
-	Obj/Obj_Pet.inl
-	Obj/Obj_Pet_Attributes.cpp
-	Obj/Obj_Pet_AttrRefesh.cpp
-	Obj/Obj_Pet_Calc.cpp
-	Obj/Obj_Pet_Skill.cpp
-	Obj/PetManager.cpp
-	Obj/PetManager.h
-	Obj/PetPlacard.cpp
-	Obj/PetPlacard.h
-	Obj/PetPool.cpp
-	Obj/PetPool.h
-)
-
 SET (OBJ_LIST
 	Obj/Attributes.h
 	Obj/CharacterManager.cpp
@@ -1600,6 +1581,13 @@ SET (OBJ_LIST
 	Obj/Obj_Monster_AttrRefesh.cpp
 	Obj/Obj_Monster_Calc.cpp
 	Obj/Obj_Monster_Skill.cpp
+	Obj/Obj_Pet.cpp
+	Obj/Obj_Pet.h
+	Obj/Obj_Pet.inl
+	Obj/Obj_Pet_Attributes.cpp
+	Obj/Obj_Pet_AttrRefesh.cpp
+	Obj/Obj_Pet_Calc.cpp
+	Obj/Obj_Pet_Skill.cpp
 	Obj/Obj_Platform.cpp
 	Obj/Obj_Platform.h
 	Obj/Obj_Special.cpp
@@ -1611,6 +1599,12 @@ SET (OBJ_LIST
 	Obj/ObjManager.h
 	Obj/ObjSingleManager.cpp
 	Obj/ObjSingleManager.h
+	Obj/PetManager.cpp
+	Obj/PetManager.h
+	Obj/PetPlacard.cpp
+	Obj/PetPlacard.h
+	Obj/PetPool.cpp
+	Obj/PetPool.h
 	Obj/PlatformManager.cpp
 	Obj/PlatformManager.h
 	Obj/PlatformPool.cpp
@@ -2605,22 +2599,6 @@ SET (STDAFX_LIST
 	stdafx.h
 )
 
-SET (WUXING_LIST
-	wuxing/wuxing.cpp
-	wuxing/wuxing.h
-	wuxing/wuxing_fire.cpp
-	wuxing/wuxing_fire.h
-	wuxing/wuxing_gold.cpp
-	wuxing/wuxing_gold.h
-	wuxing/wuxing_soild.cpp
-	wuxing/wuxing_soild.h
-	wuxing/wuxing_water.cpp
-	wuxing/wuxing_water.h
-	wuxing/wuxing_wood.cpp
-	wuxing/wuxing_wood.h
-	wuxing/wuxings.h
-)
-
 SET (SERVER//SERVER//SERVER.VCPROJ_LIST
 	Readme.txt
 )
@@ -2678,7 +2656,6 @@ if (WIN32)
 	source_group(Obj\\HumanAssistantClass FILES ${OBJ_HUMANASSISTANTCLASS_LIST})
 	source_group(Obj\\Horse FILES ${OBJ_HORSE_LIST})
 	source_group(Obj\\Bus FILES ${OBJ_BUS_LIST})
-	source_group(Obj\\pet FILES ${OBJ_PET_LIST})
 	source_group(Obj FILES ${OBJ_LIST})
 	source_group(Base FILES ${BASE_LIST})
 	source_group(Main FILES ${MAIN_LIST})
@@ -2729,7 +2706,6 @@ if (WIN32)
 	source_group(Skill FILES ${SKILL_LIST})
 	source_group(DB FILES ${DB_LIST})
 	source_group(StdAfx FILES ${STDAFX_LIST})
-	source_group(wuxing FILES ${WUXING_LIST})
 	source_group( FILES ${SERVER//SERVER//SERVER.VCPROJ_LIST})
 endif()
 
@@ -2785,7 +2761,6 @@ ADD_EXECUTABLE(Server
 	${OBJ_HUMANASSISTANTCLASS_LIST}
 	${OBJ_HORSE_LIST}
 	${OBJ_BUS_LIST}
-	${OBJ_PET_LIST}
 	${OBJ_LIST}
 	${BASE_LIST}
 	${MAIN_LIST}
@@ -2836,7 +2811,6 @@ ADD_EXECUTABLE(Server
 	${SKILL_LIST}
 	${DB_LIST}
 	${STDAFX_LIST}
-	${WUXING_LIST}
 	${SERVER//SERVER//SERVER.VCPROJ_LIST}
 )
 

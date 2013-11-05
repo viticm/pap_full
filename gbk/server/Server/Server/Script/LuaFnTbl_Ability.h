@@ -3110,7 +3110,7 @@ namespace LuaFnTbl
 					EQUIP_TB*	pTB = 	g_ItemTable.GetEquipTB(ItemTableIndex);
 						if(pTB)
 						{
-							Lua_PushNumber(L,(INT)(pTB->m_ReqLevel));
+							Lua_PushNumber(L,(LONG)(pTB->m_ReqLevel));
 							return 1;
 						}
 				}

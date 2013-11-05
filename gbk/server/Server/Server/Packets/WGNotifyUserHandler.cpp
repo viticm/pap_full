@@ -17,22 +17,20 @@ uint WGNotifyUserHandler::Execute( WGNotifyUser* pPacket, Player* pPlayer )
 
 	GUID_t sGuid = pPacket->GetGUID() ;
 	Obj_Human* pHuman = (Obj_Human*)(g_pGUIDManager->Get(sGuid)) ;
+	GamePlayer* pGamePlayer = (GamePlayer*)(pHuman->GetPlayer()) ;
+	Scene* pScene = pHuman->getScene() ;
 	if( pHuman==NULL )
 	{
 		g_pLog->FastSaveLog( LOG_FILE_1, "WGNotifyUserHandler: pHuman==NULL GUID=%X",
 			sGuid ) ;
 		goto CHECK_RECYCLE_GUID;
 	}
-
-	GamePlayer* pGamePlayer = (GamePlayer*)(pHuman->GetPlayer()) ;
 	if( pGamePlayer==NULL )
 	{
 		g_pLog->FastSaveLog( LOG_FILE_1, "WGNotifyUserHandler: pGamePlayer==NULL GUID=%X",
 			sGuid ) ;
 		goto CHECK_RECYCLE_GUID;
 	}
-
-	Scene* pScene = pHuman->getScene() ;
 	if( pScene==NULL )
 	{
 		g_pLog->FastSaveLog( LOG_FILE_1, "WGNotifyUserHandler: pScene==NULL GUID=%X",

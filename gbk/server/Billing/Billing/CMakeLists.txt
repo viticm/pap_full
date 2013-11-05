@@ -23,14 +23,12 @@ SET(EXECUTABLE_OUTPUT_PATH ${TF_CURRENT_BINARY_PATH_BIN})
 ##update_begin
 
 
-INCLUDE_DIRECTORIES(Main)
-INCLUDE_DIRECTORIES(..\\..\\Server\\Server\\Base)
 INCLUDE_DIRECTORIES(Packets)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\DataBase)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\DBSystem\\DataBase)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Packets)
 INCLUDE_DIRECTORIES(..\\..\\..\\Common)
-INCLUDE_DIRECTORIES(DB)
+INCLUDE_DIRECTORIES(..\\..\\Server\\Server\\Base)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Packets)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common\\DataBase)
+INCLUDE_DIRECTORIES(Main)
 INCLUDE_DIRECTORIES(/usr/local/unixODBC/include)
 
 
@@ -151,18 +149,6 @@ SET (COMMON_PACKETS_LIST
 )
 
 SET (COMMON_DATABASE_LIST
-	DB/DBAccount.cpp
-	DB/DBAccount.h
-	DB/DBLogicManager.cpp
-	DB/DBLogicManager.h
-	DB/DBThread.cpp
-	DB/DBThread.h
-	DB/DBThreadManager.cpp
-	DB/DBThreadManager.h
-	../../../Common/DBSystem/DataBase/ODBCBase.cpp
-	../../../Common/DBSystem/DataBase/ODBCBase.h
-	../../../Common/DBSystem/DataBase/ODBCInterface.cpp
-	../../../Common/DBSystem/DataBase/ODBCInterface.h
 	../../../Common/DataBase/WXSJ_DBC.cpp
 	../../../Common/DataBase/WXSJ_DBC.h
 )
@@ -176,8 +162,6 @@ SET (COMMON_LIST
 	../../../Common/DB_Struct.cpp
 	../../../Common/DB_Struct.h
 	../../../Common/FileAPI.h
-	../../../Common/FoxEncrypt.cpp
-	../../../Common/FoxEncrypt.h
 	../../Server/Server/Base/FoxWin32.h
 	../../../Common/GameDefine.h
 	../../../Common/GameDefine2.h

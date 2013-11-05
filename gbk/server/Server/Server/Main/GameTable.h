@@ -842,7 +842,7 @@ struct _HORSE_SKILL_TBL
 	_HORSE_SKILL m_aHorseSkillTbl[MAX_HORSE_SKILL];
 	//实际技能个数
 	INT			 m_iCount;
-	_HORSE_SKILL_TBL::_HORSE_SKILL_TBL()
+	_HORSE_SKILL_TBL()
 	{
 		memset( this, 0, sizeof(_HORSE_SKILL_TBL) );
 		//每个技能槽的领悟概率

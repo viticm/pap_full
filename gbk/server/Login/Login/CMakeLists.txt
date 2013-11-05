@@ -26,16 +26,16 @@ SET(EXECUTABLE_OUTPUT_PATH ${TF_CURRENT_BINARY_PATH_BIN})
 ##update_begin
 
 
-INCLUDE_DIRECTORIES(Main)
-INCLUDE_DIRECTORIES(Player)
-INCLUDE_DIRECTORIES(..\\..\\Server\\Server\\Base)
-INCLUDE_DIRECTORIES(Packets)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\DataBase)
-INCLUDE_DIRECTORIES(..\\..\\..\\Common\\DBSystem\\DataBase)
 INCLUDE_DIRECTORIES(..\\..\\..\\Common\\Packets)
-INCLUDE_DIRECTORIES(Process)
+INCLUDE_DIRECTORIES(..\\..\\Server\\Server\\Base)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common\\DBSystem\\DataBase)
+INCLUDE_DIRECTORIES(..\\..\\..\\Common\\DataBase)
 INCLUDE_DIRECTORIES(DB)
 INCLUDE_DIRECTORIES(..\\..\\..\\Common)
+INCLUDE_DIRECTORIES(Packets)
+INCLUDE_DIRECTORIES(Process)
+INCLUDE_DIRECTORIES(Player)
+INCLUDE_DIRECTORIES(Main)
 INCLUDE_DIRECTORIES(/usr/local/unixODBC/include)
 
 
@@ -292,8 +292,6 @@ SET (COMMON_DATABASE_LIST
 	../../../Common/DBSystem/DataBase/DBItemList.h
 	../../../Common/DBSystem/DataBase/DBManager.cpp
 	../../../Common/DBSystem/DataBase/DBManager.h
-	../../../Common/DBSystem/DataBase/DBMountList.cpp
-	../../../Common/DBSystem/DataBase/DBMountList.h
 	../../../Common/DBSystem/DataBase/DBPetList.cpp
 	../../../Common/DBSystem/DataBase/DBPetList.h
 	../../../Common/DBSystem/DataBase/DBPrivateInfo.cpp

@@ -5,6 +5,9 @@
 #include "Packet.h"
 #include "PacketFactory.h"
 #include "FoxWin32.h"
+#ifndef min
+#define min(a,b)            (((a) < (b)) ? (a) : (b))
+#endif
 
 
 namespace Packets

@@ -31,7 +31,7 @@ public :
 	time_t			GetANSITime( );
 
 	// 得到tm结构的时间 20100723 BLL
-	tm  TimeManager::GetFormatTime( );
+	tm              GetFormatTime( );
 
 public :
 	//***注意：

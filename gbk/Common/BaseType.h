@@ -27,8 +27,11 @@
 	#include <Windows.h>
 	#include "crtdbg.h"
 #elif defined(__LINUX__)
+    #include <stdlib.h>
+    #include <string.h>
 	#include <sys/types.h>
 	#include <pthread.h>
+    #include <cmath>
 #endif
 
 #include <stdio.h>
