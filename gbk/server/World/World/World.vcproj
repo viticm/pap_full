@@ -18,7 +18,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\..\Bin\Server"
+			OutputDirectory="..\..\..\Run\Server"
 			IntermediateDirectory="\Intermediate\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
@@ -42,7 +42,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../Common;../../Common/Packets;./Main;../../Server/Server/Base;./Packets;./WorldData;../../Server/Server/SMU;../../Common/DataBase"
+				AdditionalIncludeDirectories="../../../Common;../../../Common/Packets;./Main;../../Server/Server/Base;./Packets;./WorldData;../../Server/Server/SMU;../../../Common/DataBase"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;__WINDOWS__;_FOX_WORLD;_FOX_LOGIN;_FOX_SERVER;_LOG_WORLD;_USE_32BIT_TIME_T;_CRT_SECURE_NO_DEPRECATE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -64,7 +64,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib ..\..\Common\FoxNet.lib"
+				AdditionalDependencies="ws2_32.lib ..\..\..\Common\FoxNet.lib"
 				OutputFile="$(OutDir)/World.exe"
 				LinkIncremental="2"
 				IgnoreDefaultLibraryNames="libcd.lib;"
@@ -99,7 +99,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\Bin\Server"
+			OutputDirectory="..\..\..\Run\Server"
 			IntermediateDirectory="\Intermediate\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
@@ -125,7 +125,7 @@
 				InlineFunctionExpansion="1"
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				AdditionalIncludeDirectories="../../Common;../../Common/Packets;./Main;../../Server/Server/Base;./Packets;./WorldData;../../Server/Server/SMU;../../Common/DataBase;./"
+				AdditionalIncludeDirectories="../../../Common;../../../Common/Packets;./Main;../../Server/Server/Base;./Packets;./WorldData;../../Server/Server/SMU;../../../Common/DataBase;./"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WINDOWS__;_FOX_WORLD;_FOX_LOGIN;_FOX_SERVER;_LOG_WORLD;_USE_32BIT_TIME_T"
 				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
@@ -146,7 +146,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FORCE:MULTIPLE"
-				AdditionalDependencies="ws2_32.lib ..\..\Common\NetD.lib"
+				AdditionalDependencies="ws2_32.lib ..\..\..\Common\NetD.lib"
 				OutputFile="$(OutDir)/World.exe"
 				LinkIncremental="2"
 				IgnoreDefaultLibraryNames="libc.lib;libcd.lib"
@@ -796,7 +796,7 @@
 			Name="Common"
 			>
 			<File
-				RelativePath="..\..\Common\Array_Base.cpp"
+				RelativePath="..\..\..\Common\Array_Base.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -808,1121 +808,1121 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\Common\Array_Base.h"
+				RelativePath="..\..\..\Common\Array_Base.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Assertx.cpp"
+				RelativePath="..\..\..\Common\Assertx.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Assertx.h"
+				RelativePath="..\..\..\Common\Assertx.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\BaseType.h"
+				RelativePath="..\..\..\Common\BaseType.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Chain.cpp"
+				RelativePath="..\..\..\Common\Chain.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Chain.h"
+				RelativePath="..\..\..\Common\Chain.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\DB_Struct.cpp"
+				RelativePath="..\..\..\Common\DB_Struct.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\DB_Struct.h"
+				RelativePath="..\..\..\Common\DB_Struct.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\FileAPI.h"
+				RelativePath="..\..\..\Common\FileAPI.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine.h"
+				RelativePath="..\..\..\Common\GameDefine.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine2.h"
+				RelativePath="..\..\..\Common\GameDefine2.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Attr.h"
+				RelativePath="..\..\..\Common\GameDefine_Attr.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_City.h"
+				RelativePath="..\..\..\Common\GameDefine_City.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Guild.h"
+				RelativePath="..\..\..\Common\GameDefine_Guild.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Item.h"
+				RelativePath="..\..\..\Common\GameDefine_Item.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Result.cpp"
+				RelativePath="..\..\..\Common\GameDefine_Result.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Result.h"
+				RelativePath="..\..\..\Common\GameDefine_Result.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameDefine_Scene.h"
+				RelativePath="..\..\..\Common\GameDefine_Scene.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct.cpp"
+				RelativePath="..\..\..\Common\GameStruct.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct.h"
+				RelativePath="..\..\..\Common\GameStruct.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_City.h"
+				RelativePath="..\..\..\Common\GameStruct_City.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Country.h"
+				RelativePath="..\..\..\Common\GameStruct_Country.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Finger.cpp"
+				RelativePath="..\..\..\Common\GameStruct_Finger.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Finger.h"
+				RelativePath="..\..\..\Common\GameStruct_Finger.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Guild.h"
+				RelativePath="..\..\..\Common\GameStruct_Guild.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Item.h"
+				RelativePath="..\..\..\Common\GameStruct_Item.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Query.h"
+				RelativePath="..\..\..\Common\GameStruct_Query.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Relation.cpp"
+				RelativePath="..\..\..\Common\GameStruct_Relation.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Relation.h"
+				RelativePath="..\..\..\Common\GameStruct_Relation.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Skill.h"
+				RelativePath="..\..\..\Common\GameStruct_Skill.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_Team.h"
+				RelativePath="..\..\..\Common\GameStruct_Team.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameStruct_TopList.h"
+				RelativePath="..\..\..\Common\GameStruct_TopList.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameUtil.cpp"
+				RelativePath="..\..\..\Common\GameUtil.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\GameUtil.h"
+				RelativePath="..\..\..\Common\GameUtil.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Minidump.cpp"
+				RelativePath="..\..\..\Common\Minidump.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Minidump.h"
+				RelativePath="..\..\..\Common\Minidump.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\OResultDef.h"
+				RelativePath="..\..\..\Common\OResultDef.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\PacketDefine.h"
+				RelativePath="..\..\..\Common\PacketDefine.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\PacketFactory.h"
+				RelativePath="..\..\..\Common\PacketFactory.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\PacketFactoryManager.cpp"
+				RelativePath="..\..\..\Common\PacketFactoryManager.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\PacketFactoryManager.h"
+				RelativePath="..\..\..\Common\PacketFactoryManager.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\PacketStruct.cpp"
+				RelativePath="..\..\..\Common\PacketStruct.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\PacketStruct.h"
+				RelativePath="..\..\..\Common\PacketStruct.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\PlayerStatus.h"
+				RelativePath="..\..\..\Common\PlayerStatus.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Rand.cpp"
+				RelativePath="..\..\..\Common\Rand.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Rand.h"
+				RelativePath="..\..\..\Common\Rand.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ScriptCommandStruct.cpp"
+				RelativePath="..\..\..\Common\ScriptCommandStruct.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ScriptCommandStruct.h"
+				RelativePath="..\..\..\Common\ScriptCommandStruct.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ServerSocket.h"
+				RelativePath="..\..\..\Common\ServerSocket.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ShareMemAPI.cpp"
+				RelativePath="..\..\..\Common\ShareMemAPI.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ShareMemAPI.h"
+				RelativePath="..\..\..\Common\ShareMemAPI.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\Type.h"
+				RelativePath="..\..\..\Common\Type.h"
 				>
 			</File>
 			<Filter
 				Name="Packets"
 				>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskChangeScene.cpp"
+					RelativePath="..\..\..\Common\Packets\GWAskChangeScene.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskChangeScene.h"
+					RelativePath="..\..\..\Common\Packets\GWAskChangeScene.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskMail.cpp"
+					RelativePath="..\..\..\Common\Packets\GWAskMail.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskMail.h"
+					RelativePath="..\..\..\Common\Packets\GWAskMail.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskOtherOnlineAttrib_Human.cpp"
+					RelativePath="..\..\..\Common\Packets\GWAskOtherOnlineAttrib_Human.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskOtherOnlineAttrib_Human.h"
+					RelativePath="..\..\..\Common\Packets\GWAskOtherOnlineAttrib_Human.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskSceneData.cpp"
+					RelativePath="..\..\..\Common\Packets\GWAskSceneData.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskSceneData.h"
+					RelativePath="..\..\..\Common\Packets\GWAskSceneData.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskTeamInfo.cpp"
+					RelativePath="..\..\..\Common\Packets\GWAskTeamInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskTeamInfo.h"
+					RelativePath="..\..\..\Common\Packets\GWAskTeamInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskTeamMemberInfo.cpp"
+					RelativePath="..\..\..\Common\Packets\GWAskTeamMemberInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskTeamMemberInfo.h"
+					RelativePath="..\..\..\Common\Packets\GWAskTeamMemberInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskUserData.cpp"
+					RelativePath="..\..\..\Common\Packets\GWAskUserData.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWAskUserData.h"
+					RelativePath="..\..\..\Common\Packets\GWAskUserData.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWBatchMail.cpp"
+					RelativePath="..\..\..\Common\Packets\GWBatchMail.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWBatchMail.h"
+					RelativePath="..\..\..\Common\Packets\GWBatchMail.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCallOfHuman.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCallOfHuman.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCallOfHuman.h"
+					RelativePath="..\..\..\Common\Packets\GWCallOfHuman.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCancelHorseFindMateInfo.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCancelHorseFindMateInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCancelHorseFindMateInfo.h"
+					RelativePath="..\..\..\Common\Packets\GWCancelHorseFindMateInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChangeMenpai.cpp"
+					RelativePath="..\..\..\Common\Packets\GWChangeMenpai.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChangeMenpai.h"
+					RelativePath="..\..\..\Common\Packets\GWChangeMenpai.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChannelCreate.cpp"
+					RelativePath="..\..\..\Common\Packets\GWChannelCreate.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChannelCreate.h"
+					RelativePath="..\..\..\Common\Packets\GWChannelCreate.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChannelDismiss.cpp"
+					RelativePath="..\..\..\Common\Packets\GWChannelDismiss.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChannelDismiss.h"
+					RelativePath="..\..\..\Common\Packets\GWChannelDismiss.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChannelInvite.cpp"
+					RelativePath="..\..\..\Common\Packets\GWChannelInvite.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChannelInvite.h"
+					RelativePath="..\..\..\Common\Packets\GWChannelInvite.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChannelKick.cpp"
+					RelativePath="..\..\..\Common\Packets\GWChannelKick.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChannelKick.h"
+					RelativePath="..\..\..\Common\Packets\GWChannelKick.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCharUpdateCurTitle.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCharUpdateCurTitle.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCharUpdateCurTitle.h"
+					RelativePath="..\..\..\Common\Packets\GWCharUpdateCurTitle.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChat.cpp"
+					RelativePath="..\..\..\Common\Packets\GWChat.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWChat.h"
+					RelativePath="..\..\..\Common\Packets\GWChat.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCommand.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCommand.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCommand.h"
+					RelativePath="..\..\..\Common\Packets\GWCommand.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryAP.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryAP.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryAP.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryAP.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryAppoint.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryAppoint.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryAppoint.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryAppoint.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryCollect.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryCollect.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryCollect.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryCollect.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryDelate.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryDelate.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryDelate.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryDelate.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryDelateRequest.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryDelateRequest.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryDelateRequest.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryDelateRequest.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryDonative.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryDonative.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryDonative.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryDonative.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryFetch.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryFetch.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryFetch.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryFetch.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryInfoRequest.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryInfoRequest.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryInfoRequest.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryInfoRequest.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryRemove.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryRemove.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryRemove.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryRemove.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryRequestKindom.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryRequestKindom.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryRequestKindom.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryRequestKindom.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryVoteOn.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryVoteOn.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryVoteOn.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryVoteOn.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryVoteRequest.cpp"
+					RelativePath="..\..\..\Common\Packets\GWCountryVoteRequest.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWCountryVoteRequest.h"
+					RelativePath="..\..\..\Common\Packets\GWCountryVoteRequest.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWDetailOtherOnlineAttrib_Horse.cpp"
+					RelativePath="..\..\..\Common\Packets\GWDetailOtherOnlineAttrib_Horse.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWDetailOtherOnlineAttrib_Horse.h"
+					RelativePath="..\..\..\Common\Packets\GWDetailOtherOnlineAttrib_Horse.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWDetailOtherOnlineAttrib_Human.cpp"
+					RelativePath="..\..\..\Common\Packets\GWDetailOtherOnlineAttrib_Human.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWDetailOtherOnlineAttrib_Human.h"
+					RelativePath="..\..\..\Common\Packets\GWDetailOtherOnlineAttrib_Human.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWDetailOtherOnlineEquipList_Human.cpp"
+					RelativePath="..\..\..\Common\Packets\GWDetailOtherOnlineEquipList_Human.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWDetailOtherOnlineEquipList_Human.h"
+					RelativePath="..\..\..\Common\Packets\GWDetailOtherOnlineEquipList_Human.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWEnterTeamFollow.cpp"
+					RelativePath="..\..\..\Common\Packets\GWEnterTeamFollow.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWEnterTeamFollow.h"
+					RelativePath="..\..\..\Common\Packets\GWEnterTeamFollow.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWFinger.cpp"
+					RelativePath="..\..\..\Common\Packets\GWFinger.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWFinger.h"
+					RelativePath="..\..\..\Common\Packets\GWFinger.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWGuild.cpp"
+					RelativePath="..\..\..\Common\Packets\GWGuild.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWGuild.h"
+					RelativePath="..\..\..\Common\Packets\GWGuild.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWHeartBeat.cpp"
+					RelativePath="..\..\..\Common\Packets\GWHeartBeat.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWHeartBeat.h"
+					RelativePath="..\..\..\Common\Packets\GWHeartBeat.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWHorseChangeState.cpp"
+					RelativePath="..\..\..\Common\Packets\GWHorseChangeState.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWHorseChangeState.h"
+					RelativePath="..\..\..\Common\Packets\GWHorseChangeState.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWIssueHorseFindMateInfo.cpp"
+					RelativePath="..\..\..\Common\Packets\GWIssueHorseFindMateInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWIssueHorseFindMateInfo.h"
+					RelativePath="..\..\..\Common\Packets\GWIssueHorseFindMateInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWLevelUp.cpp"
+					RelativePath="..\..\..\Common\Packets\GWLevelUp.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWLevelUp.h"
+					RelativePath="..\..\..\Common\Packets\GWLevelUp.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWMail.cpp"
+					RelativePath="..\..\..\Common\Packets\GWMail.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWMail.h"
+					RelativePath="..\..\..\Common\Packets\GWMail.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWNotifyUser.cpp"
+					RelativePath="..\..\..\Common\Packets\GWNotifyUser.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWNotifyUser.h"
+					RelativePath="..\..\..\Common\Packets\GWNotifyUser.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWQueryHorseFindMateInfo.cpp"
+					RelativePath="..\..\..\Common\Packets\GWQueryHorseFindMateInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWQueryHorseFindMateInfo.h"
+					RelativePath="..\..\..\Common\Packets\GWQueryHorseFindMateInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWRefreshDataToWorld.cpp"
+					RelativePath="..\..\..\Common\Packets\GWRefreshDataToWorld.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWRefreshDataToWorld.h"
+					RelativePath="..\..\..\Common\Packets\GWRefreshDataToWorld.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWRelation.cpp"
+					RelativePath="..\..\..\Common\Packets\GWRelation.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWRelation.h"
+					RelativePath="..\..\..\Common\Packets\GWRelation.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWSearchHorseFindMateInfo.cpp"
+					RelativePath="..\..\..\Common\Packets\GWSearchHorseFindMateInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWSearchHorseFindMateInfo.h"
+					RelativePath="..\..\..\Common\Packets\GWSearchHorseFindMateInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWSearchOnlineUser.cpp"
+					RelativePath="..\..\..\Common\Packets\GWSearchOnlineUser.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWSearchOnlineUser.h"
+					RelativePath="..\..\..\Common\Packets\GWSearchOnlineUser.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWStopTeamFollow.cpp"
+					RelativePath="..\..\..\Common\Packets\GWStopTeamFollow.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWStopTeamFollow.h"
+					RelativePath="..\..\..\Common\Packets\GWStopTeamFollow.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamApply.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamApply.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamApply.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamApply.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamAppoint.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamAppoint.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamAppoint.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamAppoint.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamDismiss.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamDismiss.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamDismiss.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamDismiss.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamInvite.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamInvite.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamInvite.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamInvite.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamKick.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamKick.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamKick.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamKick.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamLeaderDie.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamLeaderDie.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamLeaderDie.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamLeaderDie.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamLeaderRetInvite.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamLeaderRetInvite.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamLeaderRetInvite.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamLeaderRetInvite.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamLeave.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamLeave.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamLeave.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamLeave.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamMemberEnterScene.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamMemberEnterScene.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamMemberEnterScene.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamMemberEnterScene.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamRetApply.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamRetApply.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamRetApply.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamRetApply.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamRetInvite.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTeamRetInvite.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTeamRetInvite.h"
+					RelativePath="..\..\..\Common\Packets\GWTeamRetInvite.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTopList.cpp"
+					RelativePath="..\..\..\Common\Packets\GWTopList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWTopList.h"
+					RelativePath="..\..\..\Common\Packets\GWTopList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWUpdateTitle.cpp"
+					RelativePath="..\..\..\Common\Packets\GWUpdateTitle.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\GWUpdateTitle.h"
+					RelativePath="..\..\..\Common\Packets\GWUpdateTitle.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\SSConnect.cpp"
+					RelativePath="..\..\..\Common\Packets\SSConnect.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\SSConnect.h"
+					RelativePath="..\..\..\Common\Packets\SSConnect.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\SSScenePlayerCount.cpp"
+					RelativePath="..\..\..\Common\Packets\SSScenePlayerCount.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\SSScenePlayerCount.h"
+					RelativePath="..\..\..\Common\Packets\SSScenePlayerCount.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGAskOtherOnlineAttrib_Human.cpp"
+					RelativePath="..\..\..\Common\Packets\WGAskOtherOnlineAttrib_Human.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGAskOtherOnlineAttrib_Human.h"
+					RelativePath="..\..\..\Common\Packets\WGAskOtherOnlineAttrib_Human.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCallOfHuman.cpp"
+					RelativePath="..\..\..\Common\Packets\WGCallOfHuman.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCallOfHuman.h"
+					RelativePath="..\..\..\Common\Packets\WGCallOfHuman.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGChannelError.cpp"
+					RelativePath="..\..\..\Common\Packets\WGChannelError.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGChannelError.h"
+					RelativePath="..\..\..\Common\Packets\WGChannelError.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGChannelResult.cpp"
+					RelativePath="..\..\..\Common\Packets\WGChannelResult.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGChannelResult.h"
+					RelativePath="..\..\..\Common\Packets\WGChannelResult.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGChat.cpp"
+					RelativePath="..\..\..\Common\Packets\WGChat.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGChat.h"
+					RelativePath="..\..\..\Common\Packets\WGChat.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryCollect.cpp"
+					RelativePath="..\..\..\Common\Packets\WGCountryCollect.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryCollect.h"
+					RelativePath="..\..\..\Common\Packets\WGCountryCollect.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryDelateConfirm.cpp"
+					RelativePath="..\..\..\Common\Packets\WGCountryDelateConfirm.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryDelateConfirm.h"
+					RelativePath="..\..\..\Common\Packets\WGCountryDelateConfirm.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryFetch.cpp"
+					RelativePath="..\..\..\Common\Packets\WGCountryFetch.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryFetch.h"
+					RelativePath="..\..\..\Common\Packets\WGCountryFetch.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryInfoConfirm.cpp"
+					RelativePath="..\..\..\Common\Packets\WGCountryInfoConfirm.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryInfoConfirm.h"
+					RelativePath="..\..\..\Common\Packets\WGCountryInfoConfirm.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryReturn.cpp"
+					RelativePath="..\..\..\Common\Packets\WGCountryReturn.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryReturn.h"
+					RelativePath="..\..\..\Common\Packets\WGCountryReturn.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryVoteConfirm.cpp"
+					RelativePath="..\..\..\Common\Packets\WGCountryVoteConfirm.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGCountryVoteConfirm.h"
+					RelativePath="..\..\..\Common\Packets\WGCountryVoteConfirm.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGDetailOtherOnlineAttrib_Horse.cpp"
+					RelativePath="..\..\..\Common\Packets\WGDetailOtherOnlineAttrib_Horse.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGDetailOtherOnlineAttrib_Horse.h"
+					RelativePath="..\..\..\Common\Packets\WGDetailOtherOnlineAttrib_Horse.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGDetailOtherOnlineAttrib_Human.cpp"
+					RelativePath="..\..\..\Common\Packets\WGDetailOtherOnlineAttrib_Human.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGDetailOtherOnlineAttrib_Human.h"
+					RelativePath="..\..\..\Common\Packets\WGDetailOtherOnlineAttrib_Human.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGDetailOtherOnlineEquipList_Human.cpp"
+					RelativePath="..\..\..\Common\Packets\WGDetailOtherOnlineEquipList_Human.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGDetailOtherOnlineEquipList_Human.h"
+					RelativePath="..\..\..\Common\Packets\WGDetailOtherOnlineEquipList_Human.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGFinger.cpp"
+					RelativePath="..\..\..\Common\Packets\WGFinger.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGFinger.h"
+					RelativePath="..\..\..\Common\Packets\WGFinger.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGGuild.cpp"
+					RelativePath="..\..\..\Common\Packets\WGGuild.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGGuild.h"
+					RelativePath="..\..\..\Common\Packets\WGGuild.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGGuildError.cpp"
+					RelativePath="..\..\..\Common\Packets\WGGuildError.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGGuildError.h"
+					RelativePath="..\..\..\Common\Packets\WGGuildError.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGGuildReturn.cpp"
+					RelativePath="..\..\..\Common\Packets\WGGuildReturn.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGGuildReturn.h"
+					RelativePath="..\..\..\Common\Packets\WGGuildReturn.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGMail.cpp"
+					RelativePath="..\..\..\Common\Packets\WGMail.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGMail.h"
+					RelativePath="..\..\..\Common\Packets\WGMail.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGNotifyMail.cpp"
+					RelativePath="..\..\..\Common\Packets\WGNotifyMail.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGNotifyMail.h"
+					RelativePath="..\..\..\Common\Packets\WGNotifyMail.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGNotifyUser.cpp"
+					RelativePath="..\..\..\Common\Packets\WGNotifyUser.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGNotifyUser.h"
+					RelativePath="..\..\..\Common\Packets\WGNotifyUser.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGOperateResult.cpp"
+					RelativePath="..\..\..\Common\Packets\WGOperateResult.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGOperateResult.h"
+					RelativePath="..\..\..\Common\Packets\WGOperateResult.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGRelation.cpp"
+					RelativePath="..\..\..\Common\Packets\WGRelation.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGRelation.h"
+					RelativePath="..\..\..\Common\Packets\WGRelation.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGRetChangeScene.cpp"
+					RelativePath="..\..\..\Common\Packets\WGRetChangeScene.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGRetChangeScene.h"
+					RelativePath="..\..\..\Common\Packets\WGRetChangeScene.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGRetSceneData.cpp"
+					RelativePath="..\..\..\Common\Packets\WGRetSceneData.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGRetSceneData.h"
+					RelativePath="..\..\..\Common\Packets\WGRetSceneData.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGReturnHorseFindMateInfo.cpp"
+					RelativePath="..\..\..\Common\Packets\WGReturnHorseFindMateInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGReturnHorseFindMateInfo.h"
+					RelativePath="..\..\..\Common\Packets\WGReturnHorseFindMateInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGReturnOnlineUser.cpp"
+					RelativePath="..\..\..\Common\Packets\WGReturnOnlineUser.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGReturnOnlineUser.h"
+					RelativePath="..\..\..\Common\Packets\WGReturnOnlineUser.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGRetUserData.cpp"
+					RelativePath="..\..\..\Common\Packets\WGRetUserData.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGRetUserData.h"
+					RelativePath="..\..\..\Common\Packets\WGRetUserData.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamAskApply.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTeamAskApply.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamAskApply.h"
+					RelativePath="..\..\..\Common\Packets\WGTeamAskApply.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamAskInvite.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTeamAskInvite.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamAskInvite.h"
+					RelativePath="..\..\..\Common\Packets\WGTeamAskInvite.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamError.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTeamError.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamError.h"
+					RelativePath="..\..\..\Common\Packets\WGTeamError.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamFollowList.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTeamFollowList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamFollowList.h"
+					RelativePath="..\..\..\Common\Packets\WGTeamFollowList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamLeaderAskInvite.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTeamLeaderAskInvite.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamLeaderAskInvite.h"
+					RelativePath="..\..\..\Common\Packets\WGTeamLeaderAskInvite.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamList.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTeamList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamList.h"
+					RelativePath="..\..\..\Common\Packets\WGTeamList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamMemberInfo.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTeamMemberInfo.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamMemberInfo.h"
+					RelativePath="..\..\..\Common\Packets\WGTeamMemberInfo.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamResult.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTeamResult.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTeamResult.h"
+					RelativePath="..\..\..\Common\Packets\WGTeamResult.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTopList.cpp"
+					RelativePath="..\..\..\Common\Packets\WGTopList.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGTopList.h"
+					RelativePath="..\..\..\Common\Packets\WGTopList.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGUpdateTitle.cpp"
+					RelativePath="..\..\..\Common\Packets\WGUpdateTitle.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGUpdateTitle.h"
+					RelativePath="..\..\..\Common\Packets\WGUpdateTitle.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGWorldTime.cpp"
+					RelativePath="..\..\..\Common\Packets\WGWorldTime.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\Packets\WGWorldTime.h"
+					RelativePath="..\..\..\Common\Packets\WGWorldTime.h"
 					>
 				</File>
 				<Filter
 					Name="City"
 					>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityApplyNewCity.cpp"
+						RelativePath="..\..\..\Common\Packets\GWCityApplyNewCity.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityApplyNewCity.h"
+						RelativePath="..\..\..\Common\Packets\GWCityApplyNewCity.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityAskInitInfo.cpp"
+						RelativePath="..\..\..\Common\Packets\GWCityAskInitInfo.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityAskInitInfo.h"
+						RelativePath="..\..\..\Common\Packets\GWCityAskInitInfo.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityClose.cpp"
+						RelativePath="..\..\..\Common\Packets\GWCityClose.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityClose.h"
+						RelativePath="..\..\..\Common\Packets\GWCityClose.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityCloseSuccess.cpp"
+						RelativePath="..\..\..\Common\Packets\GWCityCloseSuccess.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityCloseSuccess.h"
+						RelativePath="..\..\..\Common\Packets\GWCityCloseSuccess.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityOpt.cpp"
+						RelativePath="..\..\..\Common\Packets\GWCityOpt.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWCityOpt.h"
+						RelativePath="..\..\..\Common\Packets\GWCityOpt.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityApplyNewCity.cpp"
+						RelativePath="..\..\..\Common\Packets\WGCityApplyNewCity.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityApplyNewCity.h"
+						RelativePath="..\..\..\Common\Packets\WGCityApplyNewCity.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityAttr.cpp"
+						RelativePath="..\..\..\Common\Packets\WGCityAttr.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityAttr.h"
+						RelativePath="..\..\..\Common\Packets\WGCityAttr.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityClose.cpp"
+						RelativePath="..\..\..\Common\Packets\WGCityClose.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityClose.h"
+						RelativePath="..\..\..\Common\Packets\WGCityClose.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityCloseSuccess.cpp"
+						RelativePath="..\..\..\Common\Packets\WGCityCloseSuccess.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityCloseSuccess.h"
+						RelativePath="..\..\..\Common\Packets\WGCityCloseSuccess.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityError.cpp"
+						RelativePath="..\..\..\Common\Packets\WGCityError.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityError.h"
+						RelativePath="..\..\..\Common\Packets\WGCityError.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityInitInfo.cpp"
+						RelativePath="..\..\..\Common\Packets\WGCityInitInfo.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGCityInitInfo.h"
+						RelativePath="..\..\..\Common\Packets\WGCityInitInfo.h"
 						>
 					</File>
 				</Filter>
@@ -1930,131 +1930,131 @@
 					Name="Team"
 					>
 					<File
-						RelativePath="..\..\Common\Packets\GWAskTeamRecruitInfo.cpp"
+						RelativePath="..\..\..\Common\Packets\GWAskTeamRecruitInfo.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWAskTeamRecruitInfo.h"
+						RelativePath="..\..\..\Common\Packets\GWAskTeamRecruitInfo.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWRegisterTeamRecruit.cpp"
+						RelativePath="..\..\..\Common\Packets\GWRegisterTeamRecruit.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWRegisterTeamRecruit.h"
+						RelativePath="..\..\..\Common\Packets\GWRegisterTeamRecruit.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWSetTeamDistribMode.cpp"
+						RelativePath="..\..\..\Common\Packets\GWSetTeamDistribMode.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWSetTeamDistribMode.h"
+						RelativePath="..\..\..\Common\Packets\GWSetTeamDistribMode.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWStopTeamFollow.cpp"
+						RelativePath="..\..\..\Common\Packets\GWStopTeamFollow.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWStopTeamFollow.h"
+						RelativePath="..\..\..\Common\Packets\GWStopTeamFollow.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamApply.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamApply.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamApply.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamApply.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamAppoint.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamAppoint.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamAppoint.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamAppoint.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamDismiss.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamDismiss.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamDismiss.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamDismiss.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamInvite.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamInvite.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamInvite.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamInvite.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamKick.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamKick.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamKick.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamKick.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamLeaderRetInvite.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamLeaderRetInvite.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamLeaderRetInvite.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamLeaderRetInvite.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamLeave.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamLeave.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamLeave.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamLeave.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamMemberEnterScene.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamMemberEnterScene.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamMemberEnterScene.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamMemberEnterScene.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamRetApply.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamRetApply.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamRetApply.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamRetApply.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamRetInvite.cpp"
+						RelativePath="..\..\..\Common\Packets\GWTeamRetInvite.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\GWTeamRetInvite.h"
+						RelativePath="..\..\..\Common\Packets\GWTeamRetInvite.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGRetTeamDistribMode.cpp"
+						RelativePath="..\..\..\Common\Packets\WGRetTeamDistribMode.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGRetTeamDistribMode.h"
+						RelativePath="..\..\..\Common\Packets\WGRetTeamDistribMode.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGRetTeamRecruitInfo.cpp"
+						RelativePath="..\..\..\Common\Packets\WGRetTeamRecruitInfo.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WGRetTeamRecruitInfo.h"
+						RelativePath="..\..\..\Common\Packets\WGRetTeamRecruitInfo.h"
 						>
 					</File>
 				</Filter>
@@ -2062,123 +2062,123 @@
 					Name="Login"
 					>
 					<File
-						RelativePath="..\..\Common\Packets\LWAskCharLogin.cpp"
+						RelativePath="..\..\..\Common\Packets\LWAskCharLogin.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWAskCharLogin.h"
+						RelativePath="..\..\..\Common\Packets\LWAskCharLogin.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWChangeName.cpp"
+						RelativePath="..\..\..\Common\Packets\LWChangeName.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWChangeName.h"
+						RelativePath="..\..\..\Common\Packets\LWChangeName.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWNotifyUser.cpp"
+						RelativePath="..\..\..\Common\Packets\LWNotifyUser.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWNotifyUser.h"
+						RelativePath="..\..\..\Common\Packets\LWNotifyUser.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWRetBillingEnd.cpp"
+						RelativePath="..\..\..\Common\Packets\LWRetBillingEnd.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWRetBillingEnd.h"
+						RelativePath="..\..\..\Common\Packets\LWRetBillingEnd.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWRetBillingKeep.cpp"
+						RelativePath="..\..\..\Common\Packets\LWRetBillingKeep.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWRetBillingKeep.h"
+						RelativePath="..\..\..\Common\Packets\LWRetBillingKeep.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWRetBillingStart.cpp"
+						RelativePath="..\..\..\Common\Packets\LWRetBillingStart.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWRetBillingStart.h"
+						RelativePath="..\..\..\Common\Packets\LWRetBillingStart.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWRetPrize.cpp"
+						RelativePath="..\..\..\Common\Packets\LWRetPrize.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\LWRetPrize.h"
+						RelativePath="..\..\..\Common\Packets\LWRetPrize.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLAskPrize.cpp"
+						RelativePath="..\..\..\Common\Packets\WLAskPrize.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLAskPrize.h"
+						RelativePath="..\..\..\Common\Packets\WLAskPrize.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLBillingEnd.cpp"
+						RelativePath="..\..\..\Common\Packets\WLBillingEnd.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLBillingEnd.h"
+						RelativePath="..\..\..\Common\Packets\WLBillingEnd.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLBillingKeep.cpp"
+						RelativePath="..\..\..\Common\Packets\WLBillingKeep.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLBillingKeep.h"
+						RelativePath="..\..\..\Common\Packets\WLBillingKeep.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLBillingKick.cpp"
+						RelativePath="..\..\..\Common\Packets\WLBillingKick.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLBillingKick.h"
+						RelativePath="..\..\..\Common\Packets\WLBillingKick.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLBillingStart.cpp"
+						RelativePath="..\..\..\Common\Packets\WLBillingStart.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLBillingStart.h"
+						RelativePath="..\..\..\Common\Packets\WLBillingStart.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLChangeName.cpp"
+						RelativePath="..\..\..\Common\Packets\WLChangeName.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLChangeName.h"
+						RelativePath="..\..\..\Common\Packets\WLChangeName.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLNotifyUser.cpp"
+						RelativePath="..\..\..\Common\Packets\WLNotifyUser.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLNotifyUser.h"
+						RelativePath="..\..\..\Common\Packets\WLNotifyUser.h"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLRetCharLogin.cpp"
+						RelativePath="..\..\..\Common\Packets\WLRetCharLogin.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\..\Common\Packets\WLRetCharLogin.h"
+						RelativePath="..\..\..\Common\Packets\WLRetCharLogin.h"
 						>
 					</File>
 				</Filter>
@@ -2187,11 +2187,11 @@
 				Name="DataBase"
 				>
 				<File
-					RelativePath="..\..\Common\DataBase\WXSJ_DBC.cpp"
+					RelativePath="..\..\..\Common\DataBase\WXSJ_DBC.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\..\Common\DataBase\WXSJ_DBC.h"
+					RelativePath="..\..\..\Common\DataBase\WXSJ_DBC.h"
 					>
 				</File>
 			</Filter>
