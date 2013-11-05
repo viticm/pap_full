@@ -1,0 +1,2 @@
+1，找不到memset等函数，需要包含include<string.h>
+2，服务器文件中有一个文件是Windows的，污染了max、min函数，FoxWin32.h
