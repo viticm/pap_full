@@ -422,8 +422,11 @@ __ENTER_FUNCTION
 					g_pTimeManager->GetMonth(),
 					g_pTimeManager->GetDay());
 			FILE* f = fopen( szFileName, "ab" ) ;
-			fwrite( buffer, 1, strlen(buffer), f ) ;
-			fclose(f) ;
+            if (f)
+            {
+			    fwrite( buffer, 1, strlen(buffer), f ) ;
+		    	fclose(f) ;
+            }
 
 			printf( buffer ) ;
 		}
