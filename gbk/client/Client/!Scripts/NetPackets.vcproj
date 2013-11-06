@@ -117,7 +117,7 @@
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
 				AdditionalIncludeDirectories="..\..\..\Common;..\..\..\Common\Packets;..\..\..\Common\DataBase;..\..\..\Common\Utilities;..\..\Client\GameInterface"
-				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;__WINDOWS__;_FOX_CLIENT;_USE_32BIT_TIME_T;_FOX_SERVER;GAME_CLIENT;_FOX_LOGIN"
+				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;__WINDOWS__;_FOX_CLIENT;_FOX_SERVER;GAME_CLIENT;_FOX_LOGIN"
 				StringPooling="false"
 				MinimalRebuild="true"
 				RuntimeLibrary="2"

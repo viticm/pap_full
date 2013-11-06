@@ -604,6 +604,8 @@ VOID CNetManager::ProcessInputStream(SocketInputStream& inputStream)
 					break;
 				}
 
+				int test1 = sizeof(time_t);
+				int test2 = sizeof(size_t);
 				if( packetSize>m_PacketFactoryManager.GetPacketMaxSize(packetID) )
 				{
 					//消息的大小出现异常，收到的消息比预定义消息的最大值还要大

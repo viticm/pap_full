@@ -159,7 +159,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="2"
 				AdditionalIncludeDirectories="..\include;..\..\Dependencies\include;..\src\nedmalloc"
-				PreprocessorDefinitions="WIN32,_WINDOWS,NDEBUG,OGRE_NONCLIENT_BUILD,FREEIMAGE_LIB,_MT,_USRDLL,CMAKE_INTDIR=\&quot;Release\&quot;,OgreMain_EXPORTS"
+				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\&quot;Release\&quot;;OgreMain_EXPORTS"
 				ExceptionHandling="1"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="true"

@@ -125,7 +125,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				AdditionalIncludeDirectories="./;../../../Common;../../Server/Server/Base;../../Server/Server/SMU;./Main;./DB;./ShareData;../../../Common/DBSystem/Mysql/include;../../../Common/DBSystem/DataBase;../../Server/Server/Other;../../Server/Server/Main;../../../Common/Combat;../../../Common/DataBase;./ShareMemory"
-				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WINDOWS__;_FOX_SERVER;_FOX_CLIENT;_FOX_WORLD;_USE_32BIT_TIME_T"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WINDOWS__;_FOX_SERVER;_FOX_CLIENT;_FOX_WORLD"
 				StringPooling="true"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="0"
