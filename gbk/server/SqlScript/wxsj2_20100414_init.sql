@@ -1018,7 +1018,7 @@ DROP PROCEDURE IF EXISTS `cacultotal`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `cacultotal`(lowindex        int,highindex       int)
+CREATE PROCEDURE `cacultotal`(lowindex        int,highindex       int)
 begin
 declare lowvalue  int;
 declare highvalue int;
@@ -1041,7 +1041,7 @@ DROP PROCEDURE IF EXISTS `create_newchar`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `create_newchar`(paccname              varchar(50) binary, pcharname             varchar(50) binary, psex                  smallint, pcreatetime           int, phaircolor            int, phairmodel            int, pfacecolor            int, pfacemodel            int, pheadid               int, pdefeq                int        ,pcountry        smallint)
+CREATE PROCEDURE `create_newchar`(paccname              varchar(50) binary, pcharname             varchar(50) binary, psex                  smallint, pcreatetime           int, phaircolor            int, phairmodel            int, pfacecolor            int, pfacemodel            int, pheadid               int, pdefeq                int        ,pcountry        smallint)
 begin
 declare rguid      	  int default -1;
 declare result		  int default -1;
@@ -1085,7 +1085,7 @@ DROP PROCEDURE IF EXISTS `delete_char_new`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `delete_char_new`(pcharname             varchar(100),
+CREATE PROCEDURE `delete_char_new`(pcharname             varchar(100),
 paccount              varchar(100),
 pcharguid             int,
 pdeltime              int,
@@ -1133,7 +1133,7 @@ DROP PROCEDURE IF EXISTS `fetch_guid`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `fetch_guid`()
+CREATE PROCEDURE `fetch_guid`()
 begin
 declare charguid  int default -1;
 start transaction;
@@ -1157,7 +1157,7 @@ DROP PROCEDURE IF EXISTS `fetch_savetime`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `fetch_savetime`(pcharguid	int)
+CREATE PROCEDURE `fetch_savetime`(pcharguid	int)
 begin
 	declare 	visvalidtime 		 	int;
 	declare 	vsavetime		 	int;
@@ -1200,7 +1200,7 @@ DROP PROCEDURE IF EXISTS `get_50level_list`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `get_50level_list`()
+CREATE PROCEDURE `get_50level_list`()
 begin
  select accname,charguid,charname,menpai,level,exp
  from t_char
@@ -1221,7 +1221,7 @@ DROP PROCEDURE IF EXISTS `get_50money_list`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `get_50money_list`()
+CREATE PROCEDURE `get_50money_list`()
 begin
  select a.accname,a.charguid,a.charname,a.menpai,
   (a.vmoney+a.bankmoney+if(isnull(b.profit),0,b.profit)) as totalmoney
@@ -1244,7 +1244,7 @@ DROP PROCEDURE IF EXISTS `get_50xinfa_list`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `get_50xinfa_list`()
+CREATE PROCEDURE `get_50xinfa_list`()
 begin
  drop table if exists tmp_xinfa;
  create temporary table tmp_xinfa
@@ -1290,7 +1290,7 @@ DROP PROCEDURE IF EXISTS `save_charextra`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_charextra`(pcharguid           int,
+CREATE PROCEDURE `save_charextra`(pcharguid           int,
 pdbversion          int,
 pbuyyuanbao         int,
 pkmcount            int,
@@ -1320,7 +1320,7 @@ DROP PROCEDURE IF EXISTS `save_cityinfo`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_cityinfo`(pcitydata longtext,ppoolid int,pisvalid int)
+CREATE PROCEDURE `save_cityinfo`(pcitydata longtext,ppoolid int,pisvalid int)
 begin
 declare rcount int;
 start transaction;
@@ -1347,7 +1347,7 @@ DROP PROCEDURE IF EXISTS `save_cshop`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_cshop`(pworldid            int,
+CREATE PROCEDURE `save_cshop`(pworldid            int,
 pserverid           int,
 ppoolid             int,
 pcshopid            int)
@@ -1379,7 +1379,7 @@ DROP PROCEDURE IF EXISTS `save_cshopitem`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_cshopitem`(pcshopid            int,
+CREATE PROCEDURE `save_cshopitem`(pcshopid            int,
 pcshoppos           int,
 pserial             int,
 pcharguid           int,
@@ -1423,7 +1423,7 @@ DROP PROCEDURE IF EXISTS `save_global`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_global`(ppoolid             int,
+CREATE PROCEDURE `save_global`(ppoolid             int,
 pdata1              int)
 begin
 	declare sameid  int;
@@ -1448,7 +1448,7 @@ DROP PROCEDURE IF EXISTS `save_guildinfo`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_guildinfo`(pguildid              int          ,
+CREATE PROCEDURE `save_guildinfo`(pguildid              int          ,
 pguildname            varchar(50)  ,
 pguildstat            int          ,
 pchiefguid            int          ,
@@ -1583,7 +1583,7 @@ DROP PROCEDURE IF EXISTS `save_iteminfo`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_iteminfo`(pcharguid             int,
+CREATE PROCEDURE `save_iteminfo`(pcharguid             int,
 pguid                 int,
 pworld                int,
 pserver               int,
@@ -1682,7 +1682,7 @@ DROP PROCEDURE IF EXISTS `save_mailinfo`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_mailinfo`(p1 varchar(50),p2 varchar(50),p3 varchar(100),p4 varchar(300),p5 int,p6 int)
+CREATE PROCEDURE `save_mailinfo`(p1 varchar(50),p2 varchar(50),p3 varchar(100),p4 varchar(300),p5 int,p6 int)
 begin
 declare rcount int;
 start transaction;
@@ -1709,7 +1709,7 @@ DROP PROCEDURE IF EXISTS `save_petiteminfo`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_petiteminfo`(ppairdata text,ppoolid int,pisvalid int)
+CREATE PROCEDURE `save_petiteminfo`(ppairdata text,ppoolid int,pisvalid int)
 begin
 declare rcount int;
 start transaction;
@@ -1736,7 +1736,7 @@ DROP PROCEDURE IF EXISTS `save_shopinfo`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`wxsj2`@`%` PROCEDURE `save_shopinfo`(psid                  int,
+CREATE PROCEDURE `save_shopinfo`(psid                  int,
 ppoolid               int,
 pshopguid             varchar(50),
 ptype                 int,
