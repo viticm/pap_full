@@ -146,6 +146,8 @@ namespace Packets
 		PACKET_GC_CHARIMPACT,			//角色附加效果
 		PACKET_GC_OPERATE_RESULT,		//操作的返回
 		PACKET_CG_CHARDEFAULTEVENT,		//缺省事件
+		PACKET_BLANK_1,                 //空白补齐1
+		PACKET_BLANK_2,                 //空白补齐2
 
 		//121
 		PACKET_CG_USEABILITY,			// 有配方的生活技能指令
@@ -279,8 +281,9 @@ namespace Packets
 		PACKET_CG_ASK_ACTIVETIME_UPDATE,	// 客户端请求更新技能有效时间信息
 		PACKET_GC_ACTIVETIME_UPDATE,		// 废弃
 		PACKET_GC_OBJ_TELEPORT,				// 角色瞬移
-		PACKET_GW_TEAMMEMBERENTERSCENE,		// 队员进入新场景
+		
 		//241
+		PACKET_GW_TEAMMEMBERENTERSCENE,		// 队员进入新场景
 		PACKET_GC_BANKBEGIN,				// 通知客户端开始打开银行
 		PACKET_CG_BANKACQUIRELIST,			// 向服务器获取存储物列表
 		PACKET_GC_BANKACQUIRELIST,			// 银行中的物品发送给客户端
@@ -290,8 +293,8 @@ namespace Packets
 		PACKET_GC_BANKREMOVEITEM,			// 通知客户端移除物品结果
 		PACKET_CG_BANKSWAPITEM,			// 通知服务器从银行中与背包或装备栏中交换物品
 		PACKET_GC_BANKSWAPITEM,			// 通知客户端从银行中与背包或装备栏中交换物品的结果
-		PACKET_CG_BANKMONEY,			// 通知服务器存钱取钱
 		//251
+		PACKET_CG_BANKMONEY,			// 通知服务器存钱取钱
 		PACKET_GC_BANKMONEY,			// 通知客户端存钱取钱结果
 		PACKET_CG_BANKCLOSE,			// 通知服务器关闭此人银行
 		PACKET_GC_DETAILATTRIB_PET,			// 宠物的详细属性
@@ -301,8 +304,8 @@ namespace Packets
 		PACKET_CG_EXCHANGEAPPLYI,			//申请交易
 		PACKET_CG_EXCHANGEREPLYI,			//交易答复请求
 		PACKET_CG_EXCHANGESYNCHLOCK,		//交易同步锁
-		PACKET_GC_EXCHANGESYNCHLOCK,		//交易同步锁
 		//261
+		PACKET_GC_EXCHANGESYNCHLOCK,		//交易同步锁
 		PACKET_CG_EXCHANGESYNCHITEMII,		//交易同步物品
 		PACKET_CG_EXCHANGESYNCHMONEYII,		//交易同步金钱
 		PACKET_GC_EXCHANGESYNCHCONFIRMII,	//交易同步确定
@@ -312,8 +315,8 @@ namespace Packets
 		PACKET_CG_EXCHANGECANCEL,			//交易取消
 		PACKET_GC_EXCHANGECANCEL,			//交易取消
 		PACKET_GW_LEVEUP,					// 队员升级，新级别刷新到 World 备考
-		PACKET_GC_PLAYER_DIE,			// 主角死亡
 		//271
+		PACKET_GC_PLAYER_DIE,			// 主角死亡
 		PACKET_CG_PLAYER_DIE_RESULT,	// 主角死亡的操作结果
 		PACKET_GC_PLAYER_RELIVE,		// 主角复活
 		PACKET_GW_ASKSCENEDATA,			//游戏场景向世界数据服务器请求场景附加信息
@@ -323,8 +326,8 @@ namespace Packets
 		PACKET_CG_MANIPULATEPET,		// 操作宠物请求,如召唤,收回,放生等操作
 		PACKET_GC_MANIPULATEPETRET,		// 请求操作宠物的返回结果
 		PACKET_CG_ASK_TEAMFOLLOW,			// 队长请求进入组队跟随
-		PACKET_CG_STOP_TEAMFOLLOW,			// 某队员（长）停止队伍跟随状态
 		//281
+		PACKET_CG_STOP_TEAMFOLLOW,			// 某队员（长）停止队伍跟随状态
 		PACKET_GC_ASK_TEAMFOLLOW,			// 给队员发送进入组队跟随请求
 		PACKET_CG_RETURN_TEAMFOLLOW,		// 队员回复是否进入组队跟随状态
 		PACKET_GC_RETURN_TEAMFOLLOW,		// 给客户端发送组队跟随状态
@@ -334,8 +337,8 @@ namespace Packets
 		PACKET_GW_STOP_TEAMFOLLOW,			// 某队员停止队伍跟随状态
 		PACKET_WG_TEAMFOLLOW_LIST,			// 发送组队跟随列表
 		PACKET_CG_MISSIONCHECK,				// 验证任务是否已经完成
-		PACKET_GC_MISSIONRESULT,			// 任务完成与否
 		//291
+		PACKET_GC_MISSIONRESULT,			// 任务完成与否
 		PACKET_GC_CHAR_DIRECT_IMPACT = 291, //效果:一次性效果
 		PACKET_GC_CHAR_BUFF, 				//效果: 持续性效果
 		PACKET_GC_DETAIL_BUFF,				//效果: 持续性效果的详细数据.数据量大,只发给自己
@@ -345,8 +348,9 @@ namespace Packets
 		PACKET_GC_CHAR_IMPACT_LIST_UPDATE,	//更新效果列表(简要信息，广播用)
 		PACKET_GC_DETAIL_IMPACT_LIST_UPDATE,//更新效果列表(详细信息，只给玩家自己发)
 		PACKET_GC_DETAIL_HEALS_AND_DAMAGES, //HP,MP,Rage,Strike Point的变化，供客户端显示伤害和治疗用
-		PACKET_GC_TARGET_LIST_AND_HIT_FLAGS,//目标列表和击中与否，用于客户端演示子弹和击中与否
+		PACKET_BLANK_4,                     //空白补齐4
 		//301
+		PACKET_GC_TARGET_LIST_AND_HIT_FLAGS,//目标列表和击中与否，用于客户端演示子弹和击中与否
 		PACKET_CG_PACKAGE_SWAPITEM,			// 要求交换包裹里的两个物品
 		PACKET_GC_PACKAGE_SWAPITEM,			// 交换包裹里的两个物品的结果
 		PACKET_CG_STALLAPPLY,				// 向服务器申请在此处摆摊
@@ -356,8 +360,8 @@ namespace Packets
 		PACKET_CG_STALLOPEN,				// 向服务器请求摊位物品列表
 		PACKET_GC_STALLOPEN,				// 摊位物品列表摊位信息
 		PACKET_CG_STALLADDITEM,				// 通知服务器向摊位中加物品
-		PACKET_GC_STALLADDITEM,				// 告诉客户端向摊位中加物品
 		//311
+		PACKET_GC_STALLADDITEM,				// 告诉客户端向摊位中加物品
 		PACKET_CG_STALLREMOVEITEM,			// 通知服务器从摊位中拿出物品
 		PACKET_GC_STALLREMOVEITEM,			// 通知客户器从摊位中拿出物品
 		PACKET_CG_STALLITEMPRICE,			// 通知服务器从摊位中的物品改变售价
@@ -367,8 +371,8 @@ namespace Packets
 		PACKET_GC_STALLBUY,					// 通知客户端购买店铺物品
 		PACKET_CG_STALLCLOSE,				// 通知服务器自己关闭店铺
 		PACKET_GC_STALLCLOSE,				// 通知客户端自己关闭店铺
-		PACKET_GC_STALLERROR,				// 通知摆摊错误
 		//321
+		PACKET_GC_STALLERROR,				// 通知摆摊错误
 		PACKET_GC_BBSMESSAGES,				// 留言板更新
 		PACKET_CG_BBSSYCHMESSAGES,			// 留言板更新
 		PACKET_CG_BBSAPPLY,					// 留言板更新
@@ -378,8 +382,8 @@ namespace Packets
 		PACKET_WG_RELATION,					//世界数据服务器向游戏服务器发送好友相关消息
 		PACKET_CG_GUILD,					// 帮会消息
 		PACKET_GW_GUILD,					// 帮会消息
+		//331
 		PACKET_WG_GUILD,					// 帮会消息
-		// 331
 		PACKET_GC_GUILD,					// 帮会消息
 		PACKET_WG_GUILDLIST,				// 返回帮会列表(PlayerID_t, UCHAR, {GuildID_t,NAME,Level,UserCount,Status})
 		PACKET_GC_GUILDLIST,				// 返回帮会列表(UCHAR, {GuildID_t,NAME,Level,UserCount,Status})
@@ -389,8 +393,8 @@ namespace Packets
 		PACKET_GC_GUILDRETURN,				// 返回帮会操作结果(enum)
 		PACKET_WG_GUILDBASEINFO,			// 帮会基本信息
 		PACKET_GC_GUILDBASEINFO,			// 帮会基本信息
+		//341
 		PACKET_WG_GUILDMEMBERS,				// 帮众信息
-		// 341
 		PACKET_GC_GUILDMEMBERS,				// 帮众信息
 		PACKET_WG_GUILDAUTHORITY,			// 帮会权限表
 		PACKET_GC_GUILDAUTHORITY,			// 帮会权限表
@@ -399,6 +403,7 @@ namespace Packets
 		PACKET_GC_ITEMLIST,					// 发送物品列表给客户端
 		PACKET_CL_ASKLOGIN,					//客户端请求Login登录
 		PACKET_LC_RETLOGIN,					//Login 返回客户端的请求结果
+		PACKET_BLANK_3,                     //空白补齐3
 
 		//351
 		PACKET_CL_ASKCHARLIST,				//请求角色列表
@@ -533,7 +538,7 @@ namespace Packets
 		PACKET_GW_HEARTBEAT,				//发送玩家的心跳消息给World
 		PACKET_GC_USEBALLIMPACT,			//先知或同类技能在创建时需要通知客户端创建特定效果
 		
-		//add by liam
+		//471
 		PACKET_GC_NEWOBJITEM,			//有新的独立物品出现在自己的视野范围
 		PACKET_CG_PICKDROPITEM,				//拾取物品
 		PACKET_GC_PICKDROPITEMRESULT,       //拾取结果
@@ -544,6 +549,7 @@ namespace Packets
 		PACKET_GC_EQUIPLEVELUPRESULT,		//装备打星结果
 		PACKET_CG_EQUIPBIND,				//装备绑定
 		PACKET_GC_EQUIPBINDRESULT,			//装备绑定结果
+		//481
 		PACKET_CG_SAVEEQUIPSUIT,			//保存装备信息（用于一键换装）
 		PACKET_GC_SAVEEQUIPSUITRESULT,      //保存装备信息结果
 		PACKET_CG_EQUIPSUITEXCHANGE,        //一键换装
@@ -554,6 +560,7 @@ namespace Packets
 		PACKET_GC_ITEMCREATERESULT,			//打造物品结果
 		PACKET_CG_EQUIPREMOULD,				//装备改造
 		PACKET_GC_EQUIPREMOULDRESULT,		//装备改造结果
+		//491
 		PACKET_CG_EQUIPDECOMPOUND,			//装备拆解
 		PACKET_GC_EQUIPDECOMPOUNDRESULT,	//装备拆解结果
 		PACKET_CG_EQUIPEXCHANGEPAITYPE,		//请求装备交换牌型
@@ -564,6 +571,7 @@ namespace Packets
 		PACKET_GC_USEEXTRABAGRESULT,		//使用扩展背包结果
 		PACKET_CG_UNEXTRABAG,				//卸下扩展背包
 		PACKET_GC_UNEXTRABAGRESULT,			//卸下扩展背包结果
+		//501
 		PACKET_CG_ASKSUBTRAINSETTING,		//请求带练信息
 		PACKET_GC_RETSUBTRAINSETTING,		//带练信息结果
 		PACKET_CG_ASKBEGINSUBTRAIN,			//请求开始带练
@@ -574,31 +582,29 @@ namespace Packets
 		PACKET_CG_ASKGETSUBTRAINEXP,		//请求提取带练经验
 		PACKET_GC_GETSUBTRAINEXPRESULT,		//提取带练经验结果
 		PACKET_CG_CLEANSUBTRAININFO,		//清除带练信息
+		//511
 		PACKET_GC_SUBTRAINRESULT,			//带练结果
 		PACKET_CG_EQUIPADSORBMAGIC,			//装备附魔
 		PACKET_GC_EQUIPADSORBMAGICRESULT,	//装备附魔结果
 		PACKET_CG_EQUIPCANCELMAGIC,			//装备退魔
 		PACKET_GC_EQUIPCANCELMAGICRESULT,	//装备退魔结果
-
-
 		PACKET_CG_SETTEAMDISTRIBMODE,		//客户端请求设置组队分配模式
 		PACKET_GC_RETTEAMDISTRIBMODE,		//组队分配模式返回
 		PACKET_GW_SETTEAMDISTRIBMODE,		//请求GL设置组队分配模式
 		PACKET_WG_RETTEAMDISTRIBMODE,		//组队分配模式请求mpserver保存
 		PACKET_CG_ASKTEAMDISTRIBMODE,		//请求组队分配模式
-		PACKET_ITEM_END				 = 600,
-
+		//521
+		PACKET_ITEM_END,                    // changed from =600
 		PACKET_CG_SKILL_UPGRADE,			//请求技能升级
-		PACKET_GC_SKILL_UPGRADE,			//回复技能升级
-		
+		PACKET_GC_SKILL_UPGRADE,			//回复技能升级	
 		PACKET_GC_SKILL_SUCCESSFUL_USE,		//技能合并消息
 		PACKET_GC_HORSE_LEVEUP,				//马升级消息
-
 		PACKET_WL_BILLINGKICK,		//world 请求login向billing发送踢人消息
 		PACKET_LW_RETPRIZE,		//Login返回给World抽奖信息
 		PACKET_LW_RETBILLINGSTART,
 		PACKET_CL_ASKREGPASSPORT,		//客户端请求注册SOHU的PASSPORT
 		PACKET_LW_RETBILLINGEND,		//login 返回world billingend 结果
+		//531
 		PACKET_LW_RETBILLINGKEEP,
 		PACKET_WL_BILLINGKEEP,
 		PACKET_WL_BILLINGEND,
@@ -609,6 +615,7 @@ namespace Packets
 		PACKET_CL_ASKCREATECODE,
 		PACKET_CL_REGSAFESIGN,
 		PACKET_LC_RETCREATECODE,
+		//541
 		PACKET_CL_ASKLOGINCODE,
 		PACKET_WL_NOTIFYUSER,
 		PACKET_KEY_EXCHANGE,
@@ -617,62 +624,49 @@ namespace Packets
 		PACKET_GWLWG_COSTLOG,
 		PACKET_LC_RETLOGINCODE,
 		PACKET_WL_ASKPRIZE,
-
         //称号相关
         PACKET_GW_CHARUPDATECURTITLE,		// 转发给WORLD更新制定玩家的特定称号名字的消息
         PACKET_WG_CHARUPDATECURTITLE,       // 通知MapServer更新制定玩家的特定称号名字
-
+		//551
         //国家
 		PACKET_CG_REQUEST_KINDOM,			//请求担任国王
 		PACKET_CG_COUNTRY_APPOINT,			//国王任免官员
 		PACKET_CG_COUNTRY_REMOVE,			//国王罢免官员
-
         PACKET_GW_REQUEST_KINDOM,			//请求担任国王
         PACKET_GW_COUNTRY_APPOINT,			//国王任免官员
 		PACKET_GW_COUNTRY_REMOVE,			//国王罢免官员
-
         PACKET_WG_COUNTRYRETURN,			//返回国家操作结果
         PACKET_GC_COUNTRYRETURN,			//返回国家操作结果
-
 		PACKET_CG_TOP_LIST,					//排行榜
 		PACKET_GC_TOP_LIST,					//排行榜
+		//561
 		PACKET_GW_TOP_LIST,					//排行榜
 		PACKET_WG_TOP_LIST,					//排行榜
-
 		PACKET_CG_MAP_INFO,					//用于跳转的地图信息
-
 		PACKET_GW_ATTRIBUP,					// 玩家属性变化
-
         //国家
         PACKET_CG_COUNTRY_INFO_REQUEST,		//国家信息请求
         PACKET_GC_COUNTRY_INFO_CONFIRM,		//国家信息回复
-
         PACKET_GW_COUNTRY_INFO_REQUEST,		//国家信息请求
         PACKET_WG_COUNTRY_INFO_CONFIRM,		//国家信息回复
-
-
         PACKET_GC_EXPANDBANKSIZE,			// 扩展银行Size
         PACKET_GC_BANKSIZE,			        // 银行当前Size
-
+        //571
 		PACKET_CG_REGISTER_TEAM_RECRUIT,	// 队长发布征收队员消息
 		PACKET_GW_REGISTER_TEAM_RECRUIT,	// 队长发布征收队员消息
-
 		PACKET_CG_ASK_TEAM_RECRUIT,			// 请求组队征兵列表
 		PACKET_GW_ASK_TEAM_RECRUIT,			// 请求组队征兵列表
 		PACKET_WG_RET_TEAM_RECRUIT,			// 返回组队征兵列表
 		PACKET_GC_RET_TEAM_RECRUIT,			// 返回组队征兵列表
-
 		// by soongxl 
 		PACKET_CG_MODIFY_PK_MODE, //客户端通知服务器pk模式更改
-
 		//by zheng
 		//开宝箱相关
 		PACKET_CG_OPENBOX,				//客户端向服务器请求打开宝箱
 		PACKET_GC_OPENBOX,				//服务器返回给客户端宝箱中的物品列表
 		PACKET_CG_OPENBOXMANIPULATE,	//开宝箱过程中的操作
+		//581
 		PACKET_GC_OPENBOXMANIPULATE,	//对于操作的返回
-
-
 		//骑乘征婚
 		PACKET_CG_ISSUEHORSEFINDMATEINFO,	//  [6/4/2008 wuwenbin]发布骑乘征婚
 		PACKET_CG_CANCELHORSEFINDMATEINFO,	//  [6/4/2008 wuwenbin]取消骑乘征婚
@@ -683,68 +677,53 @@ namespace Packets
 		PACKET_GW_CANCELHORSEFINDMATEINFO,	//  [6/4/2008 wuwenbin]取消骑乘征婚
 		PACKET_GW_SEARCHHORSEFINDMATEINFO,	//  [6/4/2008 wuwenbin]搜索骑乘征婚
 		PACKET_GW_QUERYHORSEFINDMATEINFO,	//  [6/4/2008 wuwenbin]查询骑乘征婚
+		//581
 		PACKET_GW_HORSECHANGESTATE,			//  [6/4/2008 wuwenbin]骑乘状态变化，如还童，放生等
 		PACKET_WG_RETURNHORSEFINDMATEINFO,	//  [6/4/2008 wuwenbin]返回骑乘征婚
-
 		PACKET_WG_OPERATE_RESULT,		// [6/4/2008 wuwenbin] 操作的返回 
 		PACKET_GW_ASKDETAILATTRIB,		// [6/4/2008 wuwenbin] 查看在线玩家的详细信息
-
 		PACKET_GW_ASKOTHERONLINEATTRIB_HUMAN,		//  [6/4/2008 wuwenbin]查看在线玩家的详细信息
 		PACKET_WG_DETAILOTHERONLINEATTRIB_HUMAN,	//  [6/4/2008 wuwenbin]返回在线玩家的详细信息
 		PACKET_WG_DETAILOTHERONLINEEQUIPLIST_HUMAN,	//  [6/4/2008 wuwenbin]返回在线玩家的装备信息
 		PACKET_WG_DETAILOTHERONLINEATTRIB_HORSE,	//  [6/4/2008 wuwenbin]返回在线玩家的骑乘的详细信息
 		PACKET_CG_ASKOTHERONLINEDETAILATTRIB,		//  [6/4/2008 wuwenbin]查看在线玩家的详细信息
 		PACKET_GW_REFRESHDATATOWORLD,				//  [6/4/2008 wuwenbin]刷新数据到World
-
+		//601
 		PACKET_CG_SEARCHONLINEUSER,		//  [6/4/2008 wuwenbin]查看在线玩家
 		PACKET_GW_SEARCHONLINEUSER,		//  [6/4/2008 wuwenbin]查看在线玩家
 		PACKET_WG_RETURNONLINEUSER,		//  [6/4/2008 wuwenbin]返回在线玩家
 		PACKET_GC_RETURNONLINEUSER,		//  [6/4/2008 wuwenbin]返回在线玩家
-
 		PACKET_WG_ASKOTHERONLINEATTRIB_HUMAN,		//  [6/4/2008 wuwenbin]查看在线玩家的详细信息
 		PACKET_GW_DETAILOTHERONLINEATTRIB_HUMAN,	//  [6/4/2008 wuwenbin]返回在线玩家的详细信息
 		PACKET_GW_DETAILOTHERONLINEEQUIPLIST_HUMAN,	//  [6/4/2008 wuwenbin]返回在线玩家的装备信息
 		PACKET_GW_DETAILOTHERONLINEATTRIB_HORSE,	//  [6/4/2008 wuwenbin]返回在线玩家的骑乘的详细信息
-
-
         //国家_v2
         PACKET_CG_COUNTRY_COLLECT,		    //国家募集信息请求
         PACKET_GC_COUNTRY_COLLECT,		    //国家募集信息回复
-
+        //611
         PACKET_GW_COUNTRY_COLLECT,		    //国家募集信息请求
         PACKET_WG_COUNTRY_COLLECT,		    //国家募集信息回复
-
         PACKET_CG_COUNTRY_DONATIVE,		    //捐款
         PACKET_GW_COUNTRY_DONATIVE,		    //捐款
-
         PACKET_CG_COUNTRY_FETCH,		    //套现
         PACKET_GC_COUNTRY_FETCH,		    //套现
-
         PACKET_GW_COUNTRY_FETCH,		    //套现
         PACKET_WG_COUNTRY_FETCH,		    //套现
-
         PACKET_GW_COUNTRY_AP,	    	    //国王行动力
-
         PACKET_GW_COUNTRY_DELATE_REQUEST,	//弹劾请求
+		//621
         PACKET_WG_COUNTRY_DELATE_CONFIRM,	//弹劾确认
-
         PACKET_CG_COUNTRY_DELATE,		    //发起弹劾投票
         PACKET_GW_COUNTRY_DELATE,		    //发起弹劾投票
-
         PACKET_CG_COUNTRY_VOTEON,		    //国民投票
         PACKET_GW_COUNTRY_VOTEON,		    //国民投票
-
         PACKET_GC_COUNTRY_DELATE_BEGIN,	    //弹劾开始
-
         PACKET_GW_COUNTRY_VOTE_REQUEST,	    //投票请求
         PACKET_WG_COUNTRY_VOTE_CONFIRM,	    //投票确认
-
 		PACKET_GC_COUNTRY_VOTE_SHOW,	    //投票显
-
 		PACKET_GW_TEAM_LEADER_DIE,			//队长死亡后通知GL
-
+		//631
 		PACKET_GC_MISSIONHAVEDONEFLAG,	//修改任务完成
-		
 		// 捜侠录相关 add by gh 2010/05/11
 		PACKET_GC_SOUXIA_LIST,			//发送主角搜侠列表	
 		PACKET_CG_SOUXIASKILL_ADD,		//请求搜侠录技能升级
@@ -755,30 +734,26 @@ namespace Packets
 		PACKET_GC_SOUXIASEW,			//服务器返回的缝合结果
 		PACKET_CG_SOUXIAREFINING,		//炼化捜侠录
 		PACKET_GC_SOUXIAREFINING,		//服务器返回的炼化结果
+		//641
 		PACKET_CG_SOUXIADISCARD,		//删除捜侠录
 		PACKET_GC_SOUXIADISCARD,		//删除捜侠录结果
 		PACKET_GC_SOUXIA_UPDATE,		//捜侠录的数据更新主要是神兽召唤和坐骑召唤技能的次为0后的位置变化
 		PACKET_GC_SOUXIASKILL_UPDATE,	//神兽召唤和坐骑召唤技能的次数更新
-
 		// 角色使用技能，用于头顶冒技能名称 20100602 BLL
 		PACKET_GC_CHAR_USESKILL,	
-
 		PACKET_CG_EQUIP_REFINING,		//炼化装备	
 		PACKET_GC_EQUIP_REFINING,		//炼化装备结果
-
-
 		PACKET_GC_BUSADDPASSENGER,		//加入一个乘客到BUS
 		PACKET_GC_BUSMOVE,
 		PACKET_GC_BUSREMOVEPASSENGER,
+		//651
 		PACKET_GC_BUSSTOPMOVE,
 		PACKET_GC_NEWBUS,
 		PACKET_GC_NEWBUS_MOVE,
 		PACKET_GC_BUSREMOVEALLPASSENGER,
-
 		// 玩家摊位开市，从而使其他玩家看到自己摊位	20100706 BLL
 		PACKET_CG_STALLOPENPUBLIC,
 		PACKET_GC_STALLOPENPUBLIC,
-
 		// 骑乘相关 [7/7/2010 陈军龙]
 		PACKET_CG_MANIPULATEMOUNT,		    //骑乘操作	
 		PACKET_GC_MANIPULATEMOUNTRESULT,	//骑乘操作结果
