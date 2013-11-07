@@ -6,7 +6,7 @@
 #include "GameDefine.h"
 
 
-//#pragma pack(push, 1)
+#pragma pack(push, 1)
 
 //用来定义在世界的浮点位置
 struct WORLD_POS
@@ -1728,5 +1728,5 @@ struct  SOUXIA_DATA
 #include "GameStruct_MinorPasswd.h"
 #include "GameStruct_Finger.h"
 #include "GameStruct_Country.h"
-
+#pragma pack(pop)
 #endif

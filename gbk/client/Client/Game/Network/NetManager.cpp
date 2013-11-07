@@ -604,7 +604,7 @@ VOID CNetManager::ProcessInputStream(SocketInputStream& inputStream)
 					break;
 				}
 
-				int test1 = sizeof(time_t);
+				int test1 = PACKET_GC_MISSIONLIST;
 				int test2 = sizeof(size_t);
 				if( packetSize>m_PacketFactoryManager.GetPacketMaxSize(packetID) )
 				{
