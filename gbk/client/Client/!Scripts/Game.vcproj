@@ -137,7 +137,7 @@
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
 				AdditionalIncludeDirectories="..\..\..\..\..\Common;..\..\..\Common;..\..\..\Common\Packets;..\..\..\Common\DataBase;..\..\..\Common\Utilities;..\..\..\Common\Combat;..\LuaPlus\Src\LuaPlus;..\GameInterface\Include;..\GameInterface\Include\Game;..\GameInterface\Capability;..\Game;..\..\EngineSDK\kylinengine\FairyCore;..\..\EngineSDK\kylinengine\ogre1.6.5\OgreMain\include;..\..\EngineSDK\kylinengine\ogre1.6.5\Dependencies\include;..\..\EngineSDK\ThirdParty\VSInclude;..\..\EngineSDK\kylinengine\NavigationEngine;..\..\..\Common\PathLib;..\..\EngineSDK\ThirdParty\VSInclude\DirectX9\Include"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;__WINDOWS__;_FOX_CLIENT;_FOX_LOGIN;_FOX_SERVER;GAME_CLIENT;_CRT_SECURE_NO_DEPRECATE"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;__WINDOWS__;_FOX_CLIENT;_FOX_LOGIN;_FOX_SERVER;GAME_CLIENT;_CRT_SECURE_NO_DEPRECATE;_USE_32BIT_TIME_T"
 				StringPooling="false"
 				MinimalRebuild="true"
 				ExceptionHandling="1"

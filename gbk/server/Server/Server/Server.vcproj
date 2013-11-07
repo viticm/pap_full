@@ -136,7 +136,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				AdditionalIncludeDirectories="../../../Common;../../../Common/Combat;../../../Common/Item;../../../Common/Packets;./Packets;./Main;./Obj;./Base;./Scene;./DB;./Player;./Item;./SMU;../../../Common/DataBase;./Skills;./Skills/SkillLogic;./Skills/SkillLogic/Other;./Skills/SkillLogic/Item;./Skills/SkillLogic/Common;./Skills/SkillLogic/Human;&quot;./Skills/SkillLogic/Pet&amp;Monster&quot;;./Skills/SpecialObjLogic;./Skills/ImpactLogic;./Ability;./Script;./Other;./AI;./Mission;./Team;./Scene/Scan;./MenPai;./EventModule;./ActionModule;./Skills/SkillLogic/Pet;./Skills/SkillLogic/Monster;../../../Common/Utilities;./Obj/Visitor;./Obj/HumanAssistantClass;../../../Common/Packets/MsgMediator;./Obj/Horse;./"
-				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WINDOWS__;_FOX_SERVER;_FOX_CLIENT;_FOX_WORLD"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WINDOWS__;_FOX_SERVER;_FOX_CLIENT;_FOX_WORLD;_USE_32BIT_TIME_T"
 				StringPooling="true"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="0"
