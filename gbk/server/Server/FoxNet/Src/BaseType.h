@@ -32,6 +32,7 @@
 	#include <sys/types.h>
 	#include <pthread.h>
 	#include <stdarg.h>
+    #include <string.h>
 #endif
 
 #include <stdio.h>
