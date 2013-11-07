@@ -769,7 +769,7 @@ struct _OWN_MISSION
 		FLOAT	m_afParam[MAX_MISSION_PARAM_NUM];
 		INT		m_anParam[MAX_MISSION_PARAM_NUM];
 		BOOL	m_abParam[MAX_MISSION_PARAM_NUM];
-		VOID	*m_apParam[MAX_MISSION_PARAM_NUM];
+		//VOID	*m_apParam[MAX_MISSION_PARAM_NUM];
 	};
 
 	VOID Cleanup( VOID )
