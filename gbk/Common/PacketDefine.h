@@ -339,7 +339,7 @@ namespace Packets
 		PACKET_CG_MISSIONCHECK,				// 验证任务是否已经完成
 		//291
 		PACKET_GC_MISSIONRESULT,			// 任务完成与否
-		PACKET_GC_CHAR_DIRECT_IMPACT = 291, //效果:一次性效果
+		PACKET_GC_CHAR_DIRECT_IMPACT,       //效果:一次性效果
 		PACKET_GC_CHAR_BUFF, 				//效果: 持续性效果
 		PACKET_GC_DETAIL_BUFF,				//效果: 持续性效果的详细数据.数据量大,只发给自己
 		PACKET_GC_CHARSKILL_MISSED,			//技能: 技能没有命中
