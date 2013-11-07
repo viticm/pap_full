@@ -348,7 +348,6 @@ namespace Packets
 		PACKET_GC_CHAR_IMPACT_LIST_UPDATE,	//更新效果列表(简要信息，广播用)
 		PACKET_GC_DETAIL_IMPACT_LIST_UPDATE,//更新效果列表(详细信息，只给玩家自己发)
 		PACKET_GC_DETAIL_HEALS_AND_DAMAGES, //HP,MP,Rage,Strike Point的变化，供客户端显示伤害和治疗用
-		PACKET_BLANK_4,                     //空白补齐4
 		//301
 		PACKET_GC_TARGET_LIST_AND_HIT_FLAGS,//目标列表和击中与否，用于客户端演示子弹和击中与否
 		PACKET_CG_PACKAGE_SWAPITEM,			// 要求交换包裹里的两个物品
