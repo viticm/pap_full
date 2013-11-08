@@ -62,7 +62,7 @@ namespace Packets
 	public:
 		Packet*		CreatePacket() { return new CGCharPositionWarp() ; }
 		PacketID_t	GetPacketID()const { return PACKET_CG_CHARPOSITIONWARP; }
-		UINT		GetPacketMaxSize()const { return	sizeof(CGCharPositionWarp) - sizeof(Packet); }
+		UINT		GetPacketMaxSize()const { return sizeof(m_ObjID) + sizeof(m_posServer) + sizeof(m_posClient);}//sizeof(CGCharPositionWarp) - sizeof(Packet); }
 	};
 
 	class CGCharPositionWarpHandler 
