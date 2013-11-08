@@ -76,7 +76,7 @@ bool CCoreSystem::initializeOgre(HWND hWnd)
 	m_pOgreRoot->initialise(false, Ogre::StringUtil::BLANK);
 	Ogre::NameValuePairList miscParams;
 	miscParams["externalWindowHandle"] = Ogre::StringConverter::toString((Ogre::ulong)hWnd);
-	miscParams["FSAA"] = Ogre::StringConverter::toString((Ogre::ulong)2);
+	//miscParams["FSAA"] = Ogre::StringConverter::toString((Ogre::ulong)2);
 	miscParams["vsync"] = "true";
 	m_pRenderWindow = m_pOgreRoot->createRenderWindow(Ogre::StringUtil::BLANK, 0, 0, false, &miscParams);
 	m_pRenderWindow->setActive(true);
