@@ -1,3 +1,4 @@
+
 /*
 ** $Id: LuaLib.h,v 1.2 2006/06/17 10:17:10 zengpengxiang Exp $
 ** Lua - An Extensible Extension Language

@@ -1,65 +1,67 @@
 INCLUDE_DIRECTORIES(baselib)
 
 SET(TF_CURRENT_BINARY_PATH_LIB "../../../../lib")
-SET(SRC_LIST lapi.c
-             lcode.c
-             ldebug.c
-             ldo.c
-             lfunc.c
-             lgc.c
-             llex.c
+SET(SRC_LIST lvm.h
+             ldebug.h
              lmem.c
              lobject.c
-             lparser.c
-             lstate.c
-             lstring.c
-             ltable.c
-             ltests.c
-             ltm.c
-             lua.c
-             LuaExtend.c
-             lundump.c
-             lvm.c
-             lzio.c
-             lapi.h
-             lauxlib.h
-             lcode.h
-             ldebug.h
-             ldo.h
-             lfunc.h
-             lgc.h
-             llex.h
-             llimits.h
-             lmem.h
-             lobject.h
-             lopcodes.h
              lparser.h
              lstate.h
              lstring.h
-             ltable.h
-             ltm.h
-             lua.h
-             luadebug.h
-             LuaDef.h
-             lualib.h
+             lobject.h
+             loadlib.c
+             lfunc.h
              lundump.h
-             lvm.h
+             lopcodes.c
+             llimits.h
+             lopcodes.h
+             ltable.h
+             lstring.c
+             lbitlib.c
+             lbaselib.c
+             lua.c
+             ldump.c
+             lvm.c
+             liolib.c
+             lapi.c
+             lcode.h
+             ltm.h
+             lctype.h
+             lauxlib.h
+             lctype.c
+             lzio.c
+             ldebug.c
+             lparser.c
+             linit.c
+             ltm.c
+             ltable.c
+             llex.h
+             lundump.c
+             loslib.c
+             ltablib.c
+             lfunc.c
+             lcode.c
+             llex.c
+             lcorolib.c
+             luaconf.h
+             lgc.c
+             lmathlib.c
+             ldo.h
+             lstrlib.c
+             ldo.c
+             lstate.c
+             lauxlib.c
+             lapi.h
+             ldblib.c
+             lgc.h
+             lmem.h
              lzio.h
+             lualib.h
+             lextend.c
              )
              
-SET(BASELIB_LIST 
-             baselib/lauxlib.c
-             baselib/lbaselib.c
-             baselib/ldblib.c
-             baselib/liolib.c
-             baselib/lmathlib.c
-             baselib/lstrlib.c
-             )
-
 
 if (WIN32)             
-  source_group(baselib FILES ${BASELIB_LIST})
-  
 else()
   if(USE_32BITS)
     SET(CMAKE_C_FLAGS "-Wall -ggdb -pipe -march=i386 -mtune=i686")

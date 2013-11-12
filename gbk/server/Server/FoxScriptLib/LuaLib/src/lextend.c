@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
-// Sword3 Engine (c) 1999-2000 by Kingsoft
-// 
-// File:	LuaExtend.cpp
+// Modify by viticm<viticm@126.com> 
+// PAP Engine(c) 2013-2013
+// File:	lextend.c
 // Date:	2001-9-27 15:46:40
 // Code:	Romandou
 // Desc:	扩展的LuaAPI函数
@@ -12,171 +12,169 @@
 #include <stdarg.h>
 
 //---------------------------------------------------------------------------
-// 函数:	Lua_SetTable
+// 函数:	lua_settable
 // 功能:	修改Lua table中的某个成员的值
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	int nIndex 数组在堆中的index
 // 参数:	const char * szMemberName 以字符串表示成员的名称
 // 参数:	double Number 成员的数值
 // 返回:	int 
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
-//                   Lua_SetTableMember
+//                   lua_settableMember
 //    该函数体由若干的函数组成，以实现改变Lua Table中的某个变量的值
 //    Lua的Table的表现形式有两种，一种是以数字形式表示如 Table[1],而另一
 //	  种是以字符串的形式表示，如Table.Member。	
 //	  同时，变量值还包括Number、String、CFun等
 //	 	  nIndex为数组在堆栈中的位置。
 //---------------------------------------------------------------------------
-int Lua_SetTable_DoubleFromName(Lua_State * L, int nIndex, const char * szMemberName, double Number)
+int lua_settable_DoubleFromName(lua_State * L, int nIndex, const char * szMemberName, double Number)
 {
-	
-	if (! Lua_IsTable(L, nIndex))
+	if (! lua_istable(L, nIndex))
 		return 0;
-	Lua_PushString(L, szMemberName);
-	Lua_PushNumber(L, Number);
-	Lua_SetTable(L, nIndex);
+	lua_pushstring(L, szMemberName);
+	lua_pushnumber(L, Number);
+	lua_settable(L, nIndex);
 	return 1;
-	
 }
 
 
 //---------------------------------------------------------------------------
-// 函数:	Lua_SetTable_IntFromName
+// 函数:	lua_settable_IntFromName
 // 功能:	
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	int nIndex
 // 参数:	const char * szMemberName
 // 参数:	int Number
 // 返回:	int 
 //---------------------------------------------------------------------------
-int Lua_SetTable_IntFromName(Lua_State * L, int nIndex, const char * szMemberName, int Number)
+int lua_settable_IntFromName(lua_State * L, int nIndex, const char * szMemberName, int Number)
 {
 
-	if (! Lua_IsTable(L, nIndex))
+	if (! lua_istable(L, nIndex))
 		return 0;
-	Lua_PushString(L, szMemberName);
-	Lua_PushNumber(L, (double)Number);
-	Lua_SetTable(L, nIndex);
+	lua_pushstring(L, szMemberName);
+	lua_pushnumber(L, (double)Number);
+	lua_settable(L, nIndex);
 	return 1;
 	
 }
 
 
 //---------------------------------------------------------------------------
-// 函数:	Lua_SetTable_StringFromName
+// 函数:	lua_settable_StringFromName
 // 功能:	
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	int nIndex
 // 参数:	const char * szMemberName
 // 参数:	char * szString
 // 返回:	int 
 //---------------------------------------------------------------------------
-int Lua_SetTable_StringFromName(Lua_State * L ,int nIndex, const char * szMemberName, char * szString)
+int lua_settable_StringFromName(lua_State * L ,int nIndex, const char * szMemberName, char * szString)
 {
 	
-	if (! Lua_IsTable(L, nIndex))
+	if (! lua_istable(L, nIndex))
 		return 0;
-	Lua_PushString(L, szMemberName);
-	Lua_PushString(L, szString);
-	Lua_SetTable(L, nIndex);
+	lua_pushstring(L, szMemberName);
+	lua_pushstring(L, szString);
+	lua_settable(L, nIndex);
 	return 1;
 	
 }
 
 //---------------------------------------------------------------------------
-// 函数:	Lua_SetTable_StringFromId
+// 函数:	lua_settable_StringFromId
 // 功能:	
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	int nIndex
 // 参数:	int Id
 // 参数:	const char * szString
 // 返回:	int 
 //---------------------------------------------------------------------------
-int Lua_SetTable_StringFromId(Lua_State * L, int nIndex, int Id, const char * szString)
+int lua_settable_StringFromId(lua_State * L, int nIndex, int Id, const char * szString)
 {
-	if (! Lua_IsTable(L, nIndex))
+	if (! lua_istable(L, nIndex))
 		return 0;
-	Lua_PushNumber(L, (double)Id);
-	Lua_PushString(L, szString);
-	Lua_SetTable(L, nIndex);
+	lua_pushnumber(L, (double)Id);
+	lua_pushstring(L, szString);
+	lua_settable(L, nIndex);
 	return 1;
 }
 
 
 //---------------------------------------------------------------------------
-// 函数:	Lua_SetTable_DoubleFromId
+// 函数:	lua_settable_DoubleFromId
 // 功能:	
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	int nIndex
 // 参数:	int Id
 // 参数:	double nNumber
 // 返回:	int 
 //---------------------------------------------------------------------------
-int Lua_SetTable_DoubleFromId(Lua_State * L , int nIndex, int Id, double nNumber)
+int lua_settable_DoubleFromId(lua_State * L , int nIndex, int Id, double nNumber)
 {
-	if (! Lua_IsTable(L, nIndex))
+	if (! lua_istable(L, nIndex))
 		return 0;
-	Lua_PushNumber(L, (double) Id);
-	Lua_PushNumber(L, nNumber);
-	Lua_SetTable(L, nIndex);
+	lua_pushnumber(L, (double) Id);
+	lua_pushnumber(L, nNumber);
+	lua_settable(L, nIndex);
 	return 1;
 }
 
 //---------------------------------------------------------------------------
-// 函数:	Lua_SetTable_IntFromId
+// 函数:	lua_settable_IntFromId
 // 功能:	
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	int nIndex
 // 参数:	int Id
 // 参数:	int nNumber
 // 返回:	int 
 //---------------------------------------------------------------------------
-int Lua_SetTable_IntFromId(Lua_State * L, int nIndex, int Id, int nNumber)
+int lua_settable_IntFromId(lua_State * L, int nIndex, int Id, int nNumber)
 {
-	if (! Lua_IsTable(L, nIndex))
+	if (! lua_istable(L, nIndex))
 		return 0;
-	Lua_PushNumber(L, (double) Id);
-	Lua_PushNumber(L, (double) nNumber);
-	Lua_SetTable(L, nIndex);
+	lua_pushnumber(L, (double) Id);
+	lua_pushnumber(L, (double) nNumber);
+	lua_settable(L, nIndex);
 	return 1;
 }
 
 //---------------------------------------------------------------------------
-// 函数:	Lua_SetTable_CFunFromName
+// 函数:	lua_settable_CFunFromName
 // 功能:	
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	int nIndex
 // 参数:	const char * szMemberName
-// 参数:	Lua_CFunction CFun
+// 参数:	lua_CFunction CFun
 // 返回:	int 
 //---------------------------------------------------------------------------
-int Lua_SetTable_CFunFromName(Lua_State * L, int nIndex, const char * szMemberName, Lua_CFunction CFun)
+int lua_settable_CFunFromName(lua_State * L, int nIndex, const char * szMemberName, lua_CFunction CFun)
 {
-	if (! Lua_IsTable(L, nIndex))
+	if (! lua_istable(L, nIndex))
 		return 0;
-	Lua_PushString(L, szMemberName);
-	Lua_PushCFunction(L, CFun);
-	Lua_SetTable(L, nIndex);
+	lua_pushstring(L, szMemberName);
+	lua_pushcfunction(L, CFun);
+	lua_settable(L, nIndex);
 	return 1;
 }
 
 //---------------------------------------------------------------------------
-// 函数:	Lua_SetTable_CFunFromId
+// 函数:	lua_settable_CFunFromId
 // 功能:	
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	int nIndex
 // 参数:	int nId
-// 参数:	Lua_CFunction CFun
+// 参数:	lua_CFunction CFun
 // 返回:	int 
 //---------------------------------------------------------------------------
-int Lua_SetTable_CFunFromId(Lua_State * L, int nIndex, int nId, Lua_CFunction CFun)
+int lua_settable_CFunFromId(lua_State * L, int nIndex, int nId, lua_CFunction CFun)
 {
-	if (! Lua_IsTable(L, nIndex))
+	if (! lua_istable(L, nIndex))
 		return 0;
-	Lua_PushNumber(L, nId);
-	Lua_PushCFunction(L, CFun);
-	Lua_SetTable(L, nIndex);
+	lua_pushnumber(L, nId);
+	lua_pushcfunction(L, CFun);
+	lua_settable(L, nIndex);
 	return 1;
 }
 
@@ -184,12 +182,12 @@ int Lua_SetTable_CFunFromId(Lua_State * L, int nIndex, int nId, Lua_CFunction CF
 //---------------------------------------------------------------------------
 // 函数:	Lua_GetValuesFromStack
 // 功能:	
-// 参数:	Lua_State * L
+// 参数:	lua_State * L
 // 参数:	char * cFormat
 // 参数:	...
 // 返回:	int 
 //---------------------------------------------------------------------------
-int Lua_GetValuesFromStack(Lua_State * L, char * cFormat, ...)	
+int Lua_GetValuesFromStack(lua_State * L, char * cFormat, ...)	
 {
 
 	va_list vlist;
@@ -206,7 +204,7 @@ int Lua_GetValuesFromStack(Lua_State * L, char * cFormat, ...)
 	if (! L)
 		return 0;
 	
-	nTopIndex = Lua_GetTopIndex(L);	
+	nTopIndex = lua_gettop(L);	
 	nValueNum = strlen(cFormat);
 	
 	if (nTopIndex == 0 || nValueNum == 0)//当堆栈中无数据或不取参数是返回FALSE
@@ -232,10 +230,10 @@ int Lua_GetValuesFromStack(Lua_State * L, char * cFormat, ...)
 					if (pNumber == NULL)
 						return 0;
 					
-					if (Lua_IsNumber(L, nIndex ))
+					if (lua_isnumber(L, nIndex ))
 					{
 
-						* pNumber = Lua_ValueToNumber(L, nIndex ++ );
+						* pNumber = lua_tonumber(L, nIndex++);
 						
 					}
 					else
@@ -254,9 +252,9 @@ int Lua_GetValuesFromStack(Lua_State * L, char * cFormat, ...)
 					if (pStrPoint == NULL)
 						return 0;
 					
-					if (Lua_IsString(L, nIndex))
+					if (lua_isstring(L, nIndex))
 					{
-						pString = Lua_ValueToString(L, nIndex++);
+						pString = lua_tostring(L, nIndex++);
 					
 						*pStrPoint = pString;
 						
@@ -281,5 +279,13 @@ int Lua_GetValuesFromStack(Lua_State * L, char * cFormat, ...)
 	return	1;
 }
 
+// output functions
+LUA_API void lua_outerrmsg(const char * szerrmsg)
+{
+    fprintf(stderr, szerrmsg); 
+}
 
-
+LUA_API void lua_outoutmsg(const char * szoutmsg) 
+{
+    fprintf(stdout, szoutmsg);
+}

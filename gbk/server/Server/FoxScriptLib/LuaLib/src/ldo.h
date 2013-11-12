@@ -1,5 +1,5 @@
 /*
-** $Id: ldo.h,v 1.1 2005/11/03 02:12:28 jackhong Exp $
+** $Id: ldo.h,v 2.20 2011/11/29 15:55:08 roberto Exp $
 ** Stack and Call structure of Lua
 ** See Copyright Notice in lua.h
 */
@@ -10,24 +10,37 @@
 
 #include "lobject.h"
 #include "lstate.h"
+#include "lzio.h"
 
 
-/*
-** macro to increment stack top.
-** There must be always an empty slot at the L->stack.top
-*/
-#define incr_top {if (L->top == L->stack_last) luaD_checkstack(L, 1); L->top++;}
+#define luaD_checkstack(L,n)	if (L->stack_last - L->top <= (n)) \
+				    luaD_growstack(L, n); else condmovestack(L);
 
 
-void luaD_init (lua_State *L, int stacksize);
-void luaD_adjusttop (lua_State *L, StkId base, int extra);
-void luaD_lineHook (lua_State *L, StkId func, int line, lua_Hook linehook);
-void luaD_call (lua_State *L, StkId func, int nResults);
-void luaD_callTM (lua_State *L, Closure *f, int nParams, int nResults);
-void luaD_checkstack (lua_State *L, int n);
+#define incr_top(L) {L->top++; luaD_checkstack(L,0);}
 
-void luaD_breakrun (lua_State *L, int errcode);
-int luaD_runprotected (lua_State *L, void (*f)(lua_State *, void *), void *ud);
+#define savestack(L,p)		((char *)(p) - (char *)L->stack)
+#define restorestack(L,n)	((TValue *)((char *)L->stack + (n)))
 
+
+/* type of protected functions, to be ran by `runprotected' */
+typedef void (*Pfunc) (lua_State *L, void *ud);
+
+LUAI_FUNC int luaD_protectedparser (lua_State *L, ZIO *z, const char *name,
+                                                  const char *mode);
+LUAI_FUNC void luaD_hook (lua_State *L, int event, int line);
+LUAI_FUNC int luaD_precall (lua_State *L, StkId func, int nresults);
+LUAI_FUNC void luaD_call (lua_State *L, StkId func, int nResults,
+                                        int allowyield);
+LUAI_FUNC int luaD_pcall (lua_State *L, Pfunc func, void *u,
+                                        ptrdiff_t oldtop, ptrdiff_t ef);
+LUAI_FUNC int luaD_poscall (lua_State *L, StkId firstResult);
+LUAI_FUNC void luaD_reallocstack (lua_State *L, int newsize);
+LUAI_FUNC void luaD_growstack (lua_State *L, int n);
+LUAI_FUNC void luaD_shrinkstack (lua_State *L);
+
+LUAI_FUNC l_noret luaD_throw (lua_State *L, int errcode);
+LUAI_FUNC int luaD_rawrunprotected (lua_State *L, Pfunc f, void *ud);
 
 #endif
+

@@ -6,7 +6,6 @@
 #include "FoxDebug.h"
 #include "FoxPakFile.h"
 #include "FoxLuaScript.h"
-#include "LuaLib.h"
 #include "FoxMemClass.h"
 //---------------------------------------------------------------------------
 // 函数:	FoxLuaScript::FoxLuaScript
@@ -16,7 +15,7 @@
 //---------------------------------------------------------------------------
 FoxLuaScript::FoxLuaScript(void)
 {
-	m_LuaState					= lua_open(256);
+	m_LuaState					= lua_open();
 
 	if (m_LuaState == NULL)
 	{
@@ -76,7 +75,7 @@ BOOL FoxLuaScript::LoadBuffer(PBYTE pBuffer, DWORD dwLen )
 		return FALSE;
 	}
 	
-	if (Lua_CompileBuffer(m_LuaState, (char *) pBuffer, dwLen, NULL) != 0)
+	if (lua_loadbuffer(m_LuaState, (char *) pBuffer, dwLen, NULL) != 0)
 	{
 		ScriptError(LUA_SCRIPT_COMPILE_ERROR);
 		return FALSE;
@@ -199,13 +198,14 @@ BOOL FoxLuaScript::ExecuteCode()
 		//if (!ExecuteCode()) return FALSE; ZHANGPENG 发现这里可能有错
 		return FALSE;
 	}
-	
+    /**	
 	int state;
 	if (state = Lua_Execute(m_LuaState) != 0)
 	{
 		ScriptError(LUA_SCRIPT_EXECUTE_ERROR, state);
 		return FALSE;
 	}
+    **/
 	
 	return	TRUE;
 }
@@ -229,14 +229,14 @@ BOOL FoxLuaScript::ExecuteCode()
 //---------------------------------------------------------------------------
 BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va_list vlist)
 {
-	
+    printf("\e[0;31;1m lua call is start, nRetcode: %d\e[0m\n", 99999);	
 	double nNumber;
 	char * cString	= NULL;
 	void * pPoint	= NULL;
 	Lua_CFunction CFunc;
 	int i=0;
 	int nArgnum = 0;
-	int nIndex = 0;
+	//int nIndex = 0;
 	int nRetcode;		//调用脚本函数后的返回码
 
 	if (! (m_IsRuning && m_LuaState))
@@ -264,6 +264,7 @@ BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va
 			case 'd'://输入的数据为整形
 				{
 					nNumber = (double)(va_arg(vlist, int));
+
 					Lua_PushNumber(m_LuaState, (double) nNumber);
 					nArgnum ++;
 				}
@@ -310,9 +311,9 @@ BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va
 			case 'p':
 				{
 					pPoint = va_arg(vlist, void *);
-
-					Lua_PushUserTag(m_LuaState, pPoint,m_UserTag);
-					nArgnum ++;
+					//Lua_PushUserTag(m_LuaState, pPoint,m_UserTag);
+					lua_pushlightuserdata(m_LuaState, pPoint);
+                    nArgnum ++;
 				}
 				break;
 			}
@@ -321,7 +322,7 @@ BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va
 		}
 		
 	}  
-    		
+
 	nRetcode = Lua_Call(m_LuaState, nArgnum, nResults);
 	
 	if (nRetcode != 0)
@@ -329,7 +330,6 @@ BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va
 		ScriptError(LUA_SCRIPT_EXECUTE_ERROR, nRetcode);
 		return FALSE;
 	}
-	
 
 	return	TRUE;
 }
@@ -473,7 +473,7 @@ BOOL FoxLuaScript::Init()
 {
 	if (! m_LuaState)
 	{
-		m_LuaState				= Lua_Create(256);
+		m_LuaState				= lua_open();
 		
 		if (m_LuaState == NULL)
 		{
@@ -484,7 +484,7 @@ BOOL FoxLuaScript::Init()
 		
 		m_IsRuning				= TRUE;
 		m_szScriptName[0]		= '\0';
-		m_UserTag = lua_newtag(m_LuaState)	;
+		//m_UserTag = lua_newtag(m_LuaState)	;
 	}
 	
 	RegisterStandardFunctions();
@@ -542,10 +542,16 @@ BOOL FoxLuaScript::RegisterFunctions(TLua_Funcs Funcs[], int n)
 void FoxLuaScript::RegisterStandardFunctions()
 {
 	if (! m_LuaState)		return ;
-	Lua_OpenBaseLib(m_LuaState);//Lua基本库
-	Lua_OpenIOLib(m_LuaState);//输入输出库
-	Lua_OpenStrLib(m_LuaState);//字符串处理库
-	Lua_OpenMathLib(m_LuaState);//数值运算库
+	// modify to new, based on lua 5.2.2
+    luaopen_base(m_LuaState);
+    luaopen_table(m_LuaState);
+    luaopen_string(m_LuaState);
+    luaopen_math(m_LuaState);
+    luaopen_debug(m_LuaState);
+    //Lua_OpenBaseLib(m_LuaState);//Lua基本库
+	//Lua_OpenIOLib(m_LuaState);//输入输出库
+	//Lua_OpenStrLib(m_LuaState);//字符串处理库
+	//Lua_OpenMathLib(m_LuaState);//数值运算库
 	//Lua_OpenDBLib(m_LuaState);//调试库
 	return;	
 }
@@ -610,7 +616,7 @@ void FoxLuaScript::ScriptError(int Error1 ,int Error2)
 void FoxLuaScript::SafeCallBegin(int * pIndex)
 {
 	if (! m_LuaState)		return ;
-	Lua_SafeBegin(m_LuaState, pIndex);
+	(*pIndex) = Lua_GetTopIndex(m_LuaState);
 }
 
 //---------------------------------------------------------------------------
@@ -622,7 +628,7 @@ void FoxLuaScript::SafeCallBegin(int * pIndex)
 void FoxLuaScript::SafeCallEnd(int nIndex)
 {
 	if (! m_LuaState)	return;
-	Lua_SafeEnd(m_LuaState, nIndex);
+	Lua_SetTopIndex(m_LuaState, nIndex);
 }
 
 //---------------------------------------------------------------------------

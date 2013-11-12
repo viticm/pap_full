@@ -9,7 +9,7 @@
 #define __LUACFUNREGISTER_H__
 
 #include "Type.h"
-#include "LuaLib.h"
+#include "lua.h"
 
 class LuaInterface;
 
