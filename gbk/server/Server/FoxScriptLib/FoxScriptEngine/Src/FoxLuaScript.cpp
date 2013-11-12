@@ -197,15 +197,8 @@ BOOL FoxLuaScript::ExecuteCode()
 		ScriptError(LUA_SCRIPT_EXECUTE_ERROR);
 		//if (!ExecuteCode()) return FALSE; ZHANGPENG 发现这里可能有错
 		return FALSE;
-	}
-    /**	
-	int state;
-	if (state = Lua_Execute(m_LuaState) != 0)
-	{
-		ScriptError(LUA_SCRIPT_EXECUTE_ERROR, state);
-		return FALSE;
-	}
-    **/
+    }
+    lua_execute(m_LuaState);
 	
 	return	TRUE;
 }

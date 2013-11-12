@@ -290,9 +290,7 @@ LUA_API void lua_outoutmsg(const char * szoutmsg)
     fprintf(stdout, szoutmsg);
 }
 
-LUA_API int lua_execute(lua_State *L)
+LUA_API void lua_execute(lua_State *L)
 {
-    int status;
-    status = lua_call(L, 0, LUA_MULTRET);  /* call main */
-    return status;
+    lua_call(L, 0, LUA_MULTRET);  /* call main */
 }
