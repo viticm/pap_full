@@ -78,6 +78,7 @@ LUA_API int Lua_SetTable_StringFromName(Lua_State * L, int nIndex, const char * 
 LUA_API int Lua_SetTable_IntFromName(Lua_State * L, int nIndex, const char * szMemberName, int Number);
 LUA_API int Lua_SetTable_DoubleFromName(Lua_State * L, int nIndex, const char * szMemberName, double Number);
 LUA_API int Lua_GetValuesFromStack(Lua_State * L, char * cFormat, ...);
+LUA_API int lua_execute(lua_State *L);
 
 #endif
 

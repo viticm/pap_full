@@ -7,9 +7,9 @@
 //---------------------------------------------------------------------------
 #include "FoxScript.h"
 #ifndef __linux
-	#include "lua.h"
+    #include "lua.hpp"
 #else
-	#include "lua.h"
+    #include "lua.hpp"
 	#include <string.h>
 #endif
 
