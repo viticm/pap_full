@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="UIEditor"
 	ProjectGUID="{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}"
 	RootNamespace="UIEditor"
 	Keyword="MFCProj"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -17,8 +18,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="../../../../../Bin/Client/Game/"
-			IntermediateDirectory="&quot;..\..\..\..\..\..\..\BuildOut\$(ConfigurationName)&quot;"
+			OutputDirectory="../../../../../../Run/Client/Game/"
+			IntermediateDirectory="&quot;..\..\..\..\..\..\..\..\BuildOut\$(ConfigurationName)&quot;"
 			ConfigurationType="1"
 			UseOfMFC="2"
 			CharacterSet="2"
@@ -70,10 +71,12 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="LuaPlus.lib OgreMain.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="$(BuildOut)\$(ConfigurationName)"
+				AdditionalLibraryDirectories="$(BuildOut)"
 				IgnoreDefaultLibraryNames="libcmt.lib, libc.lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -95,16 +98,13 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="../../../../../Bin/Client/Game/"
-			IntermediateDirectory="&quot;..\..\..\..\..\..\..\BuildOut\$(ConfigurationName)&quot;"
+			OutputDirectory="../../../../../../Run/Client/Game/"
+			IntermediateDirectory="&quot;..\..\..\..\..\..\..\..\BuildOut\$(ConfigurationName)&quot;"
 			ConfigurationType="1"
 			UseOfMFC="2"
 			CharacterSet="2"
@@ -131,7 +131,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="3"
-				AdditionalIncludeDirectories="../../../../LuaPlus\Src\LuaPlus\;Tree;../../../../CEGUI/CEGUI/include;../../../../../EngineSDK\kylinengine\ogre1.7.1\Dependencies\include;../../../../../EngineSDK\kylinengine\ogre1.7.1\OgreMain\include;../../../../CEGUI/CEGUIRenderer/include;../../../../../EngineSDK/ThirdParty/VSInclude"
+				AdditionalIncludeDirectories="../../../../LuaPlus\Src\LuaPlus\;Tree;../../../../CEGUI/CEGUI/include;../../../../../EngineSDK\kylinengine\ogre1.6.5\Dependencies\include;../../../../../EngineSDK\kylinengine\ogre1.6.5\OgreMain\include;../../../../CEGUI/CEGUIRenderer/include;../../../../../EngineSDK/ThirdParty/VSInclude"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;__WIN32__"
 				MinimalRebuild="false"
 				RuntimeLibrary="2"
@@ -156,13 +156,15 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="LuaPlus.lib OgreMain.lib CEGUIBase.lib CEGUIOgreRenderer.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\..\..\..\Bin\Client\Game;..\..\..\..\..\EngineSDK\kylinengine\ogre1.7.1\Dependencies\lib\Release"
+				AdditionalLibraryDirectories="..\..\..\..\..\..\Run\Client\Game;..\..\..\..\..\EngineSDK\kylinengine\ogre1.6.5\Dependencies\lib\Release"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames="libcmt.lib, libc.lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -184,9 +186,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -256,6 +255,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -275,9 +276,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -345,6 +343,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -364,9 +364,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"

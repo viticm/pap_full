@@ -1990,7 +1990,7 @@ BOOL UpdateSystem::AddPackage(PackageOper& PackOper)
 
 
 //添加一个文件到包中
-UpdateSystem::AddFileToPackage(PackageOper& PackOper)
+BOOL UpdateSystem::AddFileToPackage(PackageOper& PackOper)
 {
 	char szFileName[1024];
 	strcpy( szFileName, PackOper.strFName.c_str() );
