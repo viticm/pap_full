@@ -225,7 +225,6 @@ V_ZHONGZHI_NAME = {"小麦","大米","玉米","花生","红薯","高粱","芝麻","绿豆","黄豆
 V_ZHONGZHI_ITEMBOX_ID = {501,504,507,510,513,516,519,522,525,528,
 					531,534,537,540,543,546,549,552,555,558,
 					561,564,567,570}
-randomseed(clock());
 
 --门派ID号宏定义
 OR_SHAOLIN  = 0
@@ -488,3 +487,9 @@ FUBEN_MANTUOSHANZHANG  =  991
 PRE_TIME = 0
 DUA_TIME = 0
 EVENT_NOW = 0
+
+-- debug function for new script by viticm<viticm@126.com>
+function LERR(...)
+    OutputError(string.format(...))
+end
+math.randomseed(os.time())
