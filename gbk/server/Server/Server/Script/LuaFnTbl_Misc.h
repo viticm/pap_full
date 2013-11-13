@@ -339,11 +339,13 @@ namespace LuaFnTbl
 		
 		INT num;
 
+        LERR("file: %s, line: %d", __FILE__, __LINE__);
 		num = Lua_ValueToNumber(L,1);
 
 		CHAR msg[1024];
 		memset(msg,0,1024) ;
 		sprintf(msg,"%d\n",num);
+        LERR("file: %s, line: %d", __FILE__, __LINE__);
 		MyMessageBox(msg);
 		return 0;
 
@@ -2432,6 +2434,23 @@ namespace LuaFnTbl
 
         LUA_LEAVE_FUNCTION
             return  0;
+    }
+
+    /**
+     * ´íÎóÊä³öº¯Êý
+     * @param void
+     * @return number
+     */
+    INT LuaOutputError(Lua_State* L)
+    {
+        LUA_ENTER_FUNCTION
+            
+            const CHAR* err_str = Lua_ValueToString(L, 1);
+            LERR(err_str);
+            return 0;
+
+        LUA_LEAVE_FUNCTION
+            return 0;
     }
 
 

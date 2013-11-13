@@ -563,7 +563,7 @@ namespace LuaFnTbl
 		{"LuaFnGetBusPassengerCount", FuncProto(LuaFnGetBusPassengerCount)},
 		{"LuaFnGetBusPassengerIDByIndex", FuncProto(LuaFnGetBusPassengerIDByIndex)},
 		{"LuaFnGetBusPassengerIDIsInBus", FuncProto(LuaFnGetBusPassengerID_IsInBus)},
-
+        {"OutputError",FuncProto(LuaOutputError) },
 	};
 }
 

@@ -156,7 +156,7 @@ BOOL FoxLuaScript::Load(char * Filename)
 		printf("Load Script %s 出现异常，请检查!!\n", Filename);
 		return FALSE;
 	}
-		
+    SetScriptName(Filename);
 	if (!ExecuteCode()) 
 	{
 		FILE* fp = fopen("./Log/luaerror.log","a");
@@ -222,7 +222,6 @@ BOOL FoxLuaScript::ExecuteCode()
 //---------------------------------------------------------------------------
 BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va_list vlist)
 {
-    printf("\e[0;31;1m lua call is start, nRetcode: %d\e[0m\n", 99999);	
 	double nNumber;
 	char * cString	= NULL;
 	void * pPoint	= NULL;
@@ -541,6 +540,7 @@ void FoxLuaScript::RegisterStandardFunctions()
     luaopen_string(m_LuaState);
     luaopen_math(m_LuaState);
     luaopen_debug(m_LuaState);
+    luaopen_os(m_LuaState);
     //Lua_OpenBaseLib(m_LuaState);//Lua基本库
 	//Lua_OpenIOLib(m_LuaState);//输入输出库
 	//Lua_OpenStrLib(m_LuaState);//字符串处理库
