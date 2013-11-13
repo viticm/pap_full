@@ -536,16 +536,12 @@ void FoxLuaScript::RegisterStandardFunctions()
 	if (! m_LuaState)		return ;
 	// modify to new, based on lua 5.2.2
     luaopen_base(m_LuaState);
-    luaopen_table(m_LuaState);
-    luaopen_string(m_LuaState);
-    luaopen_math(m_LuaState);
-    luaopen_debug(m_LuaState);
-    luaopen_os(m_LuaState);
-    //Lua_OpenBaseLib(m_LuaState);//Lua基本库
-	//Lua_OpenIOLib(m_LuaState);//输入输出库
-	//Lua_OpenStrLib(m_LuaState);//字符串处理库
-	//Lua_OpenMathLib(m_LuaState);//数值运算库
-	//Lua_OpenDBLib(m_LuaState);//调试库
+    luaL_openlibs(m_LuaState); // open all for new
+    //luaopen_table(m_LuaState);
+    //luaopen_string(m_LuaState);
+    //luaopen_math(m_LuaState);
+    //luaopen_debug(m_LuaState);
+    //luaopen_os(m_LuaState);
 	return;	
 }
 
