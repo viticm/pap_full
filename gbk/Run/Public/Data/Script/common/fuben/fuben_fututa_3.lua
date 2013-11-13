@@ -264,7 +264,7 @@ end
 
 function x700103_IsMissionNPC(sceneId, selfId, missionId, NPCId)
 
-	for i, item in x700103_g_MissionNPCName do
+	for i, item in pairs(x700103_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -569,14 +569,14 @@ function x700103_OnCopySceneReady(sceneId, destsceneId)
 	end
 	
 	local tcount = 0;
-	for i, item in x700103_g_FailedObj do
+	for i, item in pairs(x700103_g_FailedObj) do
 		local failedObjId = LuaFnCreateMonster(destsceneId, item.type, item.x, item.z, item.ai, item.aiscript, x700103_g_ScriptId);
 		SetCurCamp(destsceneId, objId, item.camp);
 		LuaFnSetCopySceneData_Param(destsceneId, x700103_CSP_FAILEDOBJ_1 + tcount, failedObjId);
 		tcount = tcount + 1;
 	end
 	
-	for i, item in x700103_g_NeedKillMonster do
+	for i, item in pairs(x700103_g_NeedKillMonster) do
 		LuaFnCreateMonster(destsceneId, item.type, item.x, item.z, item.ai, item.aiscript, -1);
 	end
 	
@@ -813,7 +813,7 @@ function x700103_OnCopySceneTimer(sceneId, nowTime)
 			LuaFnSetCopySceneData_Param(sceneId, x700103_CSP_ISCLOSING, 1);
 		end	
 		
-		for i, item in x700103_g_BossMonster do
+		for i, item in pairs(x700103_g_BossMonster) do
 			if item.time == nowTickCount then
 				local tindex = random(1, 3);
 				local tpos = x700103_g_BossRandomPosition[tindex];

@@ -469,7 +469,7 @@ function x300303_MissionCountByLevelSec(sceneId, selfId, NPCId, levelSec)
 		return -1;
 	end
 	local k = 0
-	for i ,item in x300303_g_Mission do
+	for i ,item in pairs(x300303_g_Mission) do
 		if(item.levelsection == levelSec) then
 			k = k+1;
 		end
@@ -486,13 +486,13 @@ function x300303_GetRandomMissionHash(sceneId, selfId, NPCId, levelSec)
 		return -1;
 	end
 	local k = 0
-	for i ,item in x300303_g_Mission do
+	for i ,item in pairs(x300303_g_Mission) do
 		if(item.levelsection == levelSec) then
 			k = k+1;
 		end
 	end
 	local randomNum = random(1,k)
-	for i ,item in x300303_g_Mission do
+	for i ,item in pairs(x300303_g_Mission) do
 		if(item.levelsection == levelSec) then
 			randomNum = randomNum -1;
 			if (randomNum == 0) then
@@ -507,37 +507,37 @@ end
 function x300303_GetStartByHash(sceneId, selfId, NPCId, missionHash)
 	local missionKind = x300303_GetMissionKind(sceneId, selfId,missionHash)
 	if missionKind == "teshushaguai" then
-		for i ,item in x300303_g_Mission_teshushaguai do
+		for i ,item in pairs(x300303_g_Mission_teshushaguai) do
 			if(item.hash == missionHash) then
 				return item.Start;
 			end
 		end
 	elseif missionKind == "songxin" then
-		for i ,item in x300303_g_Mission_Songxin do
+		for i ,item in pairs(x300303_g_Mission_Songxin pairs(do
 			if(item.hash == missionHash) then
 				return item.Start;
 			end
 		end
 	elseif missionKind == "xunwu" then
-		for i ,item in x300303_g_Mission_xunwu do
+		for i ,item in pairs(x300303_g_Mission_xunwu) do
 			if(item.hash == missionHash) then
 				return item.Start;
 			end
 		end	
 	elseif missionKind == "gaojixunwu" then
-		for i ,item in x300303_g_Mission_gaojixunwu do
+		for i ,item in pairs(x300303_g_Mission_gaojixunwu) do
 			if(item.hash == missionHash) then
 				return item.Start;
 			end
 		end	
 	elseif missionKind == "dingdianshiyongwupin" then
-		for i ,item in x300303_g_Mission_dingdianshiyongwupin do
+		for i ,item in pairs(x300303_g_Mission_dingdianshiyongwupin pairs(do
 			if(item.hash == missionHash) then
 				return item.Start;
 			end
 		end	
 	elseif missionKind == "shoujishengzhangdian" then
-		for i ,item in x300303_g_Mission_shoujishengzhangdian do
+		for i ,item in pairs(x300303_g_Mission_shoujishengzhangdian) do
 			if(item.hash == missionHash) then
 				return item.Start;
 			end
@@ -550,37 +550,37 @@ end
 function x300303_GetContinueByHash(sceneId, selfId, NPCId, missionHash)
 	local missionKind = x300303_GetMissionKind(sceneId, selfId, missionHash)
 	if missionKind == "teshushaguai" then
-		for i ,item in x300303_g_Mission_teshushaguai do
+		for i ,item in pairs(x300303_g_Mission_teshushaguai) do
 			if(item.hash == missionHash) then
 				return item.continue;
 			end
 		end
 	elseif missionKind == "songxin" then
-		for i ,item in x300303_g_Mission_Songxin do
+		for i ,item in pairs(x300303_g_Mission_Songxin pairs(do
 			if(item.hash == missionHash) then
 				return item.continue;
 			end
 		end
 	elseif missionKind == "xunwu" then
-		for i ,item in x300303_g_Mission_xunwu do
+		for i ,item in pairs(x300303_g_Mission_xunwu) do
 			if(item.hash == missionHash) then
 				return item.continue;
 			end
 		end	
 	elseif missionKind == "gaojixunwu" then
-		for i ,item in x300303_g_Mission_gaojixunwu do
+		for i ,item in pairs(x300303_g_Mission_gaojixunwu) do
 			if(item.hash == missionHash) then
 				return item.continue;
 			end
 		end	
 	elseif missionKind == "dingdianshiyongwupin" then
-		for i ,item in x300303_g_Mission_dingdianshiyongwupin do
+		for i ,item in pairs(x300303_g_Mission_dingdianshiyongwupin pairs(do
 			if(item.hash == missionHash) then
 				return item.continue;
 			end
 		end	
 	elseif missionKind == "shoujishengzhangdian" then
-		for i ,item in x300303_g_Mission_shoujishengzhangdian do
+		for i ,item in pairs(x300303_g_Mission_shoujishengzhangdian) do
 			if(item.hash == missionHash) then
 				return item.continue;
 			end
@@ -591,7 +591,7 @@ end
 --GetContinueXByHash
 -------------------------
 function x300303_GetContinueXByHash(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_Songxin do
+	for i ,item in pairs(x300303_g_Mission_Songxin pairs(do
 		if(item.hash == missionHash) then
 			return item.continueX;
 		end
@@ -601,7 +601,7 @@ end
 --GetEndXByHash
 -------------------------
 function x300303_GetEndXByHash(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_Songxin do
+	for i ,item in pairs(x300303_g_Mission_Songxin pairs(do
 		if(item.hash == missionHash) then
 			return item.endstrX;
 		end
@@ -613,37 +613,37 @@ end
 function x300303_GetEndByHash(sceneId, selfId, NPCId, missionHash)
 	local missionKind = x300303_GetMissionKind(sceneId, selfId,missionHash)
 	if missionKind == "teshushaguai" then
-		for i ,item in x300303_g_Mission_teshushaguai do
+		for i ,item in pairs(x300303_g_Mission_teshushaguai) do
 			if(item.hash == missionHash) then
 				return item.endstr;
 			end
 		end
 	elseif missionKind == "songxin" then
-		for i ,item in x300303_g_Mission_Songxin do
+		for i ,item in pairs(x300303_g_Mission_Songxin pairs(do
 			if(item.hash == missionHash) then
 				return item.endstr;
 			end
 		end
 	elseif missionKind == "xunwu" then
-		for i ,item in x300303_g_Mission_xunwu do
+		for i ,item in pairs(x300303_g_Mission_xunwu) do
 			if(item.hash == missionHash) then
 				return item.endstr;
 			end
 		end	
 	elseif missionKind == "gaojixunwu" then
-		for i ,item in x300303_g_Mission_gaojixunwu do
+		for i ,item in pairs(x300303_g_Mission_gaojixunwu) do
 			if(item.hash == missionHash) then
 				return item.endstr;
 			end
 		end	
 	elseif missionKind == "dingdianshiyongwupin" then
-		for i ,item in x300303_g_Mission_dingdianshiyongwupin do
+		for i ,item in pairs(x300303_g_Mission_dingdianshiyongwupin pairs(do
 			if(item.hash == missionHash) then
 				return item.endstr;
 			end
 		end	
 	elseif missionKind == "shoujishengzhangdian" then
-		for i ,item in x300303_g_Mission_shoujishengzhangdian do
+		for i ,item in pairs(x300303_g_Mission_shoujishengzhangdian) do
 			if(item.hash == missionHash) then
 				return item.endstr;
 			end
@@ -673,7 +673,7 @@ end
 --GetMissionKind
 -------------------------
 function x300303_GetMissionKind(sceneId, selfId,missionHash)
-	for i ,item in x300303_g_Mission do
+	for i ,item in pairs(x300303_g_Mission) do
 		if(item.hash == missionHash) then
 			return item.missionKind;
 		end
@@ -683,7 +683,7 @@ end
 --MissionNPCName
 -------------------------
 function x300303_GetMissionNPCName(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_Songxin do
+	for i ,item in pairs(x300303_g_Mission_Songxin pairs(do
 		if (item.hash == missionHash) then
 			return item.NPC_Name;
 		end
@@ -693,7 +693,7 @@ end
 --GetXunwuItemID
 -------------------------
 function x300303_GetXunwuItemID(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_xunwu do
+	for i ,item in pairs(x300303_g_Mission_xunwu) do
 		if (item.hash == missionHash) then
 			return item.item_ID;
 		end
@@ -703,7 +703,7 @@ end
 --GetXunwuItemName
 -------------------------
 function x300303_GetXunwuItemName(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_xunwu do
+	for i ,item in pairs(x300303_g_Mission_xunwu) do
 		if (item.hash == missionHash) then
 			return item.item_Name;
 		end
@@ -713,7 +713,7 @@ end
 --GetXunwuItemNum
 -------------------------
 function x300303_GetXunwuItemNum(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_xunwu do
+	for i ,item in pairs(x300303_g_Mission_xunwu) do
 		if (item.hash == missionHash) then
 			return item.item_Num;
 		end
@@ -723,7 +723,7 @@ end
 --GetGaojiItemID
 -------------------------
 function x300303_GetGaojiItemID(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_gaojixunwu do
+	for i ,item in pairs(x300303_g_Mission_gaojixunwu) do
 		if (item.hash == missionHash) then
 			return item.item_ID;
 		end
@@ -733,7 +733,7 @@ end
 --GetGaojiItemName
 -------------------------
 function x300303_GetGaojiItemName(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_gaojixunwu do
+	for i ,item in pairs(x300303_g_Mission_gaojixunwu) do
 		if (item.hash == missionHash) then
 			return item.item_Name;
 		end
@@ -743,7 +743,7 @@ end
 --GetGaojiItemNum
 -------------------------
 function x300303_GetGaojiItemNum(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_gaojixunwu do
+	for i ,item in pairs(x300303_g_Mission_gaojixunwu) do
 		if (item.hash == missionHash) then
 			return item.item_Num;
 		end
@@ -753,7 +753,7 @@ end
 --GetshoujiItemID
 -------------------------
 function x300303_GetShoujiItemID(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_shoujishengzhangdian do
+	for i ,item in pairs(x300303_g_Mission_shoujishengzhangdian) do
 		if (item.hash == missionHash) then
 			return item.item_ID;
 		end
@@ -763,7 +763,7 @@ end
 --GetshoujiItemName
 -------------------------
 function x300303_GetShoujiItemName(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_shoujishengzhangdian do
+	for i ,item in pairs(x300303_g_Mission_shoujishengzhangdian) do
 		if (item.hash == missionHash) then
 			return item.item_Name;
 		end
@@ -773,7 +773,7 @@ end
 --GetshoujiItemNum
 -------------------------
 function x300303_GetShoujiItemNum(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_shoujishengzhangdian do
+	for i ,item in pairs(x300303_g_Mission_shoujishengzhangdian) do
 		if (item.hash == missionHash) then
 			return item.item_Num;
 		end
@@ -783,7 +783,7 @@ end
 --GetDingdianItemID
 -------------------------
 function x300303_GetDingdianItemID(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_dingdianshiyongwupin do
+	for i ,item in pairs(x300303_g_Mission_dingdianshiyongwupin pairs(do
 		if (item.hash == missionHash) then
 			return item.item_ID;
 		end
@@ -793,7 +793,7 @@ end
 --GetDingdiantemName
 -------------------------
 function x300303_GetDingdianItemName(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_dingdianshiyongwupin do
+	for i ,item in pairs(x300303_g_Mission_dingdianshiyongwupin pairs(do
 		if (item.hash == missionHash) then
 			return item.item_Name;
 		end
@@ -803,7 +803,7 @@ end
 --GetDingdianItemNum
 -------------------------
 function x300303_GetDingdianItemNum(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_dingdianshiyongwupin do
+	for i ,item in pairs(x300303_g_Mission_dingdianshiyongwupin pairs(do
 		if (item.hash == missionHash) then
 			return item.item_Num;
 		end
@@ -813,7 +813,7 @@ end
 --GetSongxinItemID
 -------------------------
 function x300303_GetSongxinItemID(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_Songxin do
+	for i ,item in pairs(x300303_g_Mission_Songxin pairs(do
 		if (item.hash == missionHash) then
 			return item.item_ID;
 		end
@@ -823,7 +823,7 @@ end
 --GetSongxintemName
 -------------------------
 function x300303_GetSongxinItemName(sceneId, selfId, NPCId, missionHash)
-	for i ,item in x300303_g_Mission_Songxin do
+	for i ,item in pairs(x300303_g_Mission_Songxin pairs(do
 		if (item.hash == missionHash) then
 			return item.item_Name;
 		end

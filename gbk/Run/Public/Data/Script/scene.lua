@@ -742,7 +742,7 @@ function x888888_PrintInfo(sceneId, MissionName, Info, MissionTarget, DemandItem
 	AddText(sceneId, MissionTarget)
 	
 	if DemandItems ~= nil then
-		for i, item in DemandItems do
+		for i, item in pairs(DemandItems) do
 			AddItemDemand(sceneId, item.id, item.num)
 		end
 	end
@@ -751,17 +751,17 @@ function x888888_PrintInfo(sceneId, MissionName, Info, MissionTarget, DemandItem
 		AddMoneyBonus(sceneId, MoneyBonus)
 	end
 	if ItemBonus ~= nil then
-		for i, item in ItemBonus do
+		for i, item in pairs(ItemBonus) do
 			AddItemBonus(sceneId, item.id, item.num)
 		end
 	end
 	if RandItemBonus ~= nil then
-		for i, item in RandItemBonus do
+		for i, item in pairs(RandItemBonus) do
 			AddRandItemBonus(sceneId, item.id, item.num)
 		end
 	end
 	if RadioItemBonus ~= nil then
-		for i, item in RadioItemBonus do
+		for i, item in pairs(RadioItemBonus) do
 			AddRadioItemBonus(sceneId, item.id, item.num)
 		end
 	end
@@ -783,7 +783,7 @@ end
 function x888888_CheckHaveItems(sceneId, selfId, Items)
 
 	if Items ~= nil then
-		for i, item in Items do
+		for i, item in pairs(Items) do
 			return HaveItem(sceneId, selfId, item.id)
 		end
 	end
@@ -817,7 +817,7 @@ function x888888_DeleteAndAddItem(sceneId, selfId, ItemToDelete, ItemToAdd, Norm
 	if ItemToAdd ~= nil then
 		BeginAddItem(sceneId)
 		--加入道具至列表
-		for i, item in ItemToAdd do
+		for i, item in pairs(ItemToAdd) do
 			AddItem(sceneId,item.id, item.num)
 		end
 	
@@ -839,7 +839,7 @@ function x888888_DeleteAndAddItem(sceneId, selfId, ItemToDelete, ItemToAdd, Norm
 	if ItemToDelete ~= nil then
 	
 		--从人物身上删除（之前应判断是否含有道具）
-		for i, item in ItemToDelete do
+		for i, item in pairs(ItemToDelete) do
 			DelItem(sceneId, selfId, item.id, item.num)
 		end
 		

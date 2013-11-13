@@ -77,7 +77,7 @@ function x888889_Mail_Repudiate( sceneId, selfId, param0, param1, param2, param3
 
 	--É¾³ý»éÒö¼¼ÄÜ
 	Skills = {260, 261, 262, 263, 264, 265, 266, 267, 268 }
-	for i, skillId in Skills do
+	for i, skillId in pairs(Skills) do
 		DelSkill( sceneId, selfId, skillId )
 	end
 

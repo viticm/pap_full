@@ -58,7 +58,7 @@ function x910009_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ĞĞ´
 		BeginEvent(sceneId)
 			AddText(sceneId,x910009_g_MissionName)
 			AddText(sceneId,x910009_g_ContinueInfo)
-			for i, item in x910009_g_DemandItem do
+			for i, item in pairs(x910009_g_DemandItem) do
 				AddItemDemand( sceneId, item.id, item.num )
 			end
 		EndEvent( )
@@ -73,10 +73,10 @@ function x910009_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ĞĞ´
 			AddText(sceneId,"#{M_MUBIAO}")
 			AddText(sceneId,x910009_g_MissionTarget)
 			--AddMoneyBonus( sceneId, x910009_g_MoneyBonus )
-			--for i, item in x910009_g_ItemBonus do
+			--for i, item in pairs(x910009_g_ItemBonus) do
 			--	AddItemBonus( sceneId, item.id, item.num )
 			--end
-			for i, item in x910009_g_RadioItemBonus do
+			for i, item in pairs(x910009_g_RadioItemBonus) do
 				AddRadioItemBonus( sceneId, item.id, item.num )
 			end
 		EndEvent( )
@@ -143,10 +143,10 @@ function x910009_OnContinue( sceneId, selfId, targetId )
 		AddText(sceneId,x910009_g_MissionName)
 		AddText(sceneId,x910009_g_MissionComplete)
 		--AddMoneyBonus( sceneId, x910009_g_MoneyBonus )
-		--for i, item in x910009_g_ItemBonus do
+		--for i, item in pairs(x910009_g_ItemBonus) do
 		--	AddItemBonus( sceneId, item.id, item.num )
 		--end
-		for i, item in x910009_g_RadioItemBonus do
+		for i, item in pairs(x910009_g_RadioItemBonus) do
 			AddRadioItemBonus( sceneId, item.id, item.num )
 		end
     EndEvent( )
@@ -173,10 +173,10 @@ end
 function x910009_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 	if x910009_CheckSubmit( sceneId, selfId, selectRadioId ) then
     	BeginAddItem(sceneId)
-			--for i, item in x910009_g_ItemBonus do
+			--for i, item in pairs(x910009_g_ItemBonus) do
 			--	AddItem( sceneId,item.id, item.num )
 			--end
-			for i, item in x910009_g_RadioItemBonus do
+			for i, item in pairs(x910009_g_RadioItemBonus) do
 				if item.id == selectRadioId then
 					AddItem( sceneId,item.id, item.num )
 				end
@@ -186,7 +186,7 @@ function x910009_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		if ret > 0 then
 			--AddMoney(sceneId,selfId,x910009_g_MoneyBonus );
 			--¿Û³ıÈÎÎñÎïÆ·
-			for i, item in x910009_g_DemandItem do
+			for i, item in pairs(x910009_g_DemandItem) do
 				DelItem( sceneId, selfId, item.id, item.num )
 			end
 			

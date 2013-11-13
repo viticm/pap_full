@@ -83,8 +83,8 @@ x920001_MP_ISCOMPLETE = 7
 --根据类型将任务需求放入x920001_g_Quest队列
 function  x920001_g_QuestOrder(QuestType)
 	local count = 0
-	for i, QuestLabel in QuestType do
-		for j, QuestInfo in QuestLabel do
+	for i, QuestLabel in pairs(QuestType) do
+		for j, QuestInfo in pairs(QuestLabel) do
 			count = count + 1
 			QuestInfo.order = count
 			x920001_g_Quest[count] = QuestInfo
@@ -202,7 +202,7 @@ function	x920001_ShowQuestInfo( sceneId, selfId, targetId ,Done )
 	
 	--任务未完成
 	if Done == 2 then 
-		for i, Info in x920001_g_ContinueInfo do
+		for i, Info in pairs(x920001_g_ContinueInfo) do
 			AddText(sceneId,Info)
 		end
 	--任务完成
@@ -210,7 +210,7 @@ function	x920001_ShowQuestInfo( sceneId, selfId, targetId ,Done )
 		AddText( sceneId, x920001_g_MissionComplete )
 	--接任务时
 	elseif( Done == 0 ) then
-		for i, Info in x920001_g_MissionInfo do
+		for i, Info in pairs(x920001_g_MissionInfo) do
 			AddText(sceneId,Info)
 		end
 	end
@@ -228,14 +228,14 @@ function	x920001_ShowQuestInfo( sceneId, selfId, targetId ,Done )
 	
 	--添加奖励物品
 	if x920001_g_ItemBonus ~= nil then
-		for i, item in x920001_g_ItemBonus do
+		for i, item in pairs(x920001_g_ItemBonus) do
 			AddItemBonus( sceneId, item.id, item.num )
 		end
 	end		
 	
 	--添加可选奖励道具
 	if x920001_g_RadioItemBonus ~= nil then
-		for i, item in x920001_g_RadioItemBonus do
+		for i, item in pairs(x920001_g_RadioItemBonus) do
 			AddRadioItemBonus( sceneId, item.id, item.num )
 		end
 	end
@@ -250,7 +250,7 @@ function  x920001_CheckAccept( sceneId, selfId, targetId )
 			if	x920001_g_MisIdPre == nil then
 				return	1
 			else
-				for i, questpre in x920001_g_MisIdPre do
+				for i, questpre in pairs(x920001_g_MisIdPre) do
 					if IsMissionHaveDone(sceneId,selfId,questpre) == 0 then
 						 BeginEvent(sceneId)			
        			--AddText( sceneId, "#Y"..x920001_g_MissionName )
@@ -288,7 +288,7 @@ function	x920001_ShowQuestAim( sceneId, selfId, targetId, Done )
 		misIndex = GetMissionIndexByID(sceneId,selfId,x920001_g_MissionId)
 		
 		--显示每个目标的完成情况
-		for i, QuestInfo in x920001_g_Quest do
+		for i, QuestInfo in pairs(x920001_g_Quest) do
 
 			if QuestInfo.type == "MONSTER_KILL" or QuestInfo.type == "COLLECT_SPECIAL"  or QuestInfo.type == "MONSTER_ITEM" then
 				if Done == 1 then
@@ -322,7 +322,7 @@ function	x920001_ShowQuestAim( sceneId, selfId, targetId, Done )
 			end
 			
 		end
-		--for i, QuestInfo in x920001_g_Quest do
+		--for i, QuestInfo in pairs(x920001_g_Quest) do
 	end
 	--if x920001_g_Quest ==nil then
 
@@ -382,7 +382,7 @@ function x920001_OnAccept( sceneId, selfId )
 	end
 	
 	local DoKill, DoArea, DoItem = 0, 0, 0
-	for i, QuestInfo in x920001_g_Quest do
+	for i, QuestInfo in pairs(x920001_g_Quest) do
 		if QuestInfo.type == "MONSTER_KILL" then
 			DoKill = 1
 		elseif (QuestInfo.type == "DELIVERY") then
@@ -454,7 +454,7 @@ function x920001_CheckSubmit( sceneId, selfId )
 	local misIndex = GetMissionIndexByID( sceneId, selfId, x920001_g_MissionId )	
 
 	--检查每一个任务需求是否都已完成
-	for i, QuestInfo in x920001_g_Quest do		
+	for i, QuestInfo in pairs(x920001_g_Quest) do		
 		--local Many = GetMissionParam( sceneId, selfId, misIndex, QuestInfo.order-1 )
 		local Many = GetMissionParam( sceneId, selfId, misIndex, 1 )
 		
@@ -495,14 +495,14 @@ function x920001_OnSubmit( sceneId, selfId, targetId, selectRadioId )
 		if ( getn( x920001_g_ItemBonus ) == 0 ) and ( getn( x920001_g_RadioItemBonus ) == 0 ) then
 			givebonus = 1
 		else
-			for i, item in x920001_g_ItemBonus do
+			for i, item in pairs(x920001_g_ItemBonus) do
 				if item.id > 0 and item.num > 0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
 				end
 			end
 			
-			for i, item in x920001_g_RadioItemBonus do
+			for i, item in pairs(x920001_g_RadioItemBonus) do
 				if item.id == selectRadioId and item.num > 0 and item.id > 0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
@@ -573,7 +573,7 @@ x920001_g_QuestOrder( x920001_g_QuestType )
 	
 	local QuestPlace = 0	--子任务对应在之前SetMissionByIndex(sceneId,selfId,misIndex,j-1,0)时存在的位置,==j-1
 	
-	for i, QuestInfo in x920001_g_Quest do
+	for i, QuestInfo in pairs(x920001_g_Quest) do
 	
 		--屏幕中间提示杀死几个怪，并改变任务数据
 		if QuestInfo.type ==  "MONSTER_KILL" then	
@@ -608,7 +608,7 @@ x920001_g_QuestOrder( x920001_g_QuestType )
 		--if QuestInfo.type ==  "MONSTER_KILL" then	
 		
 	end
-	--for i, QuestInfo in x920001_g_Quest do
+	--for i, QuestInfo in pairs(x920001_g_Quest) do
 	
 end
 --**********************************--道具改变--**********************************
@@ -618,7 +618,7 @@ function x920001_OnItemChanged( sceneId, selfId, itemdataId )
 	
 	local misIndex = GetMissionIndexByID( sceneId, selfId, x920001_g_MissionId )
 	
-	for i, QuestInfo in x920001_g_Quest do
+	for i, QuestInfo in pairs(x920001_g_Quest) do
 	
 		if QuestInfo.type == "COLLECT_SPECIAL" or QuestInfo.type == "COLLECT" or QuestInfo.type == "MONSTER_ITEM" then
 		
@@ -639,6 +639,6 @@ function x920001_OnItemChanged( sceneId, selfId, itemdataId )
 		end
 		--if QuestInfo.type == "COLLECT_SPECIAL" or QuestInfo.type == "COLLECT" or ...
 	end
-	--for i, QuestInfo in x920001_g_Quest do
+	--for i, QuestInfo in pairs(x920001_g_Quest) do
 	
 end

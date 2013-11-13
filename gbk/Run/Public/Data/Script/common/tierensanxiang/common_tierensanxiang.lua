@@ -95,7 +95,7 @@ x300200_MP_AIMNPC				= 0
 
 function x300200_IsMissionNPC(sceneId, selfId, missionId, NPCId)
 
-	for i, item in x300200_g_MissionNPCName do
+	for i, item in pairs(x300200_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -118,7 +118,7 @@ function x300200_IsAimNPC(sceneId, selfId, missionId, NPCId)
 	local misIndex = GetMissionIndexByID(sceneId, selfId, x300200_g_MissionId);
 	local aimNPCHash = GetMissionParam(sceneId, selfId, misIndex, x300200_MP_AIMNPC);
 
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if item.scene == sceneId then
 			if item.hash == aimNPCHash then
 				if GetName(sceneId, NPCId) == item.name then
@@ -141,7 +141,7 @@ end
 function x300200_GetAimNPCNum(sceneId, selfId, aimNPCHash)
 
 	local num = 0;
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if item.scene == sceneId then
 			if item.hash == aimNPCHash then
 				return num;
@@ -306,7 +306,7 @@ function x300200_GetNextAimNPCHash(sceneId, selfId, NPCId)
 	local aimNPCHash = GetMissionParam(sceneId, selfId, misIndex, x300200_MP_AIMNPC);
 	
 	local flag = 0;
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if flag > 0 then
 			return item.hash;
 		end
@@ -327,7 +327,7 @@ end
 
 function x300200_GetMissionNPCName(sceneId, selfId)
 
-	for i, item in x300200_g_MissionNPCName do
+	for i, item in pairs(x300200_g_MissionNPCName) do
 		if item.scene == sceneId then
 			return item.name;
 		end
@@ -345,7 +345,7 @@ end
 
 function x300200_GetAimNPCName(sceneId, selfId, aimNPCHash)
 
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if item.hash == aimNPCHash then
 			return item.name;
 		end
@@ -363,7 +363,7 @@ end
 
 function x300200_GetAimNPCBuffId(sceneId, selfId, aimNPCHash)
 
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if item.hash == aimNPCHash then
 			return item.buffId;
 		end
@@ -405,7 +405,7 @@ function x300200_DisplayFindNext(sceneId, selfId, NPCId, aimNPCHash)
 	
 	local flag = -1;
 	local name;
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if flag == 2 then
 			flag = 1;
 		end
@@ -455,7 +455,7 @@ function x300200_OnAccept(sceneId, selfId, NPCId)
 	AddMission(sceneId, selfId, x300200_g_MissionId, x300200_g_ScriptId, 1, 0, 0);
 	local misIndex = GetMissionIndexByID(sceneId, selfId, x300200_g_MissionId);
 	local nowNPCName = GetName(sceneId, NPCId);
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if item.name == nowNPCName then
 			SetMissionByIndex(sceneId, selfId, misIndex, x300200_MP_AIMNPC, item.hash);
 		end
@@ -506,7 +506,7 @@ end
 
 function x300200_CauseBuff(sceneId, selfId, buffId)
 
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if item.buffId > 0 then
 			x300200_CancelBuff(sceneId, selfId, item.buffId);
 		end
@@ -566,7 +566,7 @@ end
 function x300200_ChangeToNext(sceneId, selfId, NPCId, aimNPCHash)
 
 	local flag = 0;
-	for i, item in x300200_g_MissionAimNPCName do
+	for i, item in pairs(x300200_g_MissionAimNPCName) do
 		if flag == 1 then
 			if item.hash ~= -1 then
 				return item.hash;

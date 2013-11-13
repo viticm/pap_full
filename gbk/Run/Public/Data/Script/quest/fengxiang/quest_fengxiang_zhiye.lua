@@ -62,7 +62,7 @@ function x910015_UpdateEventList( sceneId, selfId,targetId )
 	BeginEvent(sceneId)
 	local  PlayerName=GetName(sceneId,selfId)
 	AddText(sceneId,"请选择你要的职业")
-	for i, eventId in x910015_g_eventList do
+	for i, eventId in pairs(x910015_g_eventList) do
 		CallScriptFunction( eventId, "OnEnumerate",sceneId, selfId, targetId )
 	end
 	EndEvent(sceneId)
@@ -70,7 +70,7 @@ function x910015_UpdateEventList( sceneId, selfId,targetId )
 end
 
 function x910015_OnEventRequest( sceneId, selfId, targetId, eventId )
-	for i, findId in x910015_g_eventList do
+	for i, findId in pairs(x910015_g_eventList) do
 		if eventId == findId then
 			CallScriptFunction( eventId, "OnDefaultEvent",sceneId, selfId, targetId )
 			return
@@ -92,7 +92,7 @@ function x910015_OnEnumerateZhiye( sceneId, selfId, targetId )
 	BeginEvent(sceneId)
 	local  PlayerName=GetName(sceneId,selfId)
 	AddText(sceneId,"现在有三个职业供你选择。你也可以随时来找我更换职业。")
-	for i, eventId in x910015_g_eventList do
+	for i, eventId in pairs(x910015_g_eventList) do
 		CallScriptFunction( eventId, "OnEnumerate",sceneId, selfId, targetId )
 	end
 	EndEvent(sceneId)
@@ -138,10 +138,10 @@ function x910015_OnContinue( sceneId, selfId, targetId )
 		AddText(sceneId,x910015_g_MissionName)
 		AddText(sceneId,x910015_g_MissionComplete)
 		AddMoneyBonus( sceneId, x910015_g_MoneyBonus )
-		for i, item in x910015_g_ItemBonus do
+		for i, item in pairs(x910015_g_ItemBonus) do
 			AddItemBonus( sceneId, item.id, item.num )
 		end
-		for i, item in x910015_g_RadioItemBonus do
+		for i, item in pairs(x910015_g_RadioItemBonus) do
 			AddRadioItemBonus( sceneId, item.id, item.num )
 		end
     EndEvent( )
@@ -166,10 +166,10 @@ end
 function x910015_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 	if x910015_CheckSubmit( sceneId, selfId, selectRadioId ) then
     	BeginAddItem(sceneId)
-			for i, item in x910015_g_ItemBonus do
+			for i, item in pairs(x910015_g_ItemBonus) do
 				AddItem( sceneId,item.id, item.num )
 			end
-			for i, item in x910015_g_RadioItemBonus do
+			for i, item in pairs(x910015_g_RadioItemBonus) do
 				if item.id == selectRadioId then
 					AddItem( sceneId,item.id, item.num )
 				end
@@ -179,7 +179,7 @@ function x910015_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		if ret > 0 then
 			AddMoney(sceneId,selfId,x910015_g_MoneyBonus );
 			--扣除任务物品
-			--for i, item in g_DemandItem do
+			--for i, item in pairs(g_DemandItem) do
 			--	DelItem( sceneId, selfId, item.id, item.num )
 			--end
 			ret = DelMission( sceneId, selfId, x910015_g_MissionId )

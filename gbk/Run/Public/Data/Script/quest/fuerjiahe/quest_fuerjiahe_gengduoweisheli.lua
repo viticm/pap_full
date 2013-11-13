@@ -164,7 +164,7 @@ function x223010_OnAbandon(sceneId, selfId)
 
 	--删除玩家任务列表中对应的任务
 	DelMission(sceneId, selfId, x223010_g_MissionId)
-	for i, item in x223010_g_DemandItem do
+	for i, item in pairs(x223010_g_DemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 	end
 
@@ -204,13 +204,13 @@ function x223010_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		MissionCom(sceneId, selfId, x223010_g_MissionId)
 		AddExp(sceneId, selfId, x223010_g_ExpBonus)
 		AddMoney(sceneId, selfId, x223010_g_MoneyBonus)
-		for i, item in x223010_g_RadioItemBonus do
+		for i, item in pairs(x223010_g_RadioItemBonus) do
 	        if item.id == selectRadioId then
 	        item={{selectRadioID, 1}}
 	        end
 	        end
 
-		for i, item in x223010_g_DemandItem do
+		for i, item in pairs(x223010_g_DemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 		end
 		CallScriptFunction( x223010_g_ScriptIdNext.ScriptId, "OnDefaultEvent",sceneId, selfId, targetId )

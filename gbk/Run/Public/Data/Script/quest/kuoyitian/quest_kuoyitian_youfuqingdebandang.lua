@@ -59,14 +59,14 @@ function x214011_OnDefaultEvent(sceneId, selfId, targetId)	--µ„ª˜∏√»ŒŒÒ∫Û÷¥––¥ÀΩ
                      AddText(sceneId,"#Y"..x214011_g_MissionName)
 		     AddText(sceneId,x214011_g_MissionComplete)
 		     AddText(sceneId,"#Y–Ë“™ŒÔ∆∑#W") 
-		     --for i, item in x214011_g_DemandItem do  
+		     --for i, item in pairs(x214011_g_DemandItem) do  
 		     --AddItemBonus(sceneId, item.id, item.num)
 		     --end
 		     AddMoneyBonus(sceneId, x214011_g_MoneyBonus)
-		     for i, item in x214011_g_ItemBonus do
+		     for i, item in pairs(x214011_g_ItemBonus) do
 	             	AddItemBonus(sceneId, item.id, item.num)
 	             end
-		     for i, item in x214011_g_RadioItemBonus do
+		     for i, item in pairs(x214011_g_RadioItemBonus) do
 	            	 AddRadioItemBonus(sceneId, item.id, item.num)
 	             end
 		     EndEvent()
@@ -82,10 +82,10 @@ function x214011_OnDefaultEvent(sceneId, selfId, targetId)	--µ„ª˜∏√»ŒŒÒ∫Û÷¥––¥ÀΩ
 		AddText(sceneId,"#Y»ŒŒÒƒø±Í#W") 
 		AddText(sceneId,x214011_g_MissionTarget) 
 		AddMoneyBonus(sceneId, x214011_g_MoneyBonus)	
-		for i, item in x214011_g_ItemBonus do
+		for i, item in pairs(x214011_g_ItemBonus) do
 	             	AddItemBonus(sceneId, item.id, item.num)
 	        end
-		for i, item in x214011_g_RadioItemBonus do
+		for i, item in pairs(x214011_g_RadioItemBonus) do
 	            	 AddRadioItemBonus(sceneId, item.id, item.num)
 	        end	
 		EndEvent()
@@ -178,7 +178,7 @@ function x214011_OnAbandon(sceneId, selfId)
 
 	--…æ≥˝ÕÊº“»ŒŒÒ¡–±Ì÷–∂‘”¶µƒ»ŒŒÒ
 	DelMission(sceneId, selfId, x214011_g_MissionId)
-	for i, item in x214011_g_DemandItem do
+	for i, item in pairs(x214011_g_DemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 	end
 
@@ -212,10 +212,10 @@ end
 function x214011_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 
 		BeginAddItem(sceneId)                                                    
-			for i, item in x214011_g_ItemBonus do                    
+			for i, item in pairs(x214011_g_ItemBonus) do                    
 				AddItem( sceneId,item.id, item.num )             
 			end                                                      
-			for i, item in x214011_g_RadioItemBonus do               
+			for i, item in pairs(x214011_g_RadioItemBonus) do               
 				if item.id == selectRadioId then                 
 					AddItem( sceneId,item.id, item.num )     
 				end                                              

@@ -292,5 +292,5 @@ LUA_API void lua_outoutmsg(const char * szoutmsg)
 
 LUA_API void lua_execute(lua_State *L)
 {
-    lua_call(L, 0, LUA_MULTRET);  /* call main */
+    lua_pcall(L, 0, LUA_MULTRET, 0);  /* call main */
 }

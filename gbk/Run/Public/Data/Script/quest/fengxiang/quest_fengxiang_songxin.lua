@@ -122,7 +122,7 @@ function x910010_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			else
 				AddText(sceneId,x910010_g_TargetContinueInfo)
 			end
-			--for i, item in g_DemandItem do
+			--for i, item in pairs(g_DemandItem) do
 
 			--	AddItemDemand( sceneId, item.id, item.num )
 
@@ -152,13 +152,13 @@ function x910010_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 
 			--AddMoneyBonus( sceneId, x910010_g_MoneyBonus )
 
-			for i, item in x910010_g_ItemBonus do
+			for i, item in pairs(x910010_g_ItemBonus) do
 
 				AddItemBonus( sceneId, item.id, item.num )
 
 			end
 
-			--for i, item in x910010_g_RadioItemBonus do
+			--for i, item in pairs(x910010_g_RadioItemBonus) do
 
 				--AddRadioItemBonus( sceneId, item.id, item.num )
 
@@ -284,13 +284,13 @@ function x910010_OnContinue( sceneId, selfId, targetId )
 
 		--AddMoneyBonus( sceneId, x910010_g_MoneyBonus )
 
-		for i, item in x910010_g_ItemBonus do
+		for i, item in pairs(x910010_g_ItemBonus) do
 
 			AddItemBonus( sceneId, item.id, item.num )
 
 		end
 
-		--for i, item in x910010_g_RadioItemBonus do
+		--for i, item in pairs(x910010_g_RadioItemBonus) do
 
 			--AddRadioItemBonus( sceneId, item.id, item.num )
 
@@ -328,13 +328,13 @@ function x910010_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 
     	BeginAddItem(sceneId)
 
-			for i, item in x910010_g_ItemBonus do
+			for i, item in pairs(x910010_g_ItemBonus) do
 
 				AddItem( sceneId,item.id, item.num )
 
 			end
 
-			--for i, item in x910010_g_RadioItemBonus do
+			--for i, item in pairs(x910010_g_RadioItemBonus) do
 
 				--if item.id == selectRadioId then
 
@@ -354,7 +354,7 @@ function x910010_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 
 			--¿Û³ýÈÎÎñÎïÆ·
 
-			--for i, item in g_DemandItem do
+			--for i, item in pairs(g_DemandItem) do
 
 			--	DelItem( sceneId, selfId, item.id, item.num )
 

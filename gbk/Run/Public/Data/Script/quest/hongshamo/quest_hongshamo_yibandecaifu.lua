@@ -58,7 +58,7 @@ function x205011_OnDefaultEvent(sceneId, selfId, targetId)	--µ„ª˜∏√»ŒŒÒ∫Û÷¥––¥ÀΩ
                      AddText(sceneId,"#Y"..x205011_g_MissionName)
 		     AddText(sceneId,x205011_g_MissionComplete)
 		     --AddText(sceneId,"#Y–Ë“™ŒÔ∆∑#W") 
-		     --for i, item in x205011_g_DemandItem do  
+		     --for i, item in pairs(x205011_g_DemandItem) do  
 		     --AddItemBonus(sceneId, item.id, item.num)
 		     --end
 		     AddMoneyBonus(sceneId, x205011_g_MoneyBonus)
@@ -167,7 +167,7 @@ function x205011_OnAbandon(sceneId, selfId)
 
 	--…æ≥˝ÕÊº“»ŒŒÒ¡–±Ì÷–∂‘”¶µƒ»ŒŒÒ
 	DelMission(sceneId, selfId, x205011_g_MissionId)
-	for i, item in x205011_g_DemandItem do
+	for i, item in pairs(x205011_g_DemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 	end
 
@@ -205,13 +205,13 @@ function x205011_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		MissionCom(sceneId, selfId, x205011_g_MissionId)
 		AddExp(sceneId, selfId, x205011_g_ExpBonus)
 		AddMoney(sceneId, selfId, x205011_g_MoneyBonus)
-		for i, item in x205011_g_RadioItemBonus do
+		for i, item in pairs(x205011_g_RadioItemBonus) do
 	        if item.id == selectRadioId then
 	        item={{selectRadioID, 1}}
 	        end
 	        end
 
-		for i, item in x205011_g_DemandItem do
+		for i, item in pairs(x205011_g_DemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 		end
 		CallScriptFunction( x205011_g_ScriptIdNext.ScriptId, "OnDefaultEvent",sceneId, selfId, targetId )

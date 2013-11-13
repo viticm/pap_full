@@ -13,7 +13,7 @@ function x207015_OnDefaultEvent(sceneId, selfId, targetId)
         x207015_g_MissionName2 = format("已经收集黄檀叶   %d/15", LuaFnGetItemCount(sceneId,selfId,12090006)+1 )
         BeginAddItem(sceneId)
 		--加入道具至列表
-		for i, item in x207015_g_MissionItem do
+		for i, item in pairs(x207015_g_MissionItem) do
 		AddItem(sceneId,item.id, item.num)
 		end
                 ret = EndAddItem(sceneId, selfId)

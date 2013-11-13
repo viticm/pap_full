@@ -346,7 +346,7 @@ function	x701601_IsGemFitEquip(sceneId, selfId, GemSerialNum, EquipBagIndex)
 		return 0
 	end
 
-	for i, gem in x701601_g_EquipGemTable[EquipType] do
+	for i, gem in pairs(x701601_g_EquipGemTable[EquipType]) do
 		if gem == GemType then
 			return 1
 		end

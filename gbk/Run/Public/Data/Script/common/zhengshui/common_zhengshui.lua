@@ -89,7 +89,7 @@ x300100_MP_AIMNPC				= 0
 
 function x300100_IsMissionNPC(sceneId, selfId, missionId, NPCId)
 
-	for i, item in x300100_g_MissionNPCName do
+	for i, item in pairs(x300100_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -112,7 +112,7 @@ function x300100_IsAimNPC(sceneId, selfId, missionId, NPCId)
 	local misIndex = GetMissionIndexByID(sceneId, selfId, x300100_g_MissionId);
 	local aimNPCHash = GetMissionParam(sceneId, selfId, misIndex, x300100_MP_AIMNPC);
 
-	for i, item in x300100_g_MissionAimNPCName do
+	for i, item in pairs(x300100_g_MissionAimNPCName) do
 		if item.scene == sceneId then
 			if item.hash == aimNPCHash then
 				if GetName(sceneId, NPCId) == item.name then
@@ -299,7 +299,7 @@ function x300100_GetRandomAimNPCHash(sceneId, selfId, NPCId)
 
 	local numInScene = 0;
 	
-	for i, item in x300100_g_MissionAimNPCName do
+	for i, item in pairs(x300100_g_MissionAimNPCName) do
 		if item.scene == sceneId then
 			numInScene = numInScene + 1;
 		end
@@ -313,7 +313,7 @@ function x300100_GetRandomAimNPCHash(sceneId, selfId, NPCId)
 	
 	numInScene = 0;
 	
-	for i, item in x300100_g_MissionAimNPCName do
+	for i, item in pairs(x300100_g_MissionAimNPCName) do
 		if item.scene <= sceneId then
 			if numInScene == randNum then
 				return item.hash;
@@ -334,7 +334,7 @@ end
 
 function x300100_GetAimNPCName(sceneId, selfId, aimNPCHash)
 
-	for i, item in x300100_g_MissionAimNPCName do
+	for i, item in pairs(x300100_g_MissionAimNPCName) do
 		if item.hash == aimNPCHash then
 			return item.name;
 		end
@@ -354,7 +354,7 @@ function x300100_GetRandomMissionInfo(sceneId, selfId, NPCId)
 
 	local size = 0;
 	
-	for i, item in x300100_g_MissionInfo do
+	for i, item in pairs(x300100_g_MissionInfo) do
 		size = size + 1;
 	end
 	
@@ -377,7 +377,7 @@ function x300100_GetRandomCompleteInfo(sceneId, selfId, NPCId)
 
 	local size = 0;
 	
-	for i, item in x300100_g_MissionCompleteInfo do
+	for i, item in pairs(x300100_g_MissionCompleteInfo) do
 		size = size + 1;
 	end
 	
@@ -398,7 +398,7 @@ end
 -------------------------
 function x300100_GetSceneName(sceneId, selfId, NPCId)
 
-	for i, item in x300100_g_MissionNPCName do
+	for i, item in pairs(x300100_g_MissionNPCName) do
 		if item.scene == sceneId then
 			return item.scenename;
 		end

@@ -26,7 +26,7 @@ function x910012_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			--LuaFnJoinMenpai(sceneId, selfId, targetId, 3)
 			local ret
 			BeginAddItem(sceneId)
-				for i, item in x910012_g_ZhiYeItemBonus1 do
+				for i, item in pairs(x910012_g_ZhiYeItemBonus1) do
 					if i < 3 then
 						AddItem( sceneId,item.id+10000*zhiye-1000, item.num )
 					else
@@ -37,7 +37,7 @@ function x910012_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			if ret > 0 then
 				AddItemListToHuman(sceneId,selfId)
 				BeginAddItem(sceneId)
-					for i, item in x910012_g_ZhiYeItemBonus2 do
+					for i, item in pairs(x910012_g_ZhiYeItemBonus2) do
 						AddItem( sceneId,item.id+10*zhiye-1000, item.num )
 					end
 				ret = EndAddItem(sceneId,selfId)

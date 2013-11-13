@@ -78,8 +78,8 @@ x970001_MP_ISCOMPLETE = 7
 
 function  x970001_g_QuestOrder(QuestType)
 	local count = 0
-	for i, QuestLabel in QuestType do
-		for j, QuestInfo in QuestLabel do
+	for i, QuestLabel in pairs(QuestType) do
+		for j, QuestInfo in pairs(QuestLabel) do
 			count = count + 1
 			QuestInfo.order = count
 			x970001_g_Quest[count] = QuestInfo
@@ -115,7 +115,7 @@ function x970001_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ĞĞ´
     if IsHaveMission(sceneId,selfId,x970001_g_MissionId) > 0 then
 		if (GetName(sceneId,targetId)==x970001_g_NameEnd) then
 			local m = 0
-			for i, QuestInfo in x970001_g_Quest do
+			for i, QuestInfo in pairs(x970001_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
 					if (getn(x970001_g_DELIVERY)==1) and (x970001_g_NameEnd == x970001_g_DELIVERY[1].npc) then	
 						m = 2
@@ -151,7 +151,7 @@ function x970001_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ĞĞ´
 				end
 				if Done == 1 then
 					local misIndex = GetMissionIndexByID(sceneId,selfId,x970001_g_MissionId)
-					for i, QuestInfo in x970001_g_Quest do
+					for i, QuestInfo in pairs(x970001_g_Quest) do
 						if (QuestInfo.type == "DELIVERY") then
 							if (GetName(sceneId,targetId)==QuestInfo.npc)then
 								SetMissionByIndex(sceneId,selfId,misIndex,7,1)
@@ -174,14 +174,14 @@ function x970001_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ĞĞ´
 			end
 		elseif (x970001_g_DELIVERY ~= nil) then
 			local n = 0 
-			for i, QuestInfo in x970001_g_Quest do
+			for i, QuestInfo in pairs(x970001_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
 					n = 1
 					break
 				end
 			end
 			if  n == 1 then
-				for i, DeliveryInfo in x970001_g_DELIVERY do
+				for i, DeliveryInfo in pairs(x970001_g_DELIVERY) do
 					if (GetName(sceneId,targetId)==DeliveryInfo.npc)then
 						if DeliveryInfo.comeitem > 0 and DeliveryInfo.comenum > 0 then
 							BeginAddItem(sceneId)		
@@ -206,7 +206,7 @@ function x970001_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ĞĞ´
 						end
 						if m > 0 then
 							local misIndex = GetMissionIndexByID(sceneId,selfId,x970001_g_MissionId)
-							for i, QuestInfo in x970001_g_Quest do
+							for i, QuestInfo in pairs(x970001_g_Quest) do
 								if QuestInfo.type == "DELIVERY" then
 									if (GetName(sceneId,targetId)==QuestInfo.npc)then
 										SetMissionByIndex(sceneId,selfId,misIndex,7,1)
@@ -252,11 +252,11 @@ function	x970001_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	local DoneEX = Done
 	AddText(sceneId,"#Y"..x970001_g_MissionName)
 	if DoneEX==2 then
-		for i, Info in x970001_g_ContinueInfo do
+		for i, Info in pairs(x970001_g_ContinueInfo) do
 			AddText(sceneId,Info)
 		end
 	else
-		for i, Info in x970001_g_MissionInfo do
+		for i, Info in pairs(x970001_g_MissionInfo) do
 			AddText(sceneId,Info)
 		end
 	end
@@ -281,7 +281,7 @@ function	x970001_ShowQuestAim( sceneId, selfId, targetId ,Done)
 	else
 		local Many = 0
 		misIndex = GetMissionIndexByID(sceneId,selfId,x970001_g_MissionId)
-		for i, QuestInfo in x970001_g_Quest do
+		for i, QuestInfo in pairs(x970001_g_Quest) do
 
 			if   (QuestInfo.type == "COLLECT") then
 				if Done == 1 then
@@ -315,7 +315,7 @@ function x970001_OnEnumerate( sceneId, selfId, targetId )
     	return 
     elseif IsHaveMission(sceneId,selfId,x970001_g_MissionId) > 0 then
     	local m = 0
-    	for  i, QuestInfo in x970001_g_Quest do
+    	for  i, QuestInfo in pairs(x970001_g_Quest) do
     		if QuestInfo.type == "DELIVERY" then
     			m = 1
     		end
@@ -325,7 +325,7 @@ function x970001_OnEnumerate( sceneId, selfId, targetId )
     		if  (GetName(sceneId,targetId)==x970001_g_NameEnd) then
     			AddNumText(sceneId,x970001_g_ScriptId,x970001_g_MissionName);
     		else
-				for i, QuestInfo in x970001_g_Quest do
+				for i, QuestInfo in pairs(x970001_g_Quest) do
 					if QuestInfo.type == "DELIVERY" then
 						if (GetName(sceneId,targetId)==QuestInfo.npc)then
 					    	if x970001_CheckContinue(sceneId, selfId, targetId) == 1 then
@@ -357,7 +357,7 @@ function x970001_CheckAccept( sceneId, selfId ,targetId )
 			if	x970001_g_MisIdPre == nil then
 				return	1
 			else
-				for i, questpre in x970001_g_MisIdPre do
+				for i, questpre in pairs(x970001_g_MisIdPre) do
 					if IsMissionHaveDone(sceneId,selfId,questpre) == 0 then
 						return 0
 					end
@@ -378,7 +378,7 @@ end
 function x970001_CheckContinue( sceneId, selfId ,targetId )
 	x970001_g_QuestOrder(x970001_g_QuestType)
 	misIndex = GetMissionIndexByID(sceneId,selfId,x970001_g_MissionId)
-	for i, QuestInfo in x970001_g_Quest do
+	for i, QuestInfo in pairs(x970001_g_Quest) do
 		if QuestInfo.type == "DELIVERY" then
 			if (GetName(sceneId,targetId)==QuestInfo.npc)then
 		    	local CanContinue = GetMissionParam(sceneId,selfId,misIndex,7)
@@ -403,12 +403,12 @@ function x970001_OnAccept(sceneId, selfId )
 		return
 	end
 	local DoKill,DoArea,DoItem = 0,0,0
-	for i, QuestInfo in x970001_g_Quest do
+	for i, QuestInfo in pairs(x970001_g_Quest) do
 		if (QuestInfo.type == "DELIVERY") then
 				DoItem = 1	
 				local m = 0
 				local ret = 1
-				for i, QuestLableInfo in x970001_g_Quest do
+				for i, QuestLableInfo in pairs(x970001_g_Quest) do
 					if (QuestLableInfo.type == "DELIVERY")and (QuestLableInfo.order==QuestInfo.order)then
 						if QuestInfo.item > 0 and QuestInfo.num > 0 then
 							m = 1
@@ -461,7 +461,7 @@ function x970001_OnAbandon( sceneId, selfId )
 	x970001_g_QuestOrder(x970001_g_QuestType)
 	--É¾³ıÍæ¼ÒÈÎÎñÁĞ±íÖĞ¶ÔÓ¦µÄÈÎÎñ
     DelMission( sceneId, selfId, x970001_g_MissionId )
-    for i, QuestInfo in x970001_g_Quest do
+    for i, QuestInfo in pairs(x970001_g_Quest) do
 		if QuestInfo.type ==  "DELIVERY" then
 			if QuestInfo.item > 0 and QuestInfo.num > 0 then
 				local deliveryitemnum = LuaFnGetItemCount(sceneId,selfId,QuestInfo.item)
@@ -495,7 +495,7 @@ function x970001_CheckSubmit( sceneId, selfId )
 	x970001_g_QuestOrder(x970001_g_QuestType)
 	local misIndex = GetMissionIndexByID(sceneId,selfId,x970001_g_MissionId)
 	local bDone = 1
-	for i, QuestInfo in x970001_g_Quest do
+	for i, QuestInfo in pairs(x970001_g_Quest) do
 		if QuestInfo.type == "DELIVERY" then
 			Many = GetMissionParam(sceneId,selfId,misIndex,7)
 			if Many == nil then
@@ -524,7 +524,7 @@ function x970001_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 	if (x970001_CheckSubmit( sceneId, selfId ) == 1) then
 			ret = DelMission( sceneId, selfId, x970001_g_MissionId )
 			if ret > 0 then
-				for i, QuestInfo in x970001_g_Quest do
+				for i, QuestInfo in pairs(x970001_g_Quest) do
 					if QuestInfo.type ==  "DELIVERY" then
 						if getn(x970001_g_DELIVERY) == 1 and QuestInfo == x970001_g_DELIVERY[1] then
 							if QuestInfo.npc == x970001_g_NameEnd and QuestInfo.item > 0 and QuestInfo.num > 0 then

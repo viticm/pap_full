@@ -287,7 +287,7 @@ end
 
 function x700003_IsMissionNPC(sceneId, selfId, missionId, NPCId)
 
-	for i, item in x700003_g_MissionNPCName do
+	for i, item in pairs(x700003_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -628,7 +628,7 @@ end
 
 function x700003_CreateMonster(sceneId, teamId)
 
-	for i, item in x700003_g_MonsterGroup[teamId] do
+	for i, item in pairs(x700003_g_MonsterGroup[teamId]) do
 		LuaFnCreateMonster(sceneId, item.type, item.x, item.z, item.ai, item.aiscript, -1);
 	end
 
@@ -855,7 +855,7 @@ function x700003_OnKillObject(sceneId, selfId, objdataId ,objId)
 	local killmonster = LuaFnGetCopySceneData_Param(sceneId, x700003_CSP_NKILLMONSTER);
 	local killnum = 0;
 	local killtype = 0;
-	for i, item in x700003_g_NeedKillMonster do
+	for i, item in pairs(x700003_g_NeedKillMonster) do
 		if item.type == objdataId then
 			if item.hash == 1 then
 				killmonster = killmonster + 1;

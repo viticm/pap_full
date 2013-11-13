@@ -73,9 +73,9 @@ function x207008_OnDefaultEvent(sceneId, selfId, targetId)	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´Ë½
 	            AddText(sceneId, x207008_g_MissionName)
                     AddText(sceneId,x207008_g_MissionComplete)
                     AddMoneyBonus(sceneId, x207008_g_MoneyBonus)
-                    for i, item in x207008_g_ItemBonus do
+                    for i, item in pairs(x207008_g_ItemBonus) do
 	            AddItemBonus(sceneId, item.id, item.num)
-	            for i, item in x207008_g_RadioItemBonus do
+	            for i, item in pairs(x207008_g_RadioItemBonus) do
 	            AddRadioItemBonus(sceneId, item.id, item.num)
 		    end
 	            end
@@ -212,10 +212,10 @@ function x207008_OnSubmit(sceneId, selfId, targetId, selectRadioId)
  
         if x207008_CheckSubmit( sceneId, selfId, selectRadioId ) then            
     	BeginAddItem(sceneId)                                                    
-			for i, item in x207008_g_ItemBonus do                    
+			for i, item in pairs(x207008_g_ItemBonus) do                    
 				AddItem( sceneId,item.id, item.num )             
 			end                                                      
-			for i, item in x207008_g_RadioItemBonus do               
+			for i, item in pairs(x207008_g_RadioItemBonus) do               
 				if item.id == selectRadioId then                 
 					AddItem( sceneId,item.id, item.num )     
 				end                                              

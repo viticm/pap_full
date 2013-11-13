@@ -190,7 +190,7 @@ function x206006_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		MissionCom(sceneId, selfId, x206006_g_MissionId)
 		AddExp(sceneId, selfId, x206006_g_ExpBonus)
 		AddMoney(sceneId, selfId, x206006_g_MoneyBonus)
-		for i, item in x206006_g_RadioItemBonus do
+		for i, item in pairs(x206006_g_RadioItemBonus) do
 	        if item.id == selectRadioId then
 	        item={{selectRadioID, 1}}
 	        end

@@ -164,7 +164,7 @@ function x201008_OnAbandon(sceneId, selfId)
 
 	--删除玩家任务列表中对应的任务
 	DelMission(sceneId, selfId, x201008_g_MissionId)
-	for i, item in x201008_g_DemandItem do
+	for i, item in pairs(x201008_g_DemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 	end
 

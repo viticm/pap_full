@@ -78,8 +78,8 @@ x300304_g_money = 1
 
 function  x300304_g_QuestOrder(QuestType)
 	local count = 0
-	for i, QuestLabel in QuestType do
-		for j, QuestInfo in QuestLabel do
+	for i, QuestLabel in pairs(QuestType) do
+		for j, QuestInfo in pairs(QuestLabel) do
 			count = count + 1
 			QuestInfo.order = count
 			x300304_g_Quest[count] = QuestInfo
@@ -133,11 +133,11 @@ function	x300304_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	local DoneEX = Done
 	AddText(sceneId,"#Y"..x300304_g_MissionName)
 	if DoneEX==2 then
-		for i, Info in x300304_g_ContinueInfo do
+		for i, Info in pairs(x300304_g_ContinueInfo) do
 			AddText(sceneId,Info)
 		end
 	else
-		for i, Info in x300304_g_MissionInfo do
+		for i, Info in pairs(x300304_g_MissionInfo) do
 			AddText(sceneId,Info)
 		end
 	end
@@ -153,12 +153,12 @@ function	x300304_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	if DoneEX == 2 then
 	else
 		if x300304_g_ItemBonus ~= nil then
-			for i, item in x300304_g_ItemBonus do
+			for i, item in pairs(x300304_g_ItemBonus) do
 				AddItemBonus( sceneId, item.id, item.num )
 			end
 		end			
 		if x300304_g_RadioItemBonus ~= nil then
-			for i, item in x300304_g_RadioItemBonus do
+			for i, item in pairs(x300304_g_RadioItemBonus) do
 				AddRadioItemBonus( sceneId, item.id, item.num )
 			end
 		end
@@ -175,7 +175,7 @@ function	x300304_ShowQuestAim( sceneId, selfId, targetId ,Done)
 	else
 		local Many = 0
 		misIndex = GetMissionIndexByID(sceneId,selfId,x300304_g_MissionId)
-		for i, QuestInfo in x300304_g_Quest do
+		for i, QuestInfo in pairs(x300304_g_Quest) do
 
 			if QuestInfo.type == "MONSTER_KILL" or QuestInfo.type == "COLLECT_SPECIAL"  or QuestInfo.type == "MONSTER_ITEM" then
 				if Done == 1 then
@@ -244,7 +244,7 @@ function x300304_OnAccept(sceneId, selfId )
 		return
 	end
 	local DoKill,DoArea,DoItem = 0,0,0
-	for i, QuestInfo in x300304_g_Quest do
+	for i, QuestInfo in pairs(x300304_g_Quest) do
 		if QuestInfo.type == "MONSTER_KILL" then
 			DoKill = 1
 		end
@@ -292,7 +292,7 @@ function x300304_CheckSubmit( sceneId, selfId )
 	local misIndex = GetMissionIndexByID(sceneId,selfId,x300304_g_MissionId)
 	local bDone = 1
 
-	for i, QuestInfo in x300304_g_Quest do
+	for i, QuestInfo in pairs(x300304_g_Quest) do
 		if QuestInfo.type == "MONSTER_KILL"  then
 
 			local Many = GetMissionParam(sceneId,selfId,misIndex,QuestInfo.order-1)
@@ -326,13 +326,13 @@ function x300304_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		if (getn(x300304_g_ItemBonus) ==0)  and  (getn(x300304_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
-			for i, item in x300304_g_ItemBonus do
+			for i, item in pairs(x300304_g_ItemBonus) do
 				if item.id>0 and item.num>0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
 				end
 			end
-			for i, item in x300304_g_RadioItemBonus do
+			for i, item in pairs(x300304_g_RadioItemBonus) do
 				if item.id == selectRadioId and item.num > 0 and item.id > 0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
@@ -388,7 +388,7 @@ end
 function x300304_OnKillObject( sceneId, selfId, objdataId )
 	x300304_g_QuestOrder(x300304_g_QuestType)
 	local QuestPlace = 0	--子任务对应在之前SetMissionByIndex(sceneId,selfId,misIndex,j-1,0)时存在的位置,==j-1
-	for i, QuestInfo in x300304_g_Quest do
+	for i, QuestInfo in pairs(x300304_g_Quest) do
 		if QuestInfo.type ==  "MONSTER_KILL" then	
 			 if objdataId == QuestInfo.id then
 				  local misIndex = GetMissionIndexByID(sceneId,selfId,x300304_g_MissionId)

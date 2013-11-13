@@ -78,8 +78,8 @@ x300305_g_QuestNum = 0
 
 function  x300305_g_QuestOrder(QuestType)
 	local count = 0
-	for i, QuestLabel in QuestType do
-		for j, QuestInfo in QuestLabel do
+	for i, QuestLabel in pairs(QuestType) do
+		for j, QuestInfo in pairs(QuestLabel) do
 			count = count + 1
 			QuestInfo.order = count
 			x300305_g_Quest[count] = QuestInfo
@@ -115,7 +115,7 @@ function x300305_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
     if IsHaveMission(sceneId,selfId,x300305_g_MissionId) > 0 then
 		if (GetName(sceneId,targetId)==x300305_g_NameEnd) then
 			local m = 0
-			for i, QuestInfo in x300305_g_Quest do
+			for i, QuestInfo in pairs(x300305_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
 					if (getn(x300305_g_DELIVERY)==1) and (x300305_g_NameEnd == x300305_g_DELIVERY[1].npc) then	
 						m = 2
@@ -151,7 +151,7 @@ function x300305_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 				end
 				if Done == 1 then
 					local misIndex = GetMissionIndexByID(sceneId,selfId,x300305_g_MissionId)
-					for i, QuestInfo in x300305_g_Quest do
+					for i, QuestInfo in pairs(x300305_g_Quest) do
 						if (QuestInfo.type == "DELIVERY") then
 							if (GetName(sceneId,targetId)==QuestInfo.npc)then
 								SetMissionByIndex(sceneId,selfId,misIndex,QuestInfo.order-1,1)
@@ -174,14 +174,14 @@ function x300305_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			end
 		elseif (x300305_g_DELIVERY ~= nil) then
 			local n = 0 
-			for i, QuestInfo in x300305_g_Quest do
+			for i, QuestInfo in pairs(x300305_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
 					n = 1
 					break
 				end
 			end
 			if  n == 1 then
-				for i, DeliveryInfo in x300305_g_DELIVERY do
+				for i, DeliveryInfo in pairs(x300305_g_DELIVERY) do
 					if (GetName(sceneId,targetId)==DeliveryInfo.npc)then
 						if DeliveryInfo.comeitem > 0 and DeliveryInfo.comenum > 0 then
 							BeginAddItem(sceneId)		
@@ -206,7 +206,7 @@ function x300305_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 						end
 						if m > 0 then
 							local misIndex = GetMissionIndexByID(sceneId,selfId,x300305_g_MissionId)
-							for i, QuestInfo in x300305_g_Quest do
+							for i, QuestInfo in pairs(x300305_g_Quest) do
 								if QuestInfo.type == "DELIVERY" then
 									if (GetName(sceneId,targetId)==QuestInfo.npc)then
 										SetMissionByIndex(sceneId,selfId,misIndex,QuestInfo.order-1,1)
@@ -252,11 +252,11 @@ function	x300305_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	local DoneEX = Done
 	AddText(sceneId,"#Y"..x300305_g_MissionName)
 	if DoneEX==2 then
-		for i, Info in x300305_g_ContinueInfo do
+		for i, Info in pairs(x300305_g_ContinueInfo) do
 			AddText(sceneId,Info)
 		end
 	else
-		for i, Info in x300305_g_MissionInfo do
+		for i, Info in pairs(x300305_g_MissionInfo) do
 			AddText(sceneId,Info)
 		end
 	end
@@ -272,12 +272,12 @@ function	x300305_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	if DoneEX == 2 then
 	else
 		if x300305_g_ItemBonus ~= nil then
-			for i, item in x300305_g_ItemBonus do
+			for i, item in pairs(x300305_g_ItemBonus) do
 				AddItemBonus( sceneId, item.id, item.num )
 			end
 		end			
 		if x300305_g_RadioItemBonus ~= nil then
-			for i, item in x300305_g_RadioItemBonus do
+			for i, item in pairs(x300305_g_RadioItemBonus) do
 				AddRadioItemBonus( sceneId, item.id, item.num )
 			end
 		end
@@ -294,7 +294,7 @@ function	x300305_ShowQuestAim( sceneId, selfId, targetId ,Done)
 	else
 		local Many = 0
 		misIndex = GetMissionIndexByID(sceneId,selfId,x300305_g_MissionId)
-		for i, QuestInfo in x300305_g_Quest do
+		for i, QuestInfo in pairs(x300305_g_Quest) do
 
 			if   (QuestInfo.type == "COLLECT") then
 				if Done == 1 then
@@ -319,7 +319,7 @@ function x300305_OnEnumerate( sceneId, selfId, targetId )
     	return 
     elseif IsHaveMission(sceneId,selfId,x300305_g_MissionId) > 0 then
     	local m = 0
-    	for  i, QuestInfo in x300305_g_Quest do
+    	for  i, QuestInfo in pairs(x300305_g_Quest) do
     		if QuestInfo.type == "DELIVERY" then
     			m = 1
     		end
@@ -328,7 +328,7 @@ function x300305_OnEnumerate( sceneId, selfId, targetId )
     		if  (GetName(sceneId,targetId)==x300305_g_NameEnd) then
     			AddNumText(sceneId,x300305_g_ScriptId,x300305_g_MissionName);
     		else
-				for i, QuestInfo in x300305_g_Quest do
+				for i, QuestInfo in pairs(x300305_g_Quest) do
 					if QuestInfo.type == "DELIVERY" then
 						if (GetName(sceneId,targetId)==QuestInfo.npc)then
 					    	if x300305_CheckContinue(sceneId, selfId, targetId) == 1 then
@@ -360,7 +360,7 @@ function x300305_CheckAccept( sceneId, selfId ,targetId )
 			if	x300305_g_MisIdPre == nil then
 				return	1
 			else
-				for i, questpre in x300305_g_MisIdPre do
+				for i, questpre in pairs(x300305_g_MisIdPre) do
 					if IsMissionHaveDone(sceneId,selfId,questpre) == 0 then
 						return 0
 					end
@@ -381,7 +381,7 @@ end
 function x300305_CheckContinue( sceneId, selfId ,targetId )
 	x300305_g_QuestOrder(x300305_g_QuestType)
 	misIndex = GetMissionIndexByID(sceneId,selfId,x300305_g_MissionId)
-	for i, QuestInfo in x300305_g_Quest do
+	for i, QuestInfo in pairs(x300305_g_Quest) do
 		if QuestInfo.type == "DELIVERY" then
 			if (GetName(sceneId,targetId)==QuestInfo.npc)then
 		    	local CanContinue = GetMissionParam(sceneId,selfId,misIndex,QuestInfo.order-1)
@@ -406,7 +406,7 @@ function x300305_OnAccept(sceneId, selfId )
 		return
 	end
 	local DoKill,DoArea,DoItem = 0,0,0
-	for i, QuestInfo in x300305_g_Quest do
+	for i, QuestInfo in pairs(x300305_g_Quest) do
 		if QuestInfo.type == "COLLECT"	then			--ÊÕ¼¯ÎïÆ·
 				DoItem = 1
 		end
@@ -477,7 +477,7 @@ function x300305_OnScneneTimer(sceneId, selfId)
 		local bHaveMonster = 0
 		for ii=0, nMonsterNum-1 do
 			local nMonsterId = GetMonsterObjID(sceneId,ii)
-			for j, ProtectInfo in x300305_g_PROTECT do
+			for j, ProtectInfo in pairs(x300305_g_PROTECT) do
 				if GetName(sceneId, nMonsterId)  ==  ProtectInfo.name then
 					bHaveMonster = bHaveMonster + 1
 					x300305_g_ProtectNPCID[j] = nMonsterId
@@ -485,7 +485,7 @@ function x300305_OnScneneTimer(sceneId, selfId)
 			end
 		end
 		if bHaveMonster == getn(x300305_g_PROTECT)  then
-			for j, ProtectInfo in x300305_g_PROTECT do
+			for j, ProtectInfo in pairs(x300305_g_PROTECT) do
 				SetPatrolId(sceneId, x300305_g_ProtectNPCID[j], ProtectInfo.patrol)
 			end
 			x300305_g_PROTECTINFO.Step = 4
@@ -500,7 +500,7 @@ function x300305_OnScneneTimer(sceneId, selfId)
 		local bDone = 0
 		for ii=0, nMonsterNum-1   do
 			local nMonsterId = GetMonsterObjID(sceneId,ii)
-			for j, ProtectInfo in x300305_g_PROTECT do
+			for j, ProtectInfo in pairs(x300305_g_PROTECT) do
 				if GetName(sceneId, nMonsterId)  ==  ProtectInfo.name then
 					bHaveMonster = bHaveMonster + 1
 					x300305_g_ProtectNPCID[j] = nMonsterId
@@ -512,7 +512,7 @@ function x300305_OnScneneTimer(sceneId, selfId)
 			x300305_CloseTimer(sceneId, x300305_g_PROTECTINFO.ScneneTimerIndex)
 			return
 		end
-		for j, NpcID in x300305_g_ProtectNPCID do 
+		for j, NpcID in pairs(x300305_g_ProtectNPCID) do 
 			-- ¼ì²âProtectNPC ºÍÍæ¼ÒÖ®¼äµÄ¾àÀë
 			local targetX, targetZ = GetWorldPos(sceneId, NpcID)
 			-- ¼ì²âÈç¹ûÍæ¼ÒµÄ¾àÀëÒÑ¾­Àë¿ªµÄ³¡¾°»òÕßÍæ¼Ò²»ÔÚ»¤ËÍ¶ÔÏó10Ã×ÄÚ£¬Õâ¸öÍæ¼ÒÊ§°Ü
@@ -534,8 +534,8 @@ function x300305_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end	
-		for j, ProtectInfo in x300305_g_PROTECT do
-			for j, NpcID in x300305_g_ProtectNPCID do 
+		for j, ProtectInfo in pairs(x300305_g_PROTECT) do
+			for j, NpcID in pairs(x300305_g_ProtectNPCID) do 
 				if  GetName(sceneId, NpcID)==ProtectInfo.name  then		
 					local targetX, targetZ = GetWorldPos(sceneId, NpcID)
 					--local x, z = GetLastPatrolPoint(sceneId, ProtectInfo.patrol)
@@ -548,7 +548,7 @@ function x300305_OnScneneTimer(sceneId, selfId)
 								-- ¼ì²âÍæ¼ÒÊÇ²»ÊÇÓÐÕâ¸öÈÎÎñ
 								if IsHaveMission(sceneId,x300305_g_PROTECTINFO.PlayerId[i],x300305_g_MissionId) > 0 then
 									local misIndex = GetMissionIndexByID(sceneId, x300305_g_PROTECTINFO.PlayerId[i], x300305_g_MissionId)
-									for i, QuestInfo in x300305_g_Quest do
+									for i, QuestInfo in pairs(x300305_g_Quest) do
 										if QuestInfo.type == "PROTECT" then
 											SetMissionByIndex(sceneId,x300305_g_PROTECTINFO.PlayerId[i],misIndex,QuestInfo.order-1,1)
 										end
@@ -604,7 +604,7 @@ function x300305_CheckSubmit( sceneId, selfId )
 	x300305_g_QuestOrder(x300305_g_QuestType)
 	local misIndex = GetMissionIndexByID(sceneId,selfId,x300305_g_MissionId)
 	local bDone = 1
-	for i, QuestInfo in x300305_g_Quest do
+	for i, QuestInfo in pairs(x300305_g_Quest) do
 		if  QuestInfo.type == "COLLECT"  then
 			local Many = GetMissionParam(sceneId,selfId,misIndex,QuestInfo.order-1)
 			if QuestInfo.num == nil then
@@ -636,13 +636,13 @@ function x300305_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		if (getn(x300305_g_ItemBonus) ==0)  and  (getn(x300305_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
-			for i, item in x300305_g_ItemBonus do
+			for i, item in pairs(x300305_g_ItemBonus) do
 				if item.id>0 and item.num>0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
 				end
 			end
-			for i, item in x300305_g_RadioItemBonus do
+			for i, item in pairs(x300305_g_RadioItemBonus) do
 				if item.id == selectRadioId and item.num > 0 and item.id > 0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
@@ -662,7 +662,7 @@ function x300305_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		else
 			ret = DelMission( sceneId, selfId, x300305_g_MissionId )
 			if ret > 0 then
-				for i, QuestInfo in x300305_g_Quest do	
+				for i, QuestInfo in pairs(x300305_g_Quest) do	
 					if QuestInfo.type ==  "COLLECT"   then
 						DelItem(sceneId,selfId,QuestInfo.item,QuestInfo.num)
 					end						
@@ -702,7 +702,7 @@ end
 function x300305_OnKillObject( sceneId, selfId, objdataId )
 	x300305_g_QuestOrder(x300305_g_QuestType)
 	local QuestPlace = 0	--×ÓÈÎÎñ¶ÔÓ¦ÔÚÖ®Ç°SetMissionByIndex(sceneId,selfId,misIndex,j-1,0)Ê±´æÔÚµÄÎ»ÖÃ,==j-1
-	for i, QuestInfo in x300305_g_Quest do
+	for i, QuestInfo in pairs(x300305_g_Quest) do
 		if QuestInfo.type ==  "MONSTER_KILL" then	
 			 if objdataId == QuestInfo.id then
 				  local misIndex = GetMissionIndexByID(sceneId,selfId,x300305_g_MissionId)
@@ -750,7 +750,7 @@ end
 function x300305_OnEnterArea( sceneId, selfId, areaId )
 	x300305_g_QuestOrder(x300305_g_QuestType)
 	if IsHaveMission(sceneId,selfId,x300305_g_MissionId) > 0 then
-		for i, QuestInfo in x300305_g_Quest do
+		for i, QuestInfo in pairs(x300305_g_Quest) do
 			if QuestInfo.type == "ENTERAREA" then
 				if (areaId == QuestInfo.area) and (sceneId == QuestInfo.mapid) then 
 					local misIndex = GetMissionIndexByID(sceneId,selfId,x300305_g_MissionId)
@@ -779,7 +779,7 @@ end
 function x300305_OnItemChanged( sceneId, selfId, itemdataId )
 	x300305_g_QuestOrder(x300305_g_QuestType)
 	local misIndex = GetMissionIndexByID(sceneId,selfId,x300305_g_MissionId)
-	for i, QuestInfo in x300305_g_Quest do
+	for i, QuestInfo in pairs(x300305_g_Quest) do
 		if QuestInfo.type == "COLLECT"  then
 			if (QuestInfo.item == itemdataId) then
 				local questitemnum = LuaFnGetItemCount(sceneId,selfId,QuestInfo.item)

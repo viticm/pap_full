@@ -73,7 +73,7 @@ function x217003_OnDefaultEvent(sceneId, selfId, targetId)	--µ„ª˜∏√»ŒŒÒ∫Û÷¥––¥ÀΩ
 				AddText(sceneId,format("∞— ÷æÓÀÕ∏¯ÀÔœ»…˙   %d/1", GetMissionParam(sceneId,selfId,misIndex,0) ))
 		     		EndEvent()
 		     		DispatchMissionTips(sceneId, selfId)
-		     		for i, item in x217003_g_noDemandItem do
+		     		for i, item in pairs(x217003_g_noDemandItem) do
 					DelItem(sceneId, selfId, item.id, item.num)
 				end
 			end
@@ -202,7 +202,7 @@ function x217003_OnAbandon(sceneId, selfId)
 
 	--…æ≥˝ÕÊº“»ŒŒÒ¡–±Ì÷–∂‘”¶µƒ»ŒŒÒ
 	DelMission(sceneId, selfId, x217003_g_MissionId)
-	for i, item in x217003_g_noDemandItem do
+	for i, item in pairs(x217003_g_noDemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 	end
 
@@ -240,7 +240,7 @@ function x217003_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		MissionCom(sceneId, selfId, x217003_g_MissionId)
 		AddExp(sceneId, selfId, x217003_g_ExpBonus)
 		AddMoney(sceneId, selfId, x217003_g_MoneyBonus)
-		for i, item in x217003_g_RadioItemBonus do
+		for i, item in pairs(x217003_g_RadioItemBonus) do
 	        if item.id == selectRadioId then
 	        item={{selectRadioID, 1}}
 	        end

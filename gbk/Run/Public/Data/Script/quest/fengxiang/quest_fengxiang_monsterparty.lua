@@ -224,9 +224,9 @@ explist8 = {{lv = 1, exp = 12},
 		
 function getEXP(input,lv)
 
-	for i, _monstercom in monstercom do
+	for i, _monstercom in pairs(monstercom) do
 		if lv == _monstercom.lv then
-			for i, _v in _monstercom.explist do
+			for i, _v in pairs(_monstercom.explist) do
 				if input == _v.lv then
 					return _v.exp
 				end
@@ -262,7 +262,7 @@ g_strNotice ={{group=1,nc1="马上开始了",nc2="第1关开始了"},
 
 function getNC(group)
 
-	for i,_str in g_strNotice do
+	for i,_str in pairs(g_strNotice) do
 		if group == _str.group then
 		return _str.nc1, _str.nc2
 		end
@@ -542,9 +542,9 @@ function getMonsterCount(group,lv)
 
 CountNum = 0
 
-	for i,_monstercom in monstercom do
+	for i,_monstercom in pairs(monstercom) do
 		if lv == _monstercom.lv then
-			for i, _monsterline in _monstercom.monlist do
+			for i, _monsterline in pairs(_monstercom.monlist) do
 				if group == _monsterline.group then
 					CountNum = CountNum + _monsterline.num
 				end
@@ -573,7 +573,7 @@ misMaxTime = {{week = '0', maxTime = 3},
 							{week = '6', maxTime = 3}}
 
 function getMissionMaxTime()
-	for i, _misMT in misMaxTime do
+	for i, _misMT in pairs(misMaxTime) do
 		if date("%w") == _misMT.week then
 			return _misMT.maxTime
 		end
@@ -790,7 +790,7 @@ function x700000_OnHumanDie(sceneId,selfId,killerId)
 			DispatchMissionTips(sceneId, selfId)
 			
 			misIndex = GetMissionIndexByID(sceneId,selfId,x700000_g_MissionId)			
-	for i,_monsterline in monstercom[GetMissionParam(sceneId,selfId,misIndex,3)].monlist do
+	for i,_monsterline in pairs(monstercom[GetMissionParam(sceneId,selfId,misIndex,3)].monlist) do
 		if GetMissionParam(sceneId,selfId,misIndex,0) == _monsterline.group then
 		
 
@@ -926,7 +926,7 @@ end
 function x700000_OnKillObject( sceneId, selfId, objdataId, objId )
 	
 --	local killedId = LuaFnGetTargetObjID(sceneId,objdataId)
---	for i,_monsterline in monstercom[lv].monlist do
+--	for i,_monsterline in pairs(monstercom[lv].monlist) do
 --		if group == _monsterline.group then
 --			for j = 1, _monsterline.num do
 --				return _monsterline.monsterid
@@ -1093,7 +1093,7 @@ function x700000_OnCopySceneTimer( sceneId, nowTime )
 	--LuaFnCreateMonster(sceneId,1000,20,218,0,109,900019)
 
 	if group < 21 then
-		for i,_monsterline in monstercom[lv].monlist do
+		for i,_monsterline in pairs(monstercom[lv].monlist) do
 			if group == _monsterline.group then
 				for j = 1, _monsterline.num do
 					local p = LuaFnCreateMonster(sceneId,_monsterline.monsterid,5,4,0,109,700000)

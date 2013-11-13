@@ -678,7 +678,7 @@ function x700102_SafeDisplayCheck(sceneId, selfId, NPCId)
 	--	local nowtime = LuaFnGetCurrentTime();
 	--	nowtime = nowtime - floor(nowtime / 86400) * 86400;
 	--	nowtime = floor(nowtime / 60) + 60 * x700102_g_TimeZoneBias;
-	--	for i, item in x700102_g_EnterTime do
+	--	for i, item in pairs(x700102_g_EnterTime) do
 	--		if nowtime >= item.min and nowtime < item.max then
 	--			return 1;
 	--		end
@@ -697,7 +697,7 @@ end
 -------------------------
 
 function x700102_IsMissionNPC(sceneId, selfId, missionId, NPCId)
-	for i, item in x700102_g_MissionNPCName do
+	for i, item in pairs(x700102_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -1068,7 +1068,7 @@ end
 function x700102_CreateMonster(sceneId, teamIndex)
 
 	local lastobjId;
-	for i, item in x700102_g_MonsterGroup[teamIndex] do
+	for i, item in pairs(x700102_g_MonsterGroup[teamIndex]) do
 		lastobjId = LuaFnCreateMonster(sceneId, item.type, item.x, item.z, x700102_g_MonsterBasicAI, 0, -1);
 	end
 	return lastobjId;
@@ -1083,7 +1083,7 @@ end
 
 function x700102_CreateBoss(sceneId)
 
-	for i, item in x700102_g_BossCreate do
+	for i, item in pairs(x700102_g_BossCreate) do
 		LuaFnCreateMonster(sceneId, item.type, item.x, item.z, item.ai, item.aiscript, -1);
 	end
 
@@ -1096,7 +1096,7 @@ end
 -------------------------
 
 function x700102_CreateBoss2(sceneId, MonsterTable)
-	for i, item in MonsterTable do
+	for i, item in pairs(MonsterTable) do
 		LuaFnCreateMonster(sceneId, item.type, item.x, item.z, item.ai, item.aiscript, -1);
 	end
 end
@@ -1109,7 +1109,7 @@ end
 
 function x700102_CreateGhost(sceneId, x, z)
 
-	for i, item in x700102_GhostCreate do
+	for i, item in pairs(x700102_GhostCreate) do
 		LuaFnCreateMonster(sceneId, item.type, x, z, 0, 0, -1);
 	end
 
@@ -1499,7 +1499,7 @@ end
 function x700102_CreateSp(sceneId, selfId, x, z)
 
 	local monobjId = LuaFnCreateMonster(sceneId, x700102_g_MonsterToType, x, z, 0, 0, -1);
-	for i, item in x700102_g_ChangeModelBuff do
+	for i, item in pairs(x700102_g_ChangeModelBuff) do
 		LuaFnSendSpecificImpactToUnit(sceneId, monobjId, monobjId, monobjId, item, 0);
 	end
 
@@ -1667,7 +1667,7 @@ function x700102_OnKillObject(sceneId, selfId, objdataId ,objId)
 	--    return 0;
 	--end
 
-	for i, item in x700102_g_MonsterType do
+	for i, item in pairs(x700102_g_MonsterType) do
 		if item.type == objdataId then
 			isboss = 0;
 		end
@@ -1676,7 +1676,7 @@ function x700102_OnKillObject(sceneId, selfId, objdataId ,objId)
 	--PrintStr('End KillObject 333');
 
 	if isboss == -1 then
-		for i, item in x700102_g_BossCreate do
+		for i, item in pairs(x700102_g_BossCreate) do
 			if item.type == objdataId then
 				isboss = 1;
 				notcount = 1;

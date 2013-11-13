@@ -280,7 +280,7 @@ end
 
 function x700004_IsMissionNPC(sceneId, selfId, missionId, NPCId)
 
-	for i, item in x700004_g_MissionNPCName do
+	for i, item in pairs(x700004_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -490,7 +490,7 @@ function x700004_MakeCopyScene(sceneId, selfId, memberNum)
 	LuaFnSetCopySceneData_Param(sceneId, x700004_CSP_NKILLMONSTER, 0) ;--É±ËÀ¹ÖµÄÊýÁ¿
 	
 	local ntotalmonster = 0;
-	for i, item in x700004_g_NeedKillMonster do
+	for i, item in pairs(x700004_g_NeedKillMonster) do
 		ntotalmonster = ntotalmonster + item.num;
 	end
 	LuaFnSetCopySceneData_Param(sceneId, x700004_CSP_NTOTALMONSTER, ntotalmonster);
@@ -568,7 +568,7 @@ function x700004_CreateMonster(sceneId, teamIndex)
 	local camp;
 	local patrolSetId;
 	
-	for i, posItem in x700004_g_RandomBirthPosition do
+	for i, posItem in pairs(x700004_g_RandomBirthPosition) do
 		if posItem.hash == item.pos then
 			xO = posItem.x;
 			zO = posItem.z;
@@ -587,7 +587,7 @@ function x700004_CreateMonster(sceneId, teamIndex)
 		local pstart = -1;
 		local tindex = 0;
 		
-		for j, patrolItem in x700004_g_PatrolRandom do
+		for j, patrolItem in pairs(x700004_g_PatrolRandom) do
 			tindex = tindex + 1;
 			if patrolItem.hash == patrolSetId then
 				if pstart == -1 then
@@ -740,7 +740,7 @@ function x700004_OnCopySceneTimer(sceneId, nowTime)
 	local nowTickCount = LuaFnGetCopySceneData_Param(sceneId, x700004_CSP_TICKCOUNT) + 1;
 	LuaFnSetCopySceneData_Param(sceneId, x700004_CSP_TICKCOUNT, nowTickCount);
 	
-	for i, item in x700004_g_NeedKillMonster do
+	for i, item in pairs(x700004_g_NeedKillMonster) do
 		if item.time == nowTickCount then
 			x700004_CreateMonster(sceneId, i);
 		end

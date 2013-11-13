@@ -64,7 +64,7 @@ function x207017_OnDefaultEvent(sceneId, selfId, targetId)	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´Ë½
 		     BeginEvent(sceneId)
 		     AddText(sceneId,x207017_g_ContinueInfo)
 		     AddText(sceneId,"ÐèÒªÎïÆ·") 
-                     for i, item in x207017_g_MissionItem do  
+                     for i, item in pairs(x207017_g_MissionItem) do  
 		     AddItemBonus(sceneId, item.id, item.num)
 		     EndEvent()
 		     end
@@ -76,9 +76,9 @@ function x207017_OnDefaultEvent(sceneId, selfId, targetId)	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´Ë½
 		     AddText(sceneId, x207017_g_MissionName)
                      AddText(sceneId,x207017_g_MissionComplete)
                      AddMoneyBonus(sceneId, x207017_g_MoneyBonus)
-                     for i, item in x207017_g_ItemBonus do
+                     for i, item in pairs(x207017_g_ItemBonus) do
 	             AddItemBonus(sceneId, item.id, item.num)
-	             for i, item in x207017_g_RadioItemBonus do
+	             for i, item in pairs(x207017_g_RadioItemBonus) do
 	             AddRadioItemBonus(sceneId, item.id, item.num)
 		     end
 	             end
@@ -198,9 +198,9 @@ function x207017_OnContinue(sceneId, selfId, targetId)
 	AddText(sceneId, x207017_g_MissionName)
         AddText(sceneId,x207017_g_MissionComplete)
         AddMoneyBonus(sceneId, x207017_g_MoneyBonus)
-        for i, item in x207017_g_ItemBonus do
+        for i, item in pairs(x207017_g_ItemBonus) do
 	AddItemBonus(sceneId, item.id, item.num)
-	for i, item in x207017_g_RadioItemBonus do
+	for i, item in pairs(x207017_g_RadioItemBonus) do
 	AddRadioItemBonus(sceneId, item.id, item.num)
 		end
 	end
@@ -238,10 +238,10 @@ function x207017_OnSubmit(sceneId, selfId, targetId, selectRadioId)
  
         if x207017_CheckSubmit( sceneId, selfId, selectRadioId ) then            
     	BeginAddItem(sceneId)                                                    
-			for i, item in x207017_g_ItemBonus do                    
+			for i, item in pairs(x207017_g_ItemBonus) do                    
 				AddItem( sceneId,item.id, item.num )             
 			end                                                      
-			for i, item in x207017_g_RadioItemBonus do               
+			for i, item in pairs(x207017_g_RadioItemBonus) do               
 				if item.id == selectRadioId then                 
 					AddItem( sceneId,item.id, item.num )     
 				end                                              
@@ -255,7 +255,7 @@ function x207017_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 				AddExp(sceneId, selfId, x207017_g_ExpBonus)   
 	                        AddMoney(sceneId, selfId, x207017_g_MoneyBonus)
 	                        AddItemListToHuman(sceneId,selfId)
-	                        for i, item in x207017_g_MissionItem do
+	                        for i, item in pairs(x207017_g_MissionItem) do
 			        DelItem(sceneId, selfId, item.id, item.num)
 		                end
 			end                                               

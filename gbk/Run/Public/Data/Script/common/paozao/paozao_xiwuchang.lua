@@ -82,7 +82,7 @@ x300310_MP_SCENEINDEX				= 4
 
 function x300310_IsMissionNPC(sceneId, selfId, NPCId)
 
-	for i, item in x300310_g_MissionNPCName do
+	for i, item in pairs(x300310_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -102,7 +102,7 @@ end
 
 function x300310_IsAbandonNPC(sceneId, selfId, NPCId)
 
-	for i, item in x300310_g_AbandonNPCName do
+	for i, item in pairs(x300310_g_AbandonNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -377,7 +377,7 @@ function x300310_OnAccept(sceneId, selfId, NPCId)
 	SetMissionByIndex(sceneId, selfId, misIndex, x300310_MP_SCENETIMERINDEX, sceneTimerIndex);
 	
 	local sceneIndex = 0;
-	for i, item in x300310_g_MissionNPCName do
+	for i, item in pairs(x300310_g_MissionNPCName) do
 		sceneIndex = sceneIndex + 1;
 		if item.scene == sceneId then
 			break;

@@ -44,8 +44,8 @@ function x950008_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 	local itemcount = 0;
 		
 	BeginAddItem(sceneId);
-	for i, items in x950008_g_Items[zhiye+1] do
-		for j, item in items do
+	for i, items in pairs(x950008_g_Items[zhiye+1]) do
+		for j, item in pairs(items) do
 			AddItem( sceneId, item.id, item.num );
 			itemcount = itemcount + 1;
 		end

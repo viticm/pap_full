@@ -70,8 +70,8 @@ x970012_MP_ISCOMPLETE = 7
 
 function  x100017_g_QuestOrder(QuestType)
 	local count = 0
-	for i, QuestLabel in QuestType do
-		for j, QuestInfo in QuestLabel do
+	for i, QuestLabel in pairs(QuestType) do
+		for j, QuestInfo in pairs(QuestLabel) do
 			count = count + 1
 			QuestInfo.order = count
 			x100017_g_Quest[count] = QuestInfo
@@ -110,7 +110,7 @@ function x100017_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
     if IsHaveMission(sceneId,selfId,x100017_g_MissionId) > 0 then
 		if (GetName(sceneId,targetId)==x100017_g_NameEnd) then
 			local m = 0
-			for i, QuestInfo in x100017_g_Quest do
+			for i, QuestInfo in pairs(x100017_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
 					if (getn(x100017_g_DELIVERY)==1) and (x100017_g_NameEnd == x100017_g_DELIVERY[1].npc) then	
 						m = 2
@@ -136,7 +136,7 @@ function x100017_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 		         AddText(sceneId,"ÕâÃ´¿ì¾Í»ØÀ´ÁË£¿Äã¹ûÈ»ÓÐ×ö´óÏÀµÄÌì¸³¡£ÎÒ¾ÍÖªµÀÄã»áË³Àû¹éÀ´£¡")
 		         AddMoneyBonus(sceneId, 10000)
 		         if x100017_g_ItemBonus ~= nil then
-		          	for i, item in x100017_g_ItemBonus do
+		          	for i, item in pairs(x100017_g_ItemBonus) do
 			        	AddItemBonus( sceneId, item.id, item.num )
 			          end
 		         end
@@ -156,7 +156,7 @@ function x100017_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 				end
 				if Done == 1 then
 					local misIndex = GetMissionIndexByID(sceneId,selfId,x100017_g_MissionId)
-					for i, QuestInfo in x100017_g_Quest do
+					for i, QuestInfo in pairs(x100017_g_Quest) do
 						if (QuestInfo.type == "DELIVERY") then
 							if (GetName(sceneId,targetId)==QuestInfo.npc)then
 								SetMissionByIndex(sceneId,selfId,misIndex,7,1)
@@ -179,14 +179,14 @@ function x100017_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			end
 		elseif (x100017_g_DELIVERY ~= nil) then
 			local n = 0 
-			for i, QuestInfo in x100017_g_Quest do
+			for i, QuestInfo in pairs(x100017_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
 					n = 1
 					break
 				end
 			end
 			if  n == 1 then
-				for i, DeliveryInfo in x100017_g_DELIVERY do
+				for i, DeliveryInfo in pairs(x100017_g_DELIVERY) do
 					if (GetName(sceneId,targetId)==DeliveryInfo.npc)then
 						if DeliveryInfo.comeitem > 0 and DeliveryInfo.comenum > 0 then
 							BeginAddItem(sceneId)		
@@ -211,7 +211,7 @@ function x100017_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 						end
 						if m > 0 then
 							local misIndex = GetMissionIndexByID(sceneId,selfId,x100017_g_MissionId)
-							for i, QuestInfo in x100017_g_Quest do
+							for i, QuestInfo in pairs(x100017_g_Quest) do
 								if QuestInfo.type == "DELIVERY" then
 									if (GetName(sceneId,targetId)==QuestInfo.npc)then
 										SetMissionByIndex(sceneId,selfId,misIndex,7,1)
@@ -257,11 +257,11 @@ function	x100017_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	local DoneEX = Done
 	AddText(sceneId,"#Y"..x100017_g_MissionName)
 	if DoneEX==2 then
-		for i, Info in x100017_g_UnDoneMissionInfo do
+		for i, Info in pairs(x100017_g_UnDoneMissionInfo) do
 			AddText(sceneId,Info)
 		end
 	else
-		for i, Info in x100017_g_MissionInfo do
+		for i, Info in pairs(x100017_g_MissionInfo) do
 			AddText(sceneId,Info)
 		end
 	end
@@ -277,7 +277,7 @@ function	x100017_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	if DoneEX == 2 then
 	else
 		if x100017_g_ItemBonus ~= nil then
-			for i, item in x100017_g_ItemBonus do
+			for i, item in pairs(x100017_g_ItemBonus) do
 				AddItemBonus( sceneId, item.id, item.num )
 			end
 		end			
@@ -293,7 +293,7 @@ function	x100017_ShowQuestAim( sceneId, selfId, targetId ,Done)
 	else
 		local Many = 0
 		misIndex = GetMissionIndexByID(sceneId,selfId,x100017_g_MissionId)
-		for i, QuestInfo in x100017_g_Quest do
+		for i, QuestInfo in pairs(x100017_g_Quest) do
 
 			if QuestInfo.type == "MONSTER_KILL" or QuestInfo.type == "COLLECT_SPECIAL"  or QuestInfo.type == "MONSTER_ITEM" then
 				if Done == 1 then
@@ -347,7 +347,7 @@ function x100017_CheckAccept( sceneId, selfId ,targetId )
 			if	x100017_g_MisIdPre == nil then
 				return	1
 			else
-				for i, questpre in x100017_g_MisIdPre do
+				for i, questpre in pairs(x100017_g_MisIdPre) do
 					if IsMissionHaveDone(sceneId,selfId,questpre) == 0 then
 						return 0
 					end
@@ -374,7 +374,7 @@ function x100017_OnAccept(sceneId, selfId )
 		return
 	end
 	local DoKill,DoArea,DoItem = 0,0,0
-	for i, QuestInfo in x100017_g_Quest do
+	for i, QuestInfo in pairs(x100017_g_Quest) do
 		if QuestInfo.type == "MONSTER_KILL" then
 			DoKill = 1
 		elseif QuestInfo.type == "COLLECT"	then			--ÊÕ¼¯ÎïÆ·
@@ -405,7 +405,7 @@ function x100017_OnAbandon( sceneId, selfId )
 	x100017_g_QuestOrder(x100017_g_QuestType)
 	--É¾³ýÍæ¼ÒÈÎÎñÁÐ±íÖÐ¶ÔÓ¦µÄÈÎÎñ
     DelMission( sceneId, selfId, x100017_g_MissionId )
-    for i, QuestInfo in x100017_g_Quest do
+    for i, QuestInfo in pairs(x100017_g_Quest) do
 		if QuestInfo.type ==  "COLLECT_SPECIAL" then
 			local collectitemnum = LuaFnGetItemCount(sceneId,selfId,QuestInfo.item)
 			if collectitemnum > 0 then
@@ -449,7 +449,7 @@ function x100017_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		if getn(x100017_g_ItemBonus) ==0 then
 			givebonus = 1
 		else
-			for i, item in x100017_g_ItemBonus do
+			for i, item in pairs(x100017_g_ItemBonus) do
 				if item.id>0 and item.num>0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
@@ -469,7 +469,7 @@ function x100017_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		else
 			ret = DelMission( sceneId, selfId, x100017_g_MissionId )
 			if ret > 0 then
-			 for i, QuestInfo in x100017_g_Quest do					
+			 for i, QuestInfo in pairs(x100017_g_Quest) do					
 				if QuestInfo.type ==  "COLLECT"  or QuestInfo.type ==  "COLLECT_SPECIAL" or QuestInfo.type ==  "MONSTER_ITEM" then
 						DelItem(sceneId,selfId,QuestInfo.item,QuestInfo.num)
 				end						
@@ -526,7 +526,7 @@ end
 function x100017_OnItemChanged( sceneId, selfId, itemdataId )
 	x100017_g_QuestOrder(x100017_g_QuestType)
 	local misIndex = GetMissionIndexByID(sceneId,selfId,x100017_g_MissionId)
-	for i, QuestInfo in x100017_g_Quest do
+	for i, QuestInfo in pairs(x100017_g_Quest) do
 		if QuestInfo.type == "COLLECT_SPECIAL" or QuestInfo.type == "COLLECT" or QuestInfo.type == "MONSTER_ITEM" then
 			if (QuestInfo.item == itemdataId) then
 				local questitemnum = LuaFnGetItemCount(sceneId,selfId,QuestInfo.item)

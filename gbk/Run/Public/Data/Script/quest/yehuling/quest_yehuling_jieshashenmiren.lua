@@ -65,7 +65,7 @@ function x207012_OnDefaultEvent(sceneId, selfId, targetId)	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´Ë½
 		     AddText(sceneId, x207012_g_MissionName)
                      AddText(sceneId,x207012_g_ContinueInfo) 
 		     AddText(sceneId,"ÐèÒªÎïÆ·")  
-                     for i, item in x207012_g_MissionItem do
+                     for i, item in pairs(x207012_g_MissionItem) do
 		     AddItemBonus(sceneId, item.id, item.num)
 		     EndEvent()
 		     end
@@ -212,7 +212,7 @@ function x207012_OnSubmit(sceneId, selfId, targetId, selectRadioId)
         DelMission( sceneId, selfId, x207012_g_MissionId )
 	AddExp(sceneId, selfId, x207012_g_ExpBonus)   
 	AddMoney(sceneId, selfId, x207012_g_MoneyBonus)
-	for i, item in x207012_g_MissionItem do
+	for i, item in pairs(x207012_g_MissionItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 		end
 	

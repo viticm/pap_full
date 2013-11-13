@@ -93,8 +93,8 @@ x211050_g_RadioItemBonus={}
 
 function  x211050_g_QuestOrder(QuestType)
 	local count = 0
-	for i, QuestLabel in QuestType do
-		for j, QuestInfo in QuestLabel do
+	for i, QuestLabel in pairs(QuestType) do
+		for j, QuestInfo in pairs(QuestLabel) do
 			count = count + 1
 			QuestInfo.order = count
 			x211050_g_Quest[count] = QuestInfo
@@ -151,11 +151,11 @@ function	x211050_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	local DoneEX = Done
 	AddText(sceneId,"#Y"..x211050_g_MissionName)
 	if DoneEX==2 then
-		for i, Info in x211050_g_ContinueInfo do
+		for i, Info in pairs(x211050_g_ContinueInfo) do
 			AddText(sceneId,Info)
 		end
 	else
-		for i, Info in x211050_g_MissionInfo do
+		for i, Info in pairs(x211050_g_MissionInfo) do
 			AddText(sceneId,Info)
 		end
 	end
@@ -170,12 +170,12 @@ function	x211050_ShowQuestInfo( sceneId, selfId, targetId ,Done)
 	if DoneEX == 2 then
 	else
 		if x211050_g_ItemBonus ~= nil then
-			for i, item in x211050_g_ItemBonus do
+			for i, item in pairs(x211050_g_ItemBonus) do
 				AddItemBonus( sceneId, item.id, item.num )
 			end
 		end			
 		if x211050_g_RadioItemBonus ~= nil then
-			for i, item in x211050_g_RadioItemBonus do
+			for i, item in pairs(x211050_g_RadioItemBonus) do
 				AddRadioItemBonus( sceneId, item.id, item.num )
 			end
 		end
@@ -225,7 +225,7 @@ function x211050_CheckAccept(sceneId, selfId, targetId)
 			if	x211050_g_MisIdPre == nil then
 				return	1
 			else
-				for i, questpre in x211050_g_MisIdPre do
+				for i, questpre in pairs(x211050_g_MisIdPre) do
 					if IsMissionHaveDone(sceneId,selfId,questpre) == 0 then
 						return 0
 					end
@@ -258,7 +258,7 @@ function x211050_OnAccept(sceneId, selfId)
 		return
 	end
 	local DoKill,DoArea,DoItem = 0,0,0
-	for i, QuestInfo in x211050_g_Quest do
+	for i, QuestInfo in pairs(x211050_g_Quest) do
 		if QuestInfo.type == "PROTECT"	then			--护送
 			if (x211050_g_PROTECTINFO == nil) then
 				print("该护送任务没有配置相关的定时器!!!")
@@ -282,7 +282,7 @@ function x211050_OnAccept(sceneId, selfId)
 					local bHaveMonster = 0
 					for ii=0, nMonsterNum-1 do
 						local nMonsterId = GetMonsterObjID(sceneId,ii)
-						for i, QuestInfo in x211050_g_Quest do
+						for i, QuestInfo in pairs(x211050_g_Quest) do
 							if QuestInfo.type == "PROTECT"	then
 								if GetName(sceneId, nMonsterId)  == QuestInfo.name  then
 									bHaveMonster = 1
@@ -300,7 +300,7 @@ function x211050_OnAccept(sceneId, selfId)
 						DispatchMissionTips(sceneId,selfId)
 						return
 					elseif bHaveMonster == 0   then
-						for i, QuestInfo in x211050_g_Quest do
+						for i, QuestInfo in pairs(x211050_g_Quest) do
 							if QuestInfo.type == "PROTECT"	then
 								local nNpcId = LuaFnCreateMonster(sceneId,  QuestInfo.npc, QuestInfo.place.x, QuestInfo.place.z, QuestInfo.ai.baseai, QuestInfo.ai.scriptai, QuestInfo.scriptid)
 								--SetCharacterName(sceneId, nNpcId, ProtectInfo.name)
@@ -392,7 +392,7 @@ function x211050_OnScneneTimer(sceneId, selfId)
 		local bHaveMonster = 0
 		for ii=0, nMonsterNum-1 do
 			local nMonsterId = GetMonsterObjID(sceneId,ii)
-			for j, ProtectInfo in x211050_g_PROTECT do
+			for j, ProtectInfo in pairs(x211050_g_PROTECT) do
 				if GetName(sceneId, nMonsterId)  ==  ProtectInfo.name then
 					bHaveMonster = bHaveMonster + 1
 					x211050_g_ProtectNPCID[j] = nMonsterId
@@ -400,7 +400,7 @@ function x211050_OnScneneTimer(sceneId, selfId)
 			end
 		end
 		if bHaveMonster == getn(x211050_g_PROTECT)  then
-			for j, ProtectInfo in x211050_g_PROTECT do
+			for j, ProtectInfo in pairs(x211050_g_PROTECT) do
 				SetPatrolId(sceneId, x211050_g_ProtectNPCID[j], ProtectInfo.patrol)
 			end
 			x211050_g_PROTECTINFO.Step = 4
@@ -415,7 +415,7 @@ function x211050_OnScneneTimer(sceneId, selfId)
 		local bDone = 0
 		for ii=0, nMonsterNum-1   do
 			local nMonsterId = GetMonsterObjID(sceneId,ii)
-			for j, ProtectInfo in x211050_g_PROTECT do
+			for j, ProtectInfo in pairs(x211050_g_PROTECT) do
 				if GetName(sceneId, nMonsterId)  ==  ProtectInfo.name then
 					bHaveMonster = bHaveMonster + 1
 					x211050_g_ProtectNPCID[j] = nMonsterId
@@ -427,7 +427,7 @@ function x211050_OnScneneTimer(sceneId, selfId)
 			x211050_CloseTimer(sceneId, x211050_g_PROTECTINFO.ScneneTimerIndex)
 			return
 		end
-		for j, NpcID in x211050_g_ProtectNPCID do 
+		for j, NpcID in pairs(x211050_g_ProtectNPCID) do 
 			-- 检测ProtectNPC 和玩家之间的距离
 			local targetX, targetZ = GetWorldPos(sceneId, NpcID)
 			-- 检测如果玩家的距离已经离开的场景或者玩家不在护送对象10米内，这个玩家失败
@@ -449,8 +449,8 @@ function x211050_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end	
-		for j, ProtectInfo in x211050_g_PROTECT do
-			for j, NpcID in x211050_g_ProtectNPCID do 
+		for j, ProtectInfo in pairs(x211050_g_PROTECT) do
+			for j, NpcID in pairs(x211050_g_ProtectNPCID) do 
 				if  GetName(sceneId, NpcID)==ProtectInfo.name  then		
 					local targetX, targetZ = GetWorldPos(sceneId, NpcID)
 					--local x, z = GetLastPatrolPoint(sceneId, ProtectInfo.patrol)
@@ -463,7 +463,7 @@ function x211050_OnScneneTimer(sceneId, selfId)
 								-- 检测玩家是不是有这个任务
 								if IsHaveMission(sceneId,x211050_g_PROTECTINFO.PlayerId[i],x211050_g_MissionId) > 0 then
 									local misIndex = GetMissionIndexByID(sceneId, x211050_g_PROTECTINFO.PlayerId[i], x211050_g_MissionId)
-									for i, QuestInfo in x211050_g_Quest do
+									for i, QuestInfo in pairs(x211050_g_Quest) do
 										if QuestInfo.type == "PROTECT" then
 											SetMissionByIndex(sceneId,x211050_g_PROTECTINFO.PlayerId[i],misIndex,QuestInfo.order-1,1)
 										end
@@ -534,7 +534,7 @@ function x211050_CheckSubmit( sceneId, selfId, targetId)
 	x211050_g_QuestOrder(x211050_g_QuestType)
 	local misIndex = GetMissionIndexByID(sceneId,selfId,x211050_g_MissionId)
 	local bDone = 1
-	for i, QuestInfo in x211050_g_Quest do
+	for i, QuestInfo in pairs(x211050_g_Quest) do
 		if QuestInfo.type == "MONSTER_KILL" or QuestInfo.type == "COLLECT_SPECIAL" or QuestInfo.type == "ENTERAREA" or QuestInfo.type == "PROTECT"  or QuestInfo.type == "COLLECT" or QuestInfo.type == "MONSTER_ITEM" then
 			local Many = GetMissionParam(sceneId,selfId,misIndex,QuestInfo.order-1)
 			if QuestInfo.num == nil then
@@ -584,13 +584,13 @@ function x211050_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		if (getn(x211050_g_ItemBonus) ==0)  and  (getn(x211050_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
-			for i, item in x211050_g_ItemBonus do
+			for i, item in pairs(x211050_g_ItemBonus) do
 				if item.id>0 and item.num>0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
 				end
 			end
-			for i, item in x211050_g_RadioItemBonus do
+			for i, item in pairs(x211050_g_RadioItemBonus) do
 				if item.id == selectRadioId and item.num > 0 and item.id > 0 then
 					AddItem( sceneId,item.id, item.num )
 					giveitem = 1
@@ -610,7 +610,7 @@ function x211050_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		else
 			ret = DelMission( sceneId, selfId, x211050_g_MissionId )
 			if ret > 0 then
-				for i, QuestInfo in x211050_g_Quest do
+				for i, QuestInfo in pairs(x211050_g_Quest) do
 					if QuestInfo.type ==  "DELIVERY" then
 						if getn(x211050_g_DELIVERY) == 1 and QuestInfo == x211050_g_DELIVERY[1] then
 							if QuestInfo.npc == x211050_g_NameEnd and QuestInfo.item > 0 and QuestInfo.num > 0 then

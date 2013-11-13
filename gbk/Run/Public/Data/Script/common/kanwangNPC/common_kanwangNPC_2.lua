@@ -277,7 +277,7 @@ end
 -------------------------
 function x300301_IsStartNPC(sceneId, selfId, x300301_g_MissionId, NPCId)
 	local NPCName = GetName(sceneId,NPCId)
-	for i,item in x300301_g_MissionNPCName do
+	for i,item in pairs(x300301_g_MissionNPCName) do
 		if ((item.scene == sceneId) and (item.name == NPCName)) then
 			if (x300301_residue(item.hash,x300301_g_EachMissionNPCNumber+1) == 1) then
 				return 1;
@@ -291,7 +291,7 @@ end
 --是否最后NPC
 -------------------------
 function x300301_IsEndNPC(sceneId, selfId, x300301_g_MissionId, NPCId)
-	for i,item in x300301_g_MissionNPCName do
+	for i,item in pairs(x300301_g_MissionNPCName) do
 		if ((item.scene == sceneId) and (item.name == GetName(sceneId,NPCId))) then
 			if (x300301_residue(item.hash, x300301_g_EachMissionNPCNumber+1) == 0) then
 				return 1;
@@ -307,7 +307,7 @@ end
 function x300301_IsAimNPC(sceneId, selfId, x300301_g_MissionId, NPCId)
 	local misIndex = GetMissionIndexByID(sceneId, selfId, x300301_g_MissionId);
 	local aimNPCHash = GetMissionParam(sceneId, selfId, misIndex, x300301_MP_AIMNPC);
-	for i,item in x300301_g_MissionNPCName do
+	for i,item in pairs(x300301_g_MissionNPCName) do
 		if ((item.scene == sceneId) and (item.hash == aimNPCHash)) then
 			if (GetName(sceneId,NPCId) == item.name) then
 				return 1;
@@ -323,7 +323,7 @@ end
 -------------------------
 function x300301_IsMissionNPC(sceneId, selfId, x300301_g_MissionId, NPCId)
 	local NPCName = GetName(sceneId,NPCId)
-	for i,item in x300301_g_MissionNPCName do
+	for i,item in pairs(x300301_g_MissionNPCName) do
 		if ((item.scene == sceneId) and (item.name == NPCName)) then
 			return item.hash;
 		end
@@ -339,7 +339,7 @@ function x300301_GetContinueMessage(sceneId, selfId, NPCId)
 	local misIndex = GetMissionIndexByID(sceneId, selfId, x300301_g_MissionId);
 	local aimNPCHash = GetMissionParam(sceneId, selfId, misIndex, x300301_MP_AIMNPC);
 	local TextString = "（任务描述）";
-	for i,item in x300301_g_MissionStrings do
+	for i,item in pairs(x300301_g_MissionStrings) do
 		if(item.hash == aimNPCHash) then
 			TextString = item.MisStr ..format(x300301_g_StringContinue,x300301_GetNameByHash(sceneId,selfId,aimNPCHash+1));
 			return TextString;
@@ -353,7 +353,7 @@ end
 ---------------------------
 function x300301_GetMaxHash(sceneId, selfId)
 	local n=0
-	for i,item in x300301_g_MissionNPCName do
+	for i,item in pairs(x300301_g_MissionNPCName) do
 		n=n+1;
 	end
 	return n;
@@ -364,7 +364,7 @@ end
 function x300301_GetHashByName(sceneId, selfId, NPCId)
 	local n = 0;
 	local NPCName = GetName(sceneId,selfId,NPCId);
-	for i,item in x300301_g_MissionNPCName do
+	for i,item in pairs(x300301_g_MissionNPCName) do
 		if (item.sceneId == sceneId) and (item.name == NPCName) then
 			n=i;
 		end	
@@ -383,7 +383,7 @@ end
 --GetNameByHash
 -----------------------------
 function x300301_GetNameByHash(sceneId,selfId,NPCHash)
-	for i ,item in x300301_g_MissionNPCName do
+	for i ,item in pairs(x300301_g_MissionNPCName) do
 		if (item.hash == NPCHash) then
 			return item.name;
 		end

@@ -56,7 +56,7 @@ function x207022_OnDefaultEvent(sceneId, selfId, targetId)	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´Ë½
                      BeginEvent(sceneId)
 		     AddText(sceneId,x207022_g_ContinueInfo)
 		     AddText(sceneId,"ÐèÒªÎïÆ·")
-		     for i, item in x207022_g_MissionItem do  
+		     for i, item in pairs(x207022_g_MissionItem) do  
 		     AddItemBonus(sceneId, item.id, item.num)
 		     EndEvent()
 		     end
@@ -159,7 +159,7 @@ end
 function x207022_OnAccept(sceneId, selfId)
 
 	        BeginAddItem(sceneId)                                                    
-		for i, item in x207022_g_MissionItem do                    
+		for i, item in pairs(x207022_g_MissionItem) do                    
 			AddItem( sceneId,item.id, item.num )             
 		end                                                      
 			                                             
@@ -249,13 +249,13 @@ function x207022_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		MissionCom(sceneId, selfId, x207022_g_MissionId)
 		AddExp(sceneId, selfId, x207022_g_ExpBonus)
 		AddMoney(sceneId, selfId, x207022_g_MoneyBonus)
-		for i, item in x207022_g_RadioItemBonus do
+		for i, item in pairs(x207022_g_RadioItemBonus) do
 	        if item.id == selectRadioId then
 	        item={{selectRadioID, 1}}
 	        end
 	        end
 
-		for i, item in x207022_g_MissionItem do
+		for i, item in pairs(x207022_g_MissionItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 		end
 	end

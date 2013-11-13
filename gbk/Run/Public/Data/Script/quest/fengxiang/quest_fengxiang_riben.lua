@@ -129,10 +129,10 @@ function x910000_OnContinue( sceneId, selfId, targetId )
 		AddText(sceneId,x910000_g_MissionName)
 		AddText(sceneId,x910000_g_MissionComplete)
 		--AddMoneyBonus( sceneId, x910000_g_MoneyBonus )
-		--for i, item in x910000_g_ItemBonus do
+		--for i, item in pairs(x910000_g_ItemBonus) do
 		--	AddItemBonus( sceneId, item.id, item.num )
 		--end
-		for i, item in x910000_g_RadioItemBonus do
+		for i, item in pairs(x910000_g_RadioItemBonus) do
 			AddRadioItemBonus( sceneId, item.id, item.num )
 		end
     EndEvent( )
@@ -157,10 +157,10 @@ end
 function x910000_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 	if x910000_CheckSubmit( sceneId, selfId, selectRadioId ) then
     	BeginAddItem(sceneId)
-			--for i, item in x910000_g_ItemBonus do
+			--for i, item in pairs(x910000_g_ItemBonus) do
 			--	AddItem( sceneId,item.id, item.num )
 			--end
-			for i, item in x910000_g_RadioItemBonus do
+			for i, item in pairs(x910000_g_RadioItemBonus) do
 				if item.id == selectRadioId then
 					AddItem( sceneId,item.id, item.num )
 				end
@@ -170,7 +170,7 @@ function x910000_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		if ret > 0 then
 			--AddMoney(sceneId,selfId,x910000_g_MoneyBonus );
 			--扣除任务物品
-			--for i, item in g_DemandItem do
+			--for i, item in pairs(g_DemandItem) do
 			--	DelItem( sceneId, selfId, item.id, item.num )
 			--end
 			ret = DelMission( sceneId, selfId, x910000_g_MissionId )

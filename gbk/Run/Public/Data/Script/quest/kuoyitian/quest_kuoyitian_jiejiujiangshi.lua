@@ -60,10 +60,10 @@ function x214005_OnDefaultEvent(sceneId, selfId, targetId)	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´Ë½
 	                     AddText(sceneId,"#Y"..x214005_g_MissionName)
 			     AddText(sceneId,x214005_g_MissionComplete)
 			     AddMoneyBonus(sceneId, x214005_g_MoneyBonus)
-			     for i, item in x214005_g_ItemBonus do
+			     for i, item in pairs(x214005_g_ItemBonus) do
 		             	AddItemBonus(sceneId, item.id, item.num)
 		             end
-			     for i, item in x214005_g_RadioItemBonus do
+			     for i, item in pairs(x214005_g_RadioItemBonus) do
 		            	 AddRadioItemBonus(sceneId, item.id, item.num)
 		             end
 			     EndEvent()
@@ -80,10 +80,10 @@ function x214005_OnDefaultEvent(sceneId, selfId, targetId)	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´Ë½
 		AddText(sceneId,"#YÈÎÎñÄ¿±ê#W") 
 		AddText(sceneId,x214005_g_MissionTarget) 
 		AddMoneyBonus(sceneId, x214005_g_MoneyBonus)	
-		for i, item in x214005_g_ItemBonus do
+		for i, item in pairs(x214005_g_ItemBonus) do
 	             	AddItemBonus(sceneId, item.id, item.num)
 	        end
-		for i, item in x214005_g_RadioItemBonus do
+		for i, item in pairs(x214005_g_RadioItemBonus) do
 	            	 AddRadioItemBonus(sceneId, item.id, item.num)
 	        end	
 		EndEvent()
@@ -176,7 +176,7 @@ function x214005_OnAbandon(sceneId, selfId)
 
 	--É¾³ýÍæ¼ÒÈÎÎñÁÐ±íÖÐ¶ÔÓ¦µÄÈÎÎñ
 	DelMission(sceneId, selfId, x214005_g_MissionId)
-	for i, item in x214005_g_DemandItem do
+	for i, item in pairs(x214005_g_DemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 	end
 
@@ -211,10 +211,10 @@ end
 function x214005_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 
 		BeginAddItem(sceneId)                                                    
-			for i, item in x214005_g_ItemBonus do                    
+			for i, item in pairs(x214005_g_ItemBonus) do                    
 				AddItem( sceneId,item.id, item.num )             
 			end                                                      
-			for i, item in x214005_g_RadioItemBonus do               
+			for i, item in pairs(x214005_g_RadioItemBonus) do               
 				if item.id == selectRadioId then                 
 					AddItem( sceneId,item.id, item.num )     
 				end                                              

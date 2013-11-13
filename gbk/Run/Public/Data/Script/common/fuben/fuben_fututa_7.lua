@@ -322,7 +322,7 @@ end
 
 function x700107_IsMissionNPC(sceneId, selfId, missionId, NPCId)
 
-	for i, item in x700107_g_MissionNPCName do
+	for i, item in pairs(x700107_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -603,7 +603,7 @@ function x700107_MakeCopyScene(sceneId, selfId, memberNum, backsceneId)
 	local season = floor((nowTime - today * 86400) / 21600) + 1;
 	LuaFnSetCopySceneData_Param(sceneId, x700107_CSP_SEASON, season);
 	local ntotalmonster = 0;
-	for i, item in x700107_g_NeedKillMonster[season] do
+	for i, item in pairs(x700107_g_NeedKillMonster[season]) do
 			ntotalmonster = ntotalmonster + 1;
 	end
 	LuaFnSetCopySceneData_Param(sceneId, x700107_CSP_NTOTALMONSTER, ntotalmonster) ;--全部怪数量
@@ -680,7 +680,7 @@ end
 function x700107_CreateMonster(sceneId, teamIndex)
 
 	local startId = x700107_CSP_OBJID_1;
-	for i, item in x700107_g_NeedKillMonster[teamIndex] do
+	for i, item in pairs(x700107_g_NeedKillMonster[teamIndex]) do
 		local objId = LuaFnCreateMonster(sceneId, item.type, item.x, item.z, item.ai, item.aiscript, -1);
 		LuaFnSetCopySceneData_Param(sceneId, startId, objId);
 		startId = startId + 1;

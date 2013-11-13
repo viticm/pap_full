@@ -13,7 +13,7 @@ function x207003_OnDefaultEvent(sceneId, selfId, targetId)
         x207003_g_MissionName2 = format("灵狐草   %d/10", LuaFnGetItemCount(sceneId,selfId,12090002)+1 )
         BeginAddItem(sceneId)
 		--加入道具至列表
-		for i, item in x207003_g_MissionItem do
+		for i, item in pairs(x207003_g_MissionItem) do
 		AddItem(sceneId,item.id, item.num)
 		end
                 ret = EndAddItem(sceneId, selfId)

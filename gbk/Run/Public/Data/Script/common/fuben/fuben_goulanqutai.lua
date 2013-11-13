@@ -275,7 +275,7 @@ end
 
 function x700002_IsMissionNPC(sceneId, selfId, missionId, NPCId)
 
-	for i, item in x700002_g_MissionNPCName do
+	for i, item in pairs(x700002_g_MissionNPCName) do
 		if item.scene == sceneId then
 			if GetName(sceneId, NPCId) == item.name then
 				return 1;
@@ -608,7 +608,7 @@ end
 
 function x700002_CreateMonster(sceneId, x, z)
 	
-	for i, item in x700002_g_MonsterCreate do
+	for i, item in pairs(x700002_g_MonsterCreate) do
 		LuaFnCreateMonster(sceneId, item.type, x, z, 0, 0, -1);
 	end
 	
@@ -623,7 +623,7 @@ end
 function x700002_CreateBoss(sceneId, teamIndex)
 
 	local lastobjId;
-	for i, item in x700002_g_BossCreate[teamIndex] do
+	for i, item in pairs(x700002_g_BossCreate[teamIndex]) do
 		lastobjId = LuaFnCreateMonster(sceneId, item.type, item.x, item.z, item.ai, 0, -1);
 	end
 	LuaFnSetCopySceneData_Param(sceneId, x700002_CSP_STATE, LuaFnGetCopySceneData_Param(sceneId, x700002_CSP_STATE) + 1 );
@@ -835,11 +835,11 @@ function x700002_CauseRandomBuff(sceneId, humancount)
 	local humanId;
 	
 	if bup then
-		for i, item in x700002_g_RandomBuffUp do
+		for i, item in pairs(x700002_g_RandomBuffUp) do
 			buffnum = buffnum + 1;
 		end
 	else
-		for i, item in x700002_g_RandomBuffDown do
+		for i, item in pairs(x700002_g_RandomBuffDown) do
 			buffnum = buffnum + 1;
 		end
 	end

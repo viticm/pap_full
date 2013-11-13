@@ -73,7 +73,7 @@ function x203002_OnDefaultEvent(sceneId, selfId, targetId)	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´Ë½
 				AddText(sceneId,format("°ÑÒ©ËÍ¸øÃ÷°²   %d/1", GetMissionParam(sceneId,selfId,misIndex,0) ))
 		     		EndEvent()
 		     		DispatchMissionTips(sceneId, selfId)
-		     		for i, item in x203002_g_noDemandItem do
+		     		for i, item in pairs(x203002_g_noDemandItem) do
 					DelItem(sceneId, selfId, item.id, item.num)
 				end
 			end
@@ -202,7 +202,7 @@ function x203002_OnAbandon(sceneId, selfId)
 
 	--É¾³ýÍæ¼ÒÈÎÎñÁÐ±íÖÐ¶ÔÓ¦µÄÈÎÎñ
 	DelMission(sceneId, selfId, x203002_g_MissionId)
-	for i, item in x203002_g_noDemandItem do
+	for i, item in pairs(x203002_g_noDemandItem) do
 		DelItem(sceneId, selfId, item.id, item.num)
 	end
 
@@ -240,7 +240,7 @@ function x203002_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		MissionCom(sceneId, selfId, x203002_g_MissionId)
 		AddExp(sceneId, selfId, x203002_g_ExpBonus)
 		AddMoney(sceneId, selfId, x203002_g_MoneyBonus)
-		for i, item in x203002_g_RadioItemBonus do
+		for i, item in pairs(x203002_g_RadioItemBonus) do
 	        if item.id == selectRadioId then
 	        item={{selectRadioID, 1}}
 	        end
