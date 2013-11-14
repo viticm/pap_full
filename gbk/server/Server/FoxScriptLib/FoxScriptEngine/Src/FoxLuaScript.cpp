@@ -179,7 +179,7 @@ BOOL FoxLuaScript::Load(char * Filename)
 BOOL FoxLuaScript::Execute()
 {
 	if (m_IsRuning && m_LuaState)
-	return CallFunction(MAINFUNCTIONNAME,0,"");
+	    return CallFunction(MAINFUNCTIONNAME,0,"");
 	
 	return FALSE;
 }
@@ -195,10 +195,10 @@ BOOL FoxLuaScript::ExecuteCode()
 	if (!(m_IsRuning && m_LuaState))
 	{
 		ScriptError(LUA_SCRIPT_EXECUTE_ERROR);
-		//if (!ExecuteCode()) return FALSE; ZHANGPENG 发现这里可能有错
 		return FALSE;
     }
-    lua_execute(m_LuaState);
+    if( 0 != lua_execute(m_LuaState) )
+        LERR("[LUA API] execute code error in file: %s, error: %s", m_szScriptName, lua_tostring(m_LuaState, lua_gettop(m_LuaState)));
 	
 	return	TRUE;
 }
@@ -230,7 +230,6 @@ BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va
 	int nArgnum = 0;
 	//int nIndex = 0;
 	int nRetcode;		//调用脚本函数后的返回码
-
 	if (! (m_IsRuning && m_LuaState))
 	{
 		ScriptError(LUA_SCRIPT_STATES_IS_NULL);
@@ -316,10 +315,10 @@ BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va
 	}  
 
 	nRetcode = Lua_Call(m_LuaState, nArgnum, nResults);
-	
 	if (nRetcode != 0)
 	{
-		ScriptError(LUA_SCRIPT_EXECUTE_ERROR, nRetcode);
+        LERR("[LUA API] call error in file: %s, error: %s", m_szScriptName, lua_tostring(m_LuaState, lua_gettop(m_LuaState)));
+		//ScriptError(LUA_SCRIPT_EXECUTE_ERROR, nRetcode);
 		return FALSE;
 	}
 
@@ -533,7 +532,7 @@ BOOL FoxLuaScript::RegisterFunctions(TLua_Funcs Funcs[], int n)
 //---------------------------------------------------------------------------
 void FoxLuaScript::RegisterStandardFunctions()
 {
-	if (! m_LuaState)		return ;
+	if (!m_LuaState) return ;
 	// modify to new, based on lua 5.2.2
     luaopen_base(m_LuaState);
     luaL_openlibs(m_LuaState); // open all for new

@@ -186,7 +186,7 @@ typedef		VOID*	DBHandle;
             } 
     // common define
     #define LF "\r\n"
-#else	//linux
+#elif defined(__LINUX__)	//linux
 	#define __ENTER_FUNCTION {try{
 	#define __LEAVE_FUNCTION }catch(...){AssertSpecial(FALSE,__PRETTY_FUNCTION__);}}
     // add by viticm, fast output some debug info 

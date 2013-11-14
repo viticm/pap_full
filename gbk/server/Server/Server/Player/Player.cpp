@@ -190,6 +190,7 @@ __ENTER_FUNCTION
 					//抛弃当前消息，并且写日志
 					m_pSocketInputStream->Skip( PACKET_HEADER_SIZE+packetSize ) ;
 					CHAR ExpMsg[256] = {0};
+                    LERR( "sizeof(WORLD_POS): %d, packetSize: %d, server size: %d", sizeof(WORLD_POS), packetSize, g_pPacketFactoryManager->GetPacketMaxSize(packetID) ) ;
 					sprintf(ExpMsg,"消息大小异常,PacketID = %d",packetID);
 					AssertEx(FALSE,ExpMsg);
 					return FALSE ;

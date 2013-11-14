@@ -196,10 +196,10 @@ sizeof(FULLUSERDATA)
 	//10/05/05_EQUIP_DB_LOAD 中增加了HEQUIP_SOUXIA 搜侠
  //   10/07/08 为乘骑系统增加_MOUNT_DB_LOAD                    [7/16/2010 陈军龙]
 	//10/07/23 为乘骑系统增加m_nMountIndex                     [7/23/2010 陈军龙]
-	if( sizeof(FULLUSERDATA) !=  190113) //189465//127853、126533、128057、128057,132957,133297,158769,161817,187757,189461
+	if (sizeof(FULLUSERDATA) !=  188174) //189465//127853、126533、128057、128057,132957,133297,158769,161817,187757,189461
 	{
         //在64位机器与32位机器是有分别的
-        printf( "sizeof(FULLUSERDATA): %d", sizeof(FULLUSERDATA) ) ;
+        LERR( "sizeof(FULLUSERDATA): %d", sizeof(FULLUSERDATA) ) ;
 		AssertEx(FALSE,"用户档案数据尺寸发生变化，请不要随意修改此部分代码,联系管理员说明相关情况！") ;
 	}
 	

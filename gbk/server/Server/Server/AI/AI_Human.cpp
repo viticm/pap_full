@@ -824,6 +824,7 @@ __ENTER_FUNCTION
 	// 检测玩家身上的任务个数是否已达上限
 	if( !pCharacter->getScene()->OnAcceptMissionCheck((Obj_Human*)pCharacter,idMissionScript) )
 	{
+        LERR("quest is full");
 		return OR_OK ;
 	}
 
@@ -834,6 +835,7 @@ __ENTER_FUNCTION
 		ORESULT oRes = Validate_Event( pNPC );
 		if( oRes != OR_OK )
 		{
+            LERR("oResult: %d", oRes);
 			return oRes;
 		}
 
@@ -876,9 +878,11 @@ __ENTER_FUNCTION
 									pCharacter->getScene()->SceneID(),
 									pCharacter->GetID(),
 									(INT)pNPC->GetID());
+            LERR( "ret: %d", ret );
 
 			if(ret>0)
 			{
+                LERR( "file: %s, line: %d", __FILE__, __LINE__ );
 				pCharacter->getScene()->GetLuaInterface()->ExeScript_DD( 
 					idMissionScript, 
 					"OnAccept", 
@@ -907,6 +911,8 @@ __ENTER_FUNCTION
 			"CheckAccept", 
 			pCharacter->getScene()->SceneID(),
 			pCharacter->GetID());
+
+            LERR( "ret: %d", ret );
 
 		if(ret>0)
 		{
@@ -1028,11 +1034,13 @@ __ENTER_FUNCTION
 	// 使得Human停下来
 	Stop();
 
+    LERR("FILE: %s, LINE: %d", __FILE__, __LINE__) ;
 	Obj_Character *pCharacter = GetCharacter();
 	Assert( pCharacter != NULL );
 	if ( pCharacter == NULL )
 		return OR_ERROR;
 
+    LERR("FILE: %s, LINE: %d", __FILE__, __LINE__) ;
 	Obj* pNPC = pCharacter->getScene()->GetObjManager()->GetObj(idNPC);
 
 	ORESULT oRes = Validate_Event( pNPC );
@@ -1040,6 +1048,8 @@ __ENTER_FUNCTION
 	{
 		return oRes;
 	}
+
+    LERR("FILE: %s, LINE: %d", __FILE__, __LINE__) ;
 	/*
 	ScriptID_t idScript = pNPC->GetScriptID();
 	if ( idScript == (ScriptID_t)(0xFFFFFFFF) )
@@ -1055,6 +1065,7 @@ __ENTER_FUNCTION
 		(INT)uSelectRadioID );
 		*/
 
+    LERR("FILE: %s, LINE: %d", __FILE__, __LINE__) ;
 	BOOL bVerifyEvent = FALSE;
 	if(pNPC->GetObjType() == Obj::OBJ_TYPE_MONSTER)
 	{
@@ -1072,6 +1083,8 @@ __ENTER_FUNCTION
 			}
 		}
 	}
+
+    LERR("FILE: %s, LINE: %d", __FILE__, __LINE__) ;
 	if(bVerifyEvent)
 	{
 		pCharacter->getScene()->GetLuaInterface()->ExeScript_DDDD( 
@@ -1083,7 +1096,7 @@ __ENTER_FUNCTION
 			uSelectRadioID);
 
 	}
-
+    LERR("FILE: %s, LINE: %d", __FILE__, __LINE__) ;
 	return OR_OK;
 
 __LEAVE_FUNCTION
@@ -2372,12 +2385,16 @@ VOID AI_Human::Penalty_Money_After_Die(const _DIE_PENALTY_INFO* pPenaltyInfo, Ob
 			MoneyLogParam.SceneID	=	pHuman->getScene()->SceneID();
 			MoneyLogParam.XPos		=	pHuman->getWorldPos()->m_fX;
 			MoneyLogParam.ZPos		=	pHuman->getWorldPos()->m_fZ;
+
+            LERR("do the function: %s", __func__) ;
 			SaveMoneyLog(&MoneyLogParam);
 		}
 		else
 		{
 			if(pHuman->GetMoney()>0)
 			{
+
+            LERR("do the function: %s", __func__) ;
 				MONEY_LOG_PARAM	MoneyLogParam;
 				MoneyLogParam.CharGUID	=	pHuman->GetGUID();
 				MoneyLogParam.OPType	=	MONEY_DIE_COST;	

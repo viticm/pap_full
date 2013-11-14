@@ -166,7 +166,7 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "" ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
@@ -204,11 +204,11 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "d", Param0 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d",filename, funcname,Param0) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in file: %s, func: %s, params: (%d)",filename, funcname,Param0) ;	
 
 	return result ;
 
@@ -242,11 +242,11 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "dd", Param0, Param1 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d %d",filename, funcname,Param0,Param1) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in file: %s, func: %s, params: (%d, %d)",filename, funcname,Param0,Param1) ;	
 
 	return result ;
 
@@ -280,11 +280,11 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "ddd", Param0, Param1, Param2 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d %d %d",filename,funcname,Param0,Param1,Param2) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error file: %s, func: %s, params: (%d, %d, %d)",filename,funcname,Param0,Param1,Param2) ;	
 
 	return result ;
 
@@ -316,13 +316,16 @@ __ENTER_FUNCTION
 		return 0;
 
 	INT nTopIndex = 0;
+
 	mLua.SafeCallBegin( &nTopIndex ) ;
+
 	bRet = mLua.CallFunction( funcname, 1, "dddd", Param0, Param1, Param2, Param3 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d %d %d %d",filename,funcname,Param0,Param1,Param2,Param3) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in file: %s, func: %s, params: (%d, %d, %d, %d)",filename,funcname,Param0,Param1,Param2,Param3) ;	
 
 	return result ;
 
@@ -356,11 +359,11 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "ddddd", Param0, Param1, Param2, Param3, Param4 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d %d %d %d %d",filename,funcname,Param0,Param1,Param2,Param3,Param4) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in file: %s, func: %s, params: (%d, %d, %d, %d, %d)",filename,funcname,Param0,Param1,Param2,Param3,Param4) ;	
 
 	return result ;
 
@@ -394,11 +397,11 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "dddddd", Param0, Param1, Param2, Param3, Param4, Param5 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d %d %d %d %d %d",filename,funcname,Param0,Param1,Param2,Param3,Param4,Param5) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in file: %s, func: %s, params: (%d, %d, %d, %d, %d, %d)",filename,funcname,Param0,Param1,Param2,Param3,Param4,Param5) ;	
 
 	return result ;
 
@@ -432,11 +435,11 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "ddddddd", Param0, Param1, Param2, Param3, Param4, Param5, Param6 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d %d %d %d %d %d %d",filename,funcname,Param0,Param1,Param2,Param3,Param4,Param5,Param6) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in file: %s, func: %s, params: (%d, %d, %d, %d, %d, %d, %d)",filename,funcname,Param0,Param1,Param2,Param3,Param4,Param5,Param6) ;	
 
 	return result ;
 
@@ -470,11 +473,11 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "dddddddd", Param0, Param1, Param2, Param3, Param4, Param5, Param6, Param7 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d %d %d %d %d %d %d %d",filename,funcname,Param0,Param1,Param2,Param3,Param4,Param5,Param6,Param7) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in file: %s, func: %s, params: (%d, %d, %d, %d, %d, %d, %d, %d)",filename,funcname,Param0,Param1,Param2,Param3,Param4,Param5,Param6,Param7) ;	
 
 	return result ;
 
@@ -508,11 +511,11 @@ __ENTER_FUNCTION
 	INT nTopIndex = 0;
 	mLua.SafeCallBegin( &nTopIndex ) ;
 	bRet = mLua.CallFunction( funcname, 1, "ddnn", Param0, Param1, fParam2, fParam3 ) ;
-	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,1);
+	INT result = (INT)Lua_ValueToNumber(mLua.m_LuaState,lua_gettop(mLua.m_LuaState));
 	mLua.SafeCallEnd( nTopIndex ) ;
 
 	if(!bRet)
-		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in fn : %s %s %d %d %f %f",filename,funcname,Param0,Param1,fParam2,fParam3) ;	
+		Log::SaveLog( SERVER_ERRORFILE, "stack pop error in file: %s, func: %s, params: (%d %d %f %f)",filename,funcname,Param0,Param1,fParam2,fParam3) ;	
 
 	return result ;
 
@@ -561,7 +564,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d", filename, funcnameX, bLoad ) ;
+				sprintf( szMsg, "ERROR: ExeScript error file: %s, func: %s, load: %d", filename, funcnameX, bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -611,7 +614,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d", filename, funcnameX, Param0,bLoad ) ;
+				sprintf( szMsg, "ERROR: ExeScript_D error file: %s, func: %s, params: (%d), load: %d", filename, funcnameX, Param0,bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -645,6 +648,7 @@ __ENTER_FUNCTION
 #ifdef _DEBUG
 	CHAR strBuf[256];
 	tsnprintf(strBuf,256,"%s,scriptid=%d",funcname,scriptid);
+    LERR("funcname: %s", funcname);
 	AssertEx(pSFileData,strBuf);
 #endif
 
@@ -666,7 +670,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d %d", filename, funcnameX, Param0,Param1,bLoad ) ;
+				sprintf( szMsg, "ERROR: ExeScript_DD error file: %s, func: %s, params: (%d, %d), load: %d", filename, funcnameX, Param0,Param1,bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -715,7 +719,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d %d %d", filename, funcnameX, Param0,Param1,Param2,bLoad ) ;
+				sprintf( szMsg, "ERROR: ExeScript_DDD error file: %s, func: %s, params: (%d, %d, %d), load: %d", filename, funcnameX, Param0,Param1,Param2,bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -765,7 +769,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d %d %d %d", filename, funcnameX, Param0,Param1,Param2,Param3,bLoad ) ;
+				sprintf( szMsg, "ERROR: ExeScript_DDDD error file: %s, func: %s, params: (%d, %d, %d, %d), load: %d", filename, funcnameX, Param0,Param1,Param2,Param3,bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -815,7 +819,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d %d %d %d %d", filename, funcnameX, Param0,Param1,Param2,Param3,Param4,bLoad ) ;
+				sprintf( szMsg, "ERROR: ExeScript_DDDDD error file: %s, func: %s, params: (%d, %d, %d, %d, %d), load: %d", filename, funcnameX, Param0,Param1,Param2,Param3,Param4,bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -865,7 +869,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d %d %d %d %d %d", filename, funcnameX, Param0,Param1,Param2,Param3,Param4,Param5,bLoad ) ;
+				sprintf( szMsg, "ERROR: ExeScript_DDDDDD error file: %s, func: %s, params: (%d, %d, %d, %d, %d, %d), load: %d", filename, funcnameX, Param0,Param1,Param2,Param3,Param4,Param5,bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -915,7 +919,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d %d %d %d %d %d %d", filename, funcnameX, Param0,Param1,Param2,Param3,Param4,Param5,Param6,bLoad ) ;
+				sprintf( szMsg, "ERROR: ERROR: ExeScript_DDDDDDD error file: %s, func: %s, params: (%d, %d, %d, %d, %d, %d, %d), load: %d", filename, funcnameX, Param0,Param1,Param2,Param3,Param4,Param5,Param6,bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -965,7 +969,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d %d %d %d %d %d %d %d", filename, funcnameX, Param0,Param1,Param2,Param3,Param4,Param5,Param6,Param7,bLoad ) ;
+				sprintf( szMsg, "ERROR: ExeScript_DDDDDDD error file: %s, func: %s, params: (%d, %d, %d, %d, %d, %d, %d), load: %d", filename, funcnameX, Param0,Param1,Param2,Param3,Param4,Param5,Param6,Param7,bLoad ) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}
@@ -1015,7 +1019,7 @@ __ENTER_FUNCTION
 			_MY_CATCH
 			{
 				CHAR szMsg[256] ;
-				sprintf( szMsg, "ERROR:%s %s %d %d %f %f %d", filename, funcnameX, Param0,Param1,fParam2,fParam3,bLoad) ;
+				sprintf( szMsg, "ERROR: ExeScript_DDNN error file: %s, func: %s, params: (%d, %d, %f, %f), load: %d", filename, funcnameX, Param0,Param1,fParam2,fParam3,bLoad) ;
 				MyMessageBox( szMsg ) ;
 			}
 		}

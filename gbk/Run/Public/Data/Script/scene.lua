@@ -668,7 +668,6 @@ function x888888_OnAcceptMissionCheck( sceneId, selfId, missionScript )
 
 	end
 
-	
 
 	return 1
 

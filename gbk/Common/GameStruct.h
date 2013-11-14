@@ -1715,6 +1715,7 @@ struct  SOUXIA_DATA
 	VOID	WriteSouXiaVarAttr(SocketOutputStream& oStream) const;
 };
 
+#pragma pack(pop)
 //后面的文件会用到前面的定义
 #include "GameStruct_Item.h"
 #include "GameStruct_Skill.h"
@@ -1728,5 +1729,4 @@ struct  SOUXIA_DATA
 #include "GameStruct_MinorPasswd.h"
 #include "GameStruct_Finger.h"
 #include "GameStruct_Country.h"
-#pragma pack(pop)
 #endif

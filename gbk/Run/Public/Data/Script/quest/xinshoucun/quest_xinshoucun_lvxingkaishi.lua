@@ -72,6 +72,7 @@ x970000_g_QuestNum = 0
 x970000_MP_ISCOMPLETE = 7
 
 function  x970000_g_QuestOrder(QuestType)
+    --local str = string.format( "name: %s, num: %d", "name1", 1 )
 	local count = 0
 	for i, QuestLabel in pairs(QuestType) do
 		for j, QuestInfo in pairs(QuestLabel) do
