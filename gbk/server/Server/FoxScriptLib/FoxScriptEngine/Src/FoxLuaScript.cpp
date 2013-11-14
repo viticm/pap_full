@@ -197,7 +197,7 @@ BOOL FoxLuaScript::ExecuteCode()
 		ScriptError(LUA_SCRIPT_EXECUTE_ERROR);
 		return FALSE;
     }
-    if( 0 != lua_execute(m_LuaState) )
+    if(0 != lua_execute(m_LuaState))
         LERR("[LUA API] execute code error in file: %s, error: %s", m_szScriptName, lua_tostring(m_LuaState, lua_gettop(m_LuaState)));
 	
 	return	TRUE;
