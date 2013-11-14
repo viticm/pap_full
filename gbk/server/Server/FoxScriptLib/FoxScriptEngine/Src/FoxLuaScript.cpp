@@ -220,7 +220,7 @@ BOOL FoxLuaScript::ExecuteCode()
 // 参数:	...
 // 返回:	BOOL 
 //---------------------------------------------------------------------------
-BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va_list vlist)
+BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPCSTR cFormat, va_list vlist)
 {
 	double nNumber;
 	char * cString	= NULL;
@@ -313,7 +313,6 @@ BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va
 		}
 		
 	}  
-
 	nRetcode = Lua_Call(m_LuaState, nArgnum, nResults);
 	if (nRetcode != 0)
 	{
@@ -335,7 +334,7 @@ BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va
 // 参数:	...
 // 返回:	BOOL 
 //---------------------------------------------------------------------------
-BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, ...)
+BOOL FoxLuaScript::CallFunction(LPSTR cFuncName, int nResults, LPCSTR cFormat, ...)
 {
 	BOOL bResult  = FALSE;
 	va_list vlist;
