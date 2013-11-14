@@ -323,7 +323,7 @@ function x300304_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		BeginAddItem(sceneId)
 		local givebonus = 0
 		local giveitem = 0
-		if (getn(x300304_g_ItemBonus) ==0)  and  (getn(x300304_g_RadioItemBonus) == 0 ) then
+		if (#(x300304_g_ItemBonus) ==0)  and  (#(x300304_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
 			for i, item in pairs(x300304_g_ItemBonus) do

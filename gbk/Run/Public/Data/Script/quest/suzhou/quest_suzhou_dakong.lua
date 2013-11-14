@@ -120,7 +120,7 @@ function x100009_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			local m = 0
 			for i, QuestInfo in pairs(x100009_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
-					if (getn(x100009_g_DELIVERY)==1) and (x100009_g_NameEnd == x100009_g_DELIVERY[1].npc) then	
+					if (#(x100009_g_DELIVERY)==1) and (x100009_g_NameEnd == x100009_g_DELIVERY[1].npc) then	
 						m = 2
 					else
 						m = 1
@@ -537,7 +537,7 @@ function x100009_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		BeginAddItem(sceneId)
 		local givebonus = 0
 		local giveitem = 0
-		if getn(x100009_g_ItemBonus) ==0 then
+		if #(x100009_g_ItemBonus) ==0 then
 			givebonus = 1
 		else
 			for i, item in pairs(x100009_g_ItemBonus) do
@@ -559,7 +559,7 @@ function x100009_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 			if ret > 0 then
 				for i, QuestInfo in pairs(x100009_g_Quest) do
 					if QuestInfo.type ==  "DELIVERY" then
-						if getn(x100009_g_DELIVERY) == 1 and QuestInfo == x100009_g_DELIVERY[1] then
+						if #(x100009_g_DELIVERY) == 1 and QuestInfo == x100009_g_DELIVERY[1] then
 							if QuestInfo.npc == x100009_g_NameEnd and QuestInfo.item > 0 and QuestInfo.num > 0 then
 								DelItem(sceneId,selfId,QuestInfo.item,QuestInfo.num)
 							end								

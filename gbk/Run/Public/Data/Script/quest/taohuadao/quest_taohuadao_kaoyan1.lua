@@ -123,7 +123,7 @@ function x960001_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			local m = 0
 			for i, QuestInfo in pairs(x960001_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
-					if (getn(x960001_g_DELIVERY)==1) and (x960001_g_NameEnd == x960001_g_DELIVERY[1].npc) then	
+					if (#(x960001_g_DELIVERY)==1) and (x960001_g_NameEnd == x960001_g_DELIVERY[1].npc) then	
 						m = 2
 					else
 						m = 1
@@ -541,7 +541,7 @@ function x960001_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		BeginAddItem(sceneId)
 		local givebonus = 0
 		local giveitem = 0
-		if (getn(x960001_g_ItemBonus) ==0)  and  (getn(x960001_g_RadioItemBonus) == 0 ) then
+		if (#(x960001_g_ItemBonus) ==0)  and  (#(x960001_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
 			for i, item in pairs(x960001_g_ItemBonus) do

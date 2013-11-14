@@ -15,3 +15,14 @@ do
         sed -i "${line}s/in /&pairs(/g;${line}s/ do/)&/g" ${luafile}
     done
 done
+
+find_cmd="grep -n 'getn('| awk -F ':' '{print \$1}'"
+for luafile in ${lua_files}
+do
+    find_lines=`echo "cat ${luafile} | ${find_cmd}" | sh`
+    for line in ${find_lines}
+    do
+        echo "find in file: ${luafile}, line: ${line}, relpace it"
+        sed -i "${line}s;getn;#;g" ${luafile}
+    done
+done

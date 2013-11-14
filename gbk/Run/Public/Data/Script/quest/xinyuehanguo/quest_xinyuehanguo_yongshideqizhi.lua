@@ -118,7 +118,7 @@ function x211048_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			local m = 0
 			for i, QuestInfo in pairs(x211048_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
-					if (getn(x211048_g_DELIVERY)==1) and (x211048_g_NameEnd == x211048_g_DELIVERY[1].npc) then	
+					if (#(x211048_g_DELIVERY)==1) and (x211048_g_NameEnd == x211048_g_DELIVERY[1].npc) then	
 						m = 2
 					else
 						m = 1
@@ -547,7 +547,7 @@ function x211048_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		BeginAddItem(sceneId)
 		local givebonus = 0
 		local giveitem = 0
-		if (getn(x211048_g_ItemBonus) ==0)  and  (getn(x211048_g_RadioItemBonus) == 0 ) then
+		if (#(x211048_g_ItemBonus) ==0)  and  (#(x211048_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
 			for i, item in pairs(x211048_g_ItemBonus) do
@@ -578,7 +578,7 @@ function x211048_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 			if ret > 0 then
 				for i, QuestInfo in pairs(x211048_g_Quest) do
 					if QuestInfo.type ==  "DELIVERY" then
-						if getn(x211048_g_DELIVERY) == 1 and QuestInfo == x211048_g_DELIVERY[1] then
+						if #(x211048_g_DELIVERY) == 1 and QuestInfo == x211048_g_DELIVERY[1] then
 							if QuestInfo.npc == x211048_g_NameEnd and QuestInfo.item > 0 and QuestInfo.num > 0 then
 								DelItem(sceneId,selfId,QuestInfo.item,QuestInfo.num)
 							end								

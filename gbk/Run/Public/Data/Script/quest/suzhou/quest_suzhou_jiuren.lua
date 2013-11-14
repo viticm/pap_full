@@ -108,7 +108,7 @@ function x100024_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			local m = 0
 			for i, QuestInfo in pairs(x100024_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
-					if (getn(x100024_g_DELIVERY)==1) and (x100024_g_NameEnd == x100024_g_DELIVERY[1].npc) then	
+					if (#(x100024_g_DELIVERY)==1) and (x100024_g_NameEnd == x100024_g_DELIVERY[1].npc) then	
 						m = 2
 					else
 						m = 1
@@ -522,7 +522,7 @@ function x100024_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 			if ret > 0 then
 				for i, QuestInfo in pairs(x100024_g_Quest) do
 					if QuestInfo.type ==  "DELIVERY" then
-						if getn(x100024_g_DELIVERY) == 1 and QuestInfo == x100024_g_DELIVERY[1] then
+						if #(x100024_g_DELIVERY) == 1 and QuestInfo == x100024_g_DELIVERY[1] then
 							if QuestInfo.npc == x100024_g_NameEnd and QuestInfo.item > 0 and QuestInfo.num > 0 then
 								DelItem(sceneId,selfId,QuestInfo.item,QuestInfo.num)
 							end								

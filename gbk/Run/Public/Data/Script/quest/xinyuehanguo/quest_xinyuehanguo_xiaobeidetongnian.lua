@@ -398,7 +398,7 @@ function x211044_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if bHaveMonster == getn(x211044_g_PROTECT)  then
+		if bHaveMonster == #(x211044_g_PROTECT)  then
 			for j, ProtectInfo in pairs(x211044_g_PROTECT) do
 				SetPatrolId(sceneId, x211044_g_ProtectNPCID[j], ProtectInfo.patrol)
 			end
@@ -421,7 +421,7 @@ function x211044_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if bHaveMonster < getn(x211044_g_PROTECT)   then
+		if bHaveMonster < #(x211044_g_PROTECT)   then
 			-- 关闭计时器
 			x211044_CloseTimer(sceneId, x211044_g_PROTECTINFO.ScneneTimerIndex)
 			return
@@ -433,7 +433,7 @@ function x211044_OnScneneTimer(sceneId, selfId)
 			for i=1, x211044_g_PROTECTINFO.PlayerNum  do
 				if x211044_g_PROTECTINFO.PlayerId[i] ~= 0  then
 					local nPlayerX, nPlayerZ = GetWorldPos(sceneId, x211044_g_PROTECTINFO.PlayerId[i])
-					local distance1 = floor(sqrt((targetX-nPlayerX)*(targetX-nPlayerX)+(targetZ-nPlayerZ)*(targetZ-nPlayerZ)))
+					local distance1 = math.floor(math.sqrt((targetX-nPlayerX)*(targetX-nPlayerX)+(targetZ-nPlayerZ)*(targetZ-nPlayerZ)))
 					
 					if distance1 > 20    then
 						--提示这个玩家任务失败
@@ -454,7 +454,7 @@ function x211044_OnScneneTimer(sceneId, selfId)
 					local targetX, targetZ = GetWorldPos(sceneId, NpcID)
 					--local x, z = GetLastPatrolPoint(sceneId, ProtectInfo.patrol)
 					local x,z =113,134
-					local distance = floor(sqrt((targetX-x)*(targetX-x)+(targetZ-z)*(targetZ-z)))
+					local distance = math.floor(math.sqrt((targetX-x)*(targetX-x)+(targetZ-z)*(targetZ-z)))
 					-- 到达终点
 					if distance<=1  then
 						for i=1, x211044_g_PROTECTINFO.PlayerNum  do
@@ -481,7 +481,7 @@ function x211044_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if (bDone >= getn(x211044_g_PROTECT)) then
+		if (bDone >= #(x211044_g_PROTECT)) then
 			x211044_g_PROTECTINFO.Step = 5
 			-- 关闭计时器
 			x211044_CloseTimer(sceneId, x211044_g_PROTECTINFO.ScneneTimerIndex)
@@ -498,7 +498,7 @@ function x211044_CloseTimer( sceneId, TimerIndex )
 	x211044_g_PROTECTINFO.Step = 0
 	x211044_g_PROTECTINFO.StartTime = 0
 	x211044_g_PROTECTINFO.PlayerNum = 0
-	for i =1, getn(x211044_g_PROTECTINFO.PlayerId) do
+	for i =1, #(x211044_g_PROTECTINFO.PlayerId) do
 		x211044_g_PROTECTINFO.PlayerId[i]=0
 	end
 	x211044_g_ProtectNPCID = {}
@@ -579,7 +579,7 @@ function x211044_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		BeginAddItem(sceneId)
 		local givebonus = 0
 		local giveitem = 0
-		if (getn(x211044_g_ItemBonus) ==0)  and  (getn(x211044_g_RadioItemBonus) == 0 ) then
+		if (#(x211044_g_ItemBonus) ==0)  and  (#(x211044_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
 			for i, item in pairs(x211044_g_ItemBonus) do
@@ -610,7 +610,7 @@ function x211044_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 			if ret > 0 then
 				for i, QuestInfo in pairs(x211044_g_Quest) do
 					if QuestInfo.type ==  "DELIVERY" then
-						if getn(x211044_g_DELIVERY) == 1 and QuestInfo == x211044_g_DELIVERY[1] then
+						if #(x211044_g_DELIVERY) == 1 and QuestInfo == x211044_g_DELIVERY[1] then
 							if QuestInfo.npc == x211044_g_NameEnd and QuestInfo.item > 0 and QuestInfo.num > 0 then
 								DelItem(sceneId,selfId,QuestInfo.item,QuestInfo.num)
 							end								

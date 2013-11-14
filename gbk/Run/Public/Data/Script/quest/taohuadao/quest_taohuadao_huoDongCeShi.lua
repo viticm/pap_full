@@ -492,7 +492,7 @@ function x920001_OnSubmit( sceneId, selfId, targetId, selectRadioId )
 		BeginAddItem(sceneId)
 		
 		--判读背包是否有空间放奖励物品
-		if ( getn( x920001_g_ItemBonus ) == 0 ) and ( getn( x920001_g_RadioItemBonus ) == 0 ) then
+		if ( #( x920001_g_ItemBonus ) == 0 ) and ( #( x920001_g_RadioItemBonus ) == 0 ) then
 			givebonus = 1
 		else
 			for i, item in pairs(x920001_g_ItemBonus) do

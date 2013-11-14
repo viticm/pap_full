@@ -398,7 +398,7 @@ function x203001_CloseTimer( sceneId, TimerIndex )
 	x203001_g_PROTECTINFO.Step = 0
 	x203001_g_PROTECTINFO.StartTime = 0
 	x203001_g_PROTECTINFO.PlayerNum = 0
-	for i =1, getn(x203001_g_PROTECTINFO.PlayerId) do
+	for i =1, #(x203001_g_PROTECTINFO.PlayerId) do
 		x203001_g_PROTECTINFO.PlayerId[i]=0
 	end
 	x203001_g_husongobj = 0

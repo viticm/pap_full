@@ -6668,7 +6668,6 @@ VOID Obj_Human::SaveMoneyLogByHuman( MONEY_OP_TYPE eReason, INT iModify )
 	MoneyLogParam.SceneID	=	getScene()->SceneID();
 	MoneyLogParam.XPos		=	getWorldPos()->m_fX;
 	MoneyLogParam.ZPos		=	getWorldPos()->m_fZ;
-    LERR("SaveMoneyLogByHuman");
 	SaveMoneyLog(&MoneyLogParam);
 	__LEAVE_FUNCTION
 }

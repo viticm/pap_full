@@ -117,7 +117,7 @@ function x300305_OnDefaultEvent( sceneId, selfId, targetId )	--µã»÷¸ÃÈÎÎñºóÖ´ÐÐ´
 			local m = 0
 			for i, QuestInfo in pairs(x300305_g_Quest) do
 				if (QuestInfo.type == "DELIVERY") then
-					if (getn(x300305_g_DELIVERY)==1) and (x300305_g_NameEnd == x300305_g_DELIVERY[1].npc) then	
+					if (#(x300305_g_DELIVERY)==1) and (x300305_g_NameEnd == x300305_g_DELIVERY[1].npc) then	
 						m = 2
 					else
 						m = 1
@@ -484,7 +484,7 @@ function x300305_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if bHaveMonster == getn(x300305_g_PROTECT)  then
+		if bHaveMonster == #(x300305_g_PROTECT)  then
 			for j, ProtectInfo in pairs(x300305_g_PROTECT) do
 				SetPatrolId(sceneId, x300305_g_ProtectNPCID[j], ProtectInfo.patrol)
 			end
@@ -507,7 +507,7 @@ function x300305_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if bHaveMonster < getn(x300305_g_PROTECT)   then
+		if bHaveMonster < #(x300305_g_PROTECT)   then
 			-- ¹Ø±Õ¼ÆÊ±Æ÷
 			x300305_CloseTimer(sceneId, x300305_g_PROTECTINFO.ScneneTimerIndex)
 			return
@@ -567,7 +567,7 @@ function x300305_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if (bDone >= getn(x300305_g_PROTECT)) then
+		if (bDone >= #(x300305_g_PROTECT)) then
 			x300305_g_PROTECTINFO.Step = 5
 			-- ¹Ø±Õ¼ÆÊ±Æ÷
 			x300305_CloseTimer(sceneId, x300305_g_PROTECTINFO.ScneneTimerIndex)
@@ -584,7 +584,7 @@ function x300305_CloseTimer( sceneId, TimerIndex )
 	x300305_g_PROTECTINFO.Step = 0
 	x300305_g_PROTECTINFO.StartTime = 0
 	x300305_g_PROTECTINFO.PlayerNum = 0
-	for i =1, getn(x300305_g_PROTECTINFO.PlayerId) do
+	for i =1, #(x300305_g_PROTECTINFO.PlayerId) do
 		x300305_g_PROTECTINFO.PlayerId[i]=0
 	end
 	x300305_g_ProtectNPCID = {}
@@ -633,7 +633,7 @@ function x300305_OnSubmit( sceneId, selfId, targetId,selectRadioId )
 		BeginAddItem(sceneId)
 		local givebonus = 0
 		local giveitem = 0
-		if (getn(x300305_g_ItemBonus) ==0)  and  (getn(x300305_g_RadioItemBonus) == 0 ) then
+		if (#(x300305_g_ItemBonus) ==0)  and  (#(x300305_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
 			for i, item in pairs(x300305_g_ItemBonus) do

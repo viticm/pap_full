@@ -397,7 +397,7 @@ function x217009_CloseTimer( sceneId, TimerIndex )
 	x217009_g_PROTECTINFO.Step = 0
 	x217009_g_PROTECTINFO.StartTime = 0
 	x217009_g_PROTECTINFO.PlayerNum = 0
-	for i =1, getn(x217009_g_PROTECTINFO.PlayerId) do
+	for i =1, #(x217009_g_PROTECTINFO.PlayerId) do
 		x217009_g_PROTECTINFO.PlayerId[i]=0
 	end
 	x217009_g_husongobj = 0

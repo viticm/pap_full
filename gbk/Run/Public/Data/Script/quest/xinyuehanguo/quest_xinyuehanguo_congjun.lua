@@ -399,7 +399,7 @@ function x211050_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if bHaveMonster == getn(x211050_g_PROTECT)  then
+		if bHaveMonster == #(x211050_g_PROTECT)  then
 			for j, ProtectInfo in pairs(x211050_g_PROTECT) do
 				SetPatrolId(sceneId, x211050_g_ProtectNPCID[j], ProtectInfo.patrol)
 			end
@@ -422,7 +422,7 @@ function x211050_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if bHaveMonster < getn(x211050_g_PROTECT)   then
+		if bHaveMonster < #(x211050_g_PROTECT)   then
 			-- 关闭计时器
 			x211050_CloseTimer(sceneId, x211050_g_PROTECTINFO.ScneneTimerIndex)
 			return
@@ -482,7 +482,7 @@ function x211050_OnScneneTimer(sceneId, selfId)
 				end
 			end
 		end
-		if (bDone >= getn(x211050_g_PROTECT)) then
+		if (bDone >= #(x211050_g_PROTECT)) then
 			x211050_g_PROTECTINFO.Step = 5
 			-- 关闭计时器
 			x211050_CloseTimer(sceneId, x211050_g_PROTECTINFO.ScneneTimerIndex)
@@ -499,7 +499,7 @@ function x211050_CloseTimer( sceneId, TimerIndex )
 	x211050_g_PROTECTINFO.Step = 0
 	x211050_g_PROTECTINFO.StartTime = 0
 	x211050_g_PROTECTINFO.PlayerNum = 0
-	for i =1, getn(x211050_g_PROTECTINFO.PlayerId) do
+	for i =1, #(x211050_g_PROTECTINFO.PlayerId) do
 		x211050_g_PROTECTINFO.PlayerId[i]=0
 	end
 	x211050_g_ProtectNPCID = {}
@@ -581,7 +581,7 @@ function x211050_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 		BeginAddItem(sceneId)
 		local givebonus = 0
 		local giveitem = 0
-		if (getn(x211050_g_ItemBonus) ==0)  and  (getn(x211050_g_RadioItemBonus) == 0 ) then
+		if (#(x211050_g_ItemBonus) ==0)  and  (#(x211050_g_RadioItemBonus) == 0 ) then
 			givebonus = 1
 		else
 			for i, item in pairs(x211050_g_ItemBonus) do
@@ -612,7 +612,7 @@ function x211050_OnSubmit(sceneId, selfId, targetId, selectRadioId)
 			if ret > 0 then
 				for i, QuestInfo in pairs(x211050_g_Quest) do
 					if QuestInfo.type ==  "DELIVERY" then
-						if getn(x211050_g_DELIVERY) == 1 and QuestInfo == x211050_g_DELIVERY[1] then
+						if #(x211050_g_DELIVERY) == 1 and QuestInfo == x211050_g_DELIVERY[1] then
 							if QuestInfo.npc == x211050_g_NameEnd and QuestInfo.item > 0 and QuestInfo.num > 0 then
 								DelItem(sceneId,selfId,QuestInfo.item,QuestInfo.num)
 							end								
