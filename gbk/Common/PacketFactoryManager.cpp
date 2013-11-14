@@ -1569,7 +1569,6 @@ __ENTER_FUNCTION
 		
 	if( m_Factories[pFactory->GetPacketID()]!=NULL ) 
 	{//ÖØ¸´Éè¶¨
-        LERR("packet id is repeat: %d", pFactory->GetPacketID());
 		Assert( FALSE ) ;
 		return ;
 	}

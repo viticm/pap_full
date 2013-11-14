@@ -29,9 +29,9 @@
 
 		#include <windows.h>
 		#include <mmsystem.h>
-		#include <dsound.h>
-		#include <dinput.h>
-		#include <ddraw.h>
+		//#include <dsound.h>
+		//#include <dinput.h>
+		//#include <ddraw.h>
 
 	//	#define SUCCEEDED(x)		((x) > 0)
 #else

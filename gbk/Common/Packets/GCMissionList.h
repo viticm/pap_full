@@ -97,7 +97,7 @@ namespace Packets
 	public:
 		Packet*		CreatePacket() { return new GCMissionList() ; }
 		PacketID_t	GetPacketID()const { return PACKET_GC_MISSIONLIST; }
-		UINT		GetPacketMaxSize()const { LERR("sizeof(_MISSION_LIST):%d",sizeof(_MISSION_LIST));return	sizeof(ObjID_t) + sizeof ( UINT )  + sizeof(_MISSION_LIST); }
+		UINT		GetPacketMaxSize()const { return	sizeof(ObjID_t) + sizeof ( UINT )  + sizeof(_MISSION_LIST); }
 	};
 
 	class GCMissionListHandler 

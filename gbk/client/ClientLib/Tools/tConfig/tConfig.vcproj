@@ -1,128 +1,192 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9.00"
 	Name="tConfig"
 	ProjectGUID="{400B8ABB-E03B-4024-8DC2-3F25230AE23A}"
-	Keyword="MFCProj">
+	RootNamespace="tConfig"
+	Keyword="MFCProj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(OutRoot)/$(ConfigurationName)"
+			OutputDirectory="../../../Run/Client/Game"
 			IntermediateDirectory="$(OutDir)/$(ProjectName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="2"
-			CharacterSet="1">
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="false"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\..\Render_Fairy"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;TCONFIG"
-				MinimalRebuild="TRUE"
+				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				TreatWChar_tAsBuiltInType="TRUE"
-				ForceConformanceInForLoopScope="TRUE"
-				UsePrecompiledHeader="3"
+				TreatWChar_tAsBuiltInType="true"
+				ForceConformanceInForLoopScope="true"
+				UsePrecompiledHeader="2"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="4"/>
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="4"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2052"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="zzip_MDd.lib zlib_MDd.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\Tools\zziplib\lib;..\..\Tools\zlib\lib"
-				GenerateDebugInformation="TRUE"
+				GenerateDebugInformation="true"
 				SubSystem="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="_DEBUG"
-				MkTypLibCompatible="FALSE"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
-				Culture="2052"
-				AdditionalIncludeDirectories="$(IntDir)"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="$(OutRoot)/$(ConfigurationName)"
 			IntermediateDirectory="$(OutDir)/$(ProjectName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="2"
-			CharacterSet="1">
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="false"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="..\..\Render_Fairy"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;TCONFIG"
-				MinimalRebuild="FALSE"
+				MinimalRebuild="false"
 				RuntimeLibrary="2"
-				TreatWChar_tAsBuiltInType="TRUE"
-				ForceConformanceInForLoopScope="TRUE"
-				UsePrecompiledHeader="3"
+				TreatWChar_tAsBuiltInType="true"
+				ForceConformanceInForLoopScope="true"
+				UsePrecompiledHeader="2"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="3"/>
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="3"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2052"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="zzip_MD.lib zlib_MD.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\Tools\zziplib\lib;..\..\Tools\zlib\lib"
-				GenerateDebugInformation="TRUE"
+				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="FALSE"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="2052"
-				AdditionalIncludeDirectories="$(IntDir)"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -131,174 +195,228 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
 			<File
-				RelativePath=".\DefConfig.cpp">
+				RelativePath=".\DefConfig.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\DirectXErrorDlg.cpp">
+				RelativePath=".\DirectXErrorDlg.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\Dlg_Cfg_Integrate.cpp">
+				RelativePath=".\Dlg_Cfg_Integrate.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\Dlg_Cfg_Sound.cpp">
+				RelativePath=".\Dlg_Cfg_Sound.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\Dlg_Cfg_Video.cpp">
+				RelativePath=".\Dlg_Cfg_Video.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\GameConfig.cpp">
+				RelativePath=".\GameConfig.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\GameConfigManager.cpp">
+				RelativePath=".\GameConfigManager.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\Render_Fairy\HardwareInfoSystem.cpp">
+				RelativePath="..\..\Render_Fairy\HardwareInfoSystem.cpp"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
 						AdditionalIncludeDirectories="..\..\AxFilePack\AXP"
-						PreprocessorDefinitions="AXP_STATIC_LIB"/>
+						PreprocessorDefinitions="AXP_STATIC_LIB"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
 						AdditionalIncludeDirectories="..\..\AxFilePack\AXP"
-						PreprocessorDefinitions="AXP_STATIC_LIB"/>
+						PreprocessorDefinitions="AXP_STATIC_LIB"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\Render_Fairy\InnerString.cpp">
+				RelativePath="..\..\Render_Fairy\InnerString.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\StaticLink.cpp">
+				RelativePath=".\StaticLink.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\stdafx.cpp">
+				RelativePath=".\stdafx.cpp"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"/>
+						UsePrecompiledHeader="1"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"/>
+						UsePrecompiledHeader="1"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\tConfig.cpp">
+				RelativePath=".\tConfig.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\tConfigDlg.cpp">
+				RelativePath=".\tConfigDlg.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\TDUnicodeLayer.cpp">
+				RelativePath=".\TDUnicodeLayer.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\TLBB_DBC.cpp">
+				RelativePath=".\TLBB_DBC.cpp"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="3"/>
+						UsePrecompiledHeader="2"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\Util.cpp">
+				RelativePath=".\Util.cpp"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
 			<File
-				RelativePath=".\ControlNode.h">
+				RelativePath=".\ControlNode.h"
+				>
 			</File>
 			<File
-				RelativePath=".\DefConfig.h">
+				RelativePath=".\DefConfig.h"
+				>
 			</File>
 			<File
-				RelativePath=".\DirectXErrorDlg.h">
+				RelativePath=".\DirectXErrorDlg.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Dlg_Cfg_Integrate.h">
+				RelativePath=".\Dlg_Cfg_Integrate.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Dlg_Cfg_Sound.h">
+				RelativePath=".\Dlg_Cfg_Sound.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Dlg_Cfg_Video.h">
+				RelativePath=".\Dlg_Cfg_Video.h"
+				>
 			</File>
 			<File
-				RelativePath=".\GameConfig.h">
+				RelativePath=".\GameConfig.h"
+				>
 			</File>
 			<File
-				RelativePath=".\GameConfigManager.h">
+				RelativePath=".\GameConfigManager.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\Render_Fairy\HardwareInfoSystem.h">
+				RelativePath="..\..\Render_Fairy\HardwareInfoSystem.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\Render_Fairy\InnerString.h">
+				RelativePath="..\..\Render_Fairy\InnerString.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Resource.h">
+				RelativePath=".\Resource.h"
+				>
 			</File>
 			<File
-				RelativePath=".\StaticLink.h">
+				RelativePath=".\StaticLink.h"
+				>
 			</File>
 			<File
-				RelativePath=".\stdafx.h">
+				RelativePath=".\stdafx.h"
+				>
 			</File>
 			<File
-				RelativePath=".\tConfig.h">
+				RelativePath=".\tConfig.h"
+				>
 			</File>
 			<File
-				RelativePath=".\tConfigDlg.h">
+				RelativePath=".\tConfigDlg.h"
+				>
 			</File>
 			<File
-				RelativePath=".\TDUnicodeLayer.h">
+				RelativePath=".\TDUnicodeLayer.h"
+				>
 			</File>
 			<File
-				RelativePath=".\TLBB_DBC.h">
+				RelativePath=".\TLBB_DBC.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Util.h">
+				RelativePath=".\Util.h"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 			<File
-				RelativePath=".\res\dx9.ico">
+				RelativePath=".\res\dx9.ico"
+				>
 			</File>
 			<File
-				RelativePath=".\res\tConfig.ico">
+				RelativePath=".\res\tConfig.ico"
+				>
 			</File>
 			<File
-				RelativePath=".\tConfig.rc">
+				RelativePath=".\tConfig.rc"
+				>
 			</File>
 			<File
-				RelativePath=".\res\tConfig.rc2">
+				RelativePath=".\res\tConfig.rc2"
+				>
 			</File>
 		</Filter>
 		<File
-			RelativePath=".\ReadMe.txt">
+			RelativePath=".\ReadMe.txt"
+			>
 		</File>
 		<File
-			RelativePath=".\res\tConfig.manifest">
+			RelativePath=".\res\tConfig.manifest"
+			>
 		</File>
 	</Files>
 	<Globals>
 		<Global
 			Name="RESOURCE_FILE"
-			Value="tConfig.rc"/>
+			Value="tConfig.rc"
+		/>
 	</Globals>
 </VisualStudioProject>
