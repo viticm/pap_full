@@ -389,7 +389,7 @@ namespace LuaFnTbl
 	*     功能说明 :
 	*					调用可变参数的任意脚本函数
 	*/
-	INT LuaFnCallScriptFunction(Lua_State* L,...) 
+	INT LuaFnCallScriptFunction(Lua_State* L) 
 	{
 		LUA_ENTER_FUNCTION
 		
