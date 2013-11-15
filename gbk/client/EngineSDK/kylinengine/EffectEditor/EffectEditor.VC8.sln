@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FairyCore", "..\!script\FairyCore.vcproj", "{60D1A2F1-DBC1-4C6D-8274-25C73E81DD5C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B7DE461C-7BBC-42B8-A603-81F924FCE0BD} = {B7DE461C-7BBC-42B8-A603-81F924FCE0BD}

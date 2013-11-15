@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="core"
 	ProjectGUID="{B29D030A-6E35-4FEA-9683-FFAD99847625}"
 	RootNamespace="core"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -85,6 +86,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxmswuniv26u_core_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxmswuniv26u_core.lib"
 				TargetMachine="1"
 			/>
@@ -107,9 +110,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -186,6 +186,8 @@
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxmswuniv26d_core_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxmswuniv26d_core.lib"
 				TargetMachine="1"
 			/>
@@ -208,9 +210,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -287,6 +286,8 @@
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxmsw26d_core_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxmsw26d_core.lib"
 				TargetMachine="1"
 			/>
@@ -309,9 +310,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -866,6 +864,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxmsw26_core_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxmsw26_core.lib"
 				TargetMachine="1"
 			/>
@@ -888,9 +888,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1045,6 +1042,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxmsw26u_core_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxmsw26u_core.lib"
 				TargetMachine="1"
 			/>
@@ -1067,9 +1066,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1145,6 +1141,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxmswuniv26_core_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxmswuniv26_core.lib"
 				TargetMachine="1"
 			/>
@@ -1167,9 +1165,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1325,6 +1320,8 @@
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxmsw26ud_core_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxmsw26ud_core.lib"
 				TargetMachine="1"
 			/>
@@ -1347,9 +1344,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1427,6 +1421,8 @@
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxmswuniv26ud_core_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxmswuniv26ud_core.lib"
 				TargetMachine="1"
 			/>
@@ -1449,9 +1445,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"

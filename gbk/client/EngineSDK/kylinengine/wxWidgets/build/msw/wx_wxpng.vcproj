@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="wxpng"
 	ProjectGUID="{0373ECB8-1BC6-45F7-8DB0-1B4CF21F8C64}"
 	RootNamespace="wxpng"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform

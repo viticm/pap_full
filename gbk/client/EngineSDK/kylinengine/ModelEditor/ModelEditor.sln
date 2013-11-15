@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ModelEditor", "ModelEditor.vcproj", "{C8855360-4860-4D40-91C7-72D54AA9A9B0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B29D030A-6E35-4FEA-9683-FFAD99847625} = {B29D030A-6E35-4FEA-9683-FFAD99847625}
@@ -32,6 +32,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tinyxml", "..\..\..\Client\!Scripts\tinyxml_lib.vcproj", "{3B8B63F1-9EEB-4644-A5CE-EF59F09C1797}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OgreMain", "..\ogre1.6.5\OgreMain\scripts\OgreMain.vcproj", "{C4CE0FC1-13A8-4BEA-B2CD-FE31EB0CD0CD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XercesLib", "..\!script\XercesLib.VC8.vcproj", "{54C9C154-0768-4064-800E-4349F8AFFFFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -360,6 +362,44 @@ Global
 		{C4CE0FC1-13A8-4BEA-B2CD-FE31EB0CD0CD}.Universal Unicode Debug|Win32.Build.0 = Debug|Win32
 		{C4CE0FC1-13A8-4BEA-B2CD-FE31EB0CD0CD}.Universal Unicode Release|Win32.ActiveCfg = Release|Win32
 		{C4CE0FC1-13A8-4BEA-B2CD-FE31EB0CD0CD}.Universal Unicode Release|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Debug|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Debug|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Debug|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Release|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Release|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Unicode Debug|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Unicode Debug|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Unicode Release|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Unicode Release|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Universal Debug|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Universal Debug|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Universal Release|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Universal Release|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Universal Unicode Debug|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Universal Unicode Debug|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Universal Unicode Release|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.DLL Universal Unicode Release|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Final|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Final|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.MinSizeRel|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.MinSizeRel|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Release|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Release|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.RelWithDebInfo|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.RelWithDebInfo|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Unicode Debug|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Unicode Debug|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Unicode Release|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Unicode Release|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Universal Debug|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Universal Debug|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Universal Release|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Universal Release|Win32.Build.0 = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Universal Unicode Debug|Win32.ActiveCfg = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Universal Unicode Debug|Win32.Build.0 = Debug|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Universal Unicode Release|Win32.ActiveCfg = Release|Win32
+		{54C9C154-0768-4064-800E-4349F8AFFFFD}.Universal Unicode Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

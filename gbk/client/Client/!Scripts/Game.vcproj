@@ -164,7 +164,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/ignore:4078"
+				AdditionalOptions="/ignore:4078 /NODEFAULTLIB:LIBCMT"
 				AdditionalDependencies="winmm.lib expat.lib opcode.lib FoxNet.lib PathLib.lib"
 				OutputFile="$(OutDir)\Game.exe"
 				LinkIncremental="1"

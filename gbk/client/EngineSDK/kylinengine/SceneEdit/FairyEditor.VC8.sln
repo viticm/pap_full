@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SceneEditor", "SceneEditor.VC8.vcproj", "{B88D1BAE-60FD-41E1-89A2-67104D63A6EA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B809E112-8AC9-4CBC-AB74-539E370FA538} = {B809E112-8AC9-4CBC-AB74-539E370FA538}

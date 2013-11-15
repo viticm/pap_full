@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="base"
 	ProjectGUID="{80A04857-3B45-4D98-ADA5-7BA6B262D091}"
 	RootNamespace="base"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -86,6 +87,8 @@
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxbase26ud_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxbase26ud.lib"
 				TargetMachine="1"
 			/>
@@ -108,9 +111,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -497,6 +497,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxbase26_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxbase26.lib"
 				TargetMachine="1"
 			/>
@@ -519,9 +521,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -764,6 +763,8 @@
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxbase26d_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxbase26d.lib"
 				TargetMachine="1"
 			/>
@@ -786,9 +787,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -864,6 +862,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxbase26_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxbase26.lib"
 				TargetMachine="1"
 			/>
@@ -886,9 +886,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1043,6 +1040,8 @@
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxbase26d_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxbase26d.lib"
 				TargetMachine="1"
 			/>
@@ -1065,9 +1064,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1144,6 +1140,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxbase26u_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxbase26u.lib"
 				TargetMachine="1"
 			/>
@@ -1166,9 +1164,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1326,6 +1321,8 @@
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxbase26ud_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxbase26ud.lib"
 				TargetMachine="1"
 			/>
@@ -1348,9 +1345,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1427,6 +1421,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\lib\vc_dll/wxbase26u_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\lib\vc_dll\wxbase26u.lib"
 				TargetMachine="1"
 			/>
@@ -1449,9 +1445,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"

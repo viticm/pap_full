@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="FairyEditor"
 	ProjectGUID="{969F9C3A-800B-4654-A369-46C3BBA04197}"
 	RootNamespace="FairyEditor"
 	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -17,7 +18,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\..\..\Bin\Client\Game"
+			OutputDirectory="..\..\..\..\Run\Client\Game"
 			IntermediateDirectory="..\..\..\..\..\BuildOut\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
@@ -83,7 +84,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\..\Bin\Client\Game"
+			OutputDirectory="..\..\..\..\Run\Client\Game"
 			IntermediateDirectory="..\..\..\..\..\BuildOut\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"

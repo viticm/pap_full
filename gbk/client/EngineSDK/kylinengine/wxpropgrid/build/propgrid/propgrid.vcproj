@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="propgrid"
 	ProjectGUID="{37619F60-C38B-410A-AB5D-DE4D2A4B69BF}"
 	RootNamespace="propgrid"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -84,6 +85,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\src\propgrid\..\..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\src\propgrid\..\..\..\lib\vc_dll/wxmsw26u_propgrid_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\src\propgrid\..\..\..\lib\vc_dll\wxmsw26u_propgrid.lib"
 				TargetMachine="1"
 			/>
@@ -106,9 +109,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -184,6 +184,8 @@
 				AdditionalLibraryDirectories="..\..\src\propgrid\..\..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\src\propgrid\..\..\..\lib\vc_dll/wxmsw26d_propgrid_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\src\propgrid\..\..\..\lib\vc_dll\wxmsw26d_propgrid.lib"
 				TargetMachine="1"
 			/>
@@ -206,9 +208,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -283,6 +282,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\src\propgrid\..\..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\src\propgrid\..\..\..\lib\vc_dll/wxmsw26_propgrid_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\src\propgrid\..\..\..\lib\vc_dll\wxmsw26_propgrid.lib"
 				TargetMachine="1"
 			/>
@@ -305,9 +306,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -384,6 +382,8 @@
 				AdditionalLibraryDirectories="..\..\src\propgrid\..\..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\src\propgrid\..\..\..\lib\vc_dll/wxmsw26ud_propgrid_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\src\propgrid\..\..\..\lib\vc_dll\wxmsw26ud_propgrid.lib"
 				TargetMachine="1"
 			/>
@@ -406,9 +406,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -485,6 +482,8 @@
 				AdditionalLibraryDirectories="..\..\src\propgrid\..\..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\src\propgrid\..\..\..\lib\vc_dll/wxmswuniv26ud_propgrid_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\src\propgrid\..\..\..\lib\vc_dll\wxmswuniv26ud_propgrid.lib"
 				TargetMachine="1"
 			/>
@@ -507,9 +506,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -585,6 +581,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\src\propgrid\..\..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\src\propgrid\..\..\..\lib\vc_dll/wxmswuniv26u_propgrid_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\src\propgrid\..\..\..\lib\vc_dll\wxmswuniv26u_propgrid.lib"
 				TargetMachine="1"
 			/>
@@ -607,9 +605,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -761,6 +756,8 @@
 				AdditionalLibraryDirectories="..\..\src\propgrid\..\..\..\lib\vc_dll"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\..\..\src\propgrid\..\..\..\lib\vc_dll/wxmswuniv26d_propgrid_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\src\propgrid\..\..\..\lib\vc_dll\wxmswuniv26d_propgrid.lib"
 				TargetMachine="1"
 			/>
@@ -783,9 +780,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1091,6 +1085,8 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\..\src\propgrid\..\..\..\lib\vc_dll"
 				ProgramDatabaseFile=".\..\..\src\propgrid\..\..\..\lib\vc_dll/wxmswuniv26_propgrid_vc_custom.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				ImportLibrary="..\..\src\propgrid\..\..\..\lib\vc_dll\wxmswuniv26_propgrid.lib"
 				TargetMachine="1"
 			/>
@@ -1113,9 +1109,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"

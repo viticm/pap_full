@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="gb2312"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="wxzlib"
 	ProjectGUID="{DDD15B8F-11C6-457E-8AA3-CBD57E7611E4}"
 	RootNamespace="wxzlib"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
