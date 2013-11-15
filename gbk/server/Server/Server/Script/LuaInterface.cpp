@@ -648,7 +648,6 @@ __ENTER_FUNCTION
 #ifdef _DEBUG
 	CHAR strBuf[256];
 	tsnprintf(strBuf,256,"%s,scriptid=%d",funcname,scriptid);
-    LERR("funcname: %s", funcname);
 	AssertEx(pSFileData,strBuf);
 #endif
 

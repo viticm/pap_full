@@ -15,7 +15,7 @@ public:
 	virtual BOOL Load(char* FileName);
 	virtual	BOOL Compile(char* FileName);
 	virtual	BOOL Execute();
-	virtual	BOOL CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat,...);
+	virtual	BOOL CallFunction(LPSTR cFuncName, int nResults, LPCSTR cFormat,...);
 	virtual BOOL RegisterFunction(LPSTR FuncName, void* Func);
 	
 };

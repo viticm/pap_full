@@ -70,7 +70,7 @@ BOOL FoxScript::Execute()
 // ¹¦ÄÜ:	
 // ·µ»Ø:	BOOL 
 //---------------------------------------------------------------------------
-BOOL FoxScript::CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat,...)
+BOOL FoxScript::CallFunction(LPSTR cFuncName, int nResults, LPCSTR cFormat,...)
 {
 	return TRUE;
 }

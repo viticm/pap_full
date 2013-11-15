@@ -43,7 +43,7 @@ public:
 	virtual BOOL Load(char* FileName);
 	virtual	BOOL Compile(char* FileName);
 	virtual	BOOL Execute();
-	virtual	BOOL CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, ...);
+	virtual	BOOL CallFunction(LPSTR cFuncName, int nResults, LPCSTR cFormat, ...);
 	virtual BOOL RegisterFunction(LPSTR FuncName, void* Func);
 	virtual void SetScriptName(LPSTR scpname){strcpy(m_szScriptName, scpname);};
 
@@ -78,7 +78,7 @@ public:
 	int	 m_UserTag;
 	Lua_State * m_LuaState;
 private:
-	BOOL CallFunction(LPSTR cFuncName, int nResults, LPSTR cFormat, va_list vlist);
+	BOOL CallFunction(LPSTR cFuncName, int nResults, LPCSTR cFormat, va_list vlist);
 
 };
 //---------------------------------------------------------------------------

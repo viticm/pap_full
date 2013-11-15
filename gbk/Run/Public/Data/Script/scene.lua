@@ -533,7 +533,7 @@ end
 
 
 function x888888_OnSceneHumanLevelUp( sceneId, objId, level )
-
+    return true
 end
 
 
